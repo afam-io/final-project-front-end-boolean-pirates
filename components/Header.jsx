@@ -14,35 +14,41 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <nav className="bg-green-backgroundtext">
+      {/* wrapper for the whole nav bar */}
+      <nav className="bg-green-backgroundtext ">
+        {/* logo */}
         <img
           className="h-8 float-left mr-4"
           src="https://i.ibb.co/2NTjXs4/logo.png"
           alt="logo"
         />
-        <p className="h-8 float-right bg-white-cardbackground hover:bg-gray-700 black-text font-bold py-2 px-4 rounded-md">Login</p>
-
-
+        {/* login button */}
+        <p className="h-8 float-right bg-white-cardbackground hover:bg-gray-700 black-text font-bold py-1 px-1 rounded-md">Login</p>
+        {/* wrapper for the whole navbar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* links in the middle of the navbar */}
           <div className="flex items-center justify-between h-30">
             <div className="flex items-center">
-              <div className=" flex-shrink-0 ml-5 flex items-baseline space-x-6 text-white px-3 py-2 rounded-md text-sm font-medium ">
-                <div className="md:hidden ml-5 flex items-baseline space-x-6">
-                  
-                  <div>
-                    <div className="text-4xl">
+              {/* styles for the mobile menu */}
+              <div className=" flex-shrink-0 ml-0 flex items-baseline space-x-6 text-white px-0 py-2 rounded-md text-sm font-medium">
+                {/* individual mobile links wrapper */}
+                <div className="md:hidden ml-0 flex items-baseline space-x-6">
+                  {/* wrapper for individual mobile link */}
+                  <div className="block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    {/* wrapper for navbar icon and the icon */}
+                    <div className="block h-6 w-6 text-4xl mb-2">
                       <AiOutlineHome />
                      </div>
                     <p>Home</p>
                   </div>
-
+                  {/* wrapper for individual mobile link */}
                   <div className="border-8 border-red-500">
                     <div className="text-4xl border-1 ">
                       <AiOutlineRead />
                     </div>
                     <p>Tutorials</p>
                   </div>
-
+                  {/* wrapper for individual mobile link */}
                   <div>
                     <div className="text-4xl border-1 ">
                      <AiOutlinePlus />
@@ -54,7 +60,9 @@ const Header = () => {
               </div>
 
               <div className="hidden md:block">
-                <div className="ml-5 flex items-baseline space-x-6">
+              {/* wrapper for desktop view middle link items */}
+              {/* TODO need to space out these links for the mobile site */}
+                <div className="flex"> 
                   <a
                     href="#"
                     className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -103,11 +111,14 @@ const Header = () => {
                 </div>
               </div>
             </div>
+            {/* wrapper around the more button */}
             <div className="-mr-2 flex md:hidden">
+              {/* mobile more button */}
+              {/* TODO need to align this button with icons */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="bg-green-backgroundtext inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
