@@ -15,7 +15,7 @@ export default function Home() {
       <div>
         <h2>
           From wind turbines to window farms, find your next project with
-          Redeem.
+          Redeem. Hi there
         </h2>
       </div>
 
