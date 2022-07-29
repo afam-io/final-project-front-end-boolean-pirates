@@ -1,24 +1,30 @@
 import React, { useState } from "react";
-import { Transition } from "@headlessui/react"
+import { Transition } from "@headlessui/react";
+import { AiOutlineHome, AiOutlineRead, AiOutlinePlus } from "react-icons/ai";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);    
     return (
       <div>
-        <nav className="bg-green-700">
+        <nav className="bg-green-backgroundtext">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <div className="flex items-center">
-                <div className="flex-shrink-0 ml-10 flex items-baseline space-x-4 text-white px-3 py-2 rounded-md text-sm font-medium">
-                 
+                <div className="flex-shrink-0 ml-10 flex items-baseline space-x-4 text-white px-3 py-2 rounded-md text-sm font-medium ">
+              
                   <img 
-                    className="h-8 w-8"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow"
+                    className="h-8"
+                    src="https://i.ibb.co/2NTjXs4/logo.png"
+                    alt="logo"
                   />
-                  <p>Home</p>
-                  <p>Tutorials</p>
-                  <p>Create</p>
+                  <div className="md:hidden ml-10 flex items-baseline space-x-4">
+                   <div className="w-6 h-6 flex place-items-center">
+                    <p><AiOutlineHome/>Home</p>
+                   </div>
+                  <p><AiOutlineRead/>Tutorials</p>
+                  <p><AiOutlinePlus/>Create</p>
+                  </div>
                 </div>
                 
         
@@ -81,6 +87,7 @@ const Header = () => {
                   aria-expanded="false"
                 >
                   <span className="sr-only">Open main menu</span>
+                  <div>
                   {!isOpen ? (
                     <svg
                       className="block h-6 w-6"
@@ -112,8 +119,10 @@ const Header = () => {
                         strokeWidth="2"
                         d="M6 18L18 6M6 6l12 12"
                       />
-                    </svg>
+                    </svg>        
                   )}
+                  <p>More</p>
+                  </div>
                 </button>
               </div>
             </div>
@@ -163,21 +172,7 @@ const Header = () => {
             )}
           </Transition>
         </nav>
-  
-        <header className="bg-white shadow">
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          </div>
-        </header>
-        <main>
-          <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* <!-- Replace with your content --> */}
-            <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
-            </div>
-            {/* <!-- /End replace --> */}
-          </div>
-        </main>
+
       </div>
     );
 
