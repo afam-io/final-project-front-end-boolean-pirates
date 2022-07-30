@@ -1,7 +1,8 @@
 export default function Form() {
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
+    {/* main div wraps all content*/}
+      <div className="flex items-center justify-center h-screen ">
         <div>
           <div className="md:grid md:grid-cols-2 md:gap-6">
             <div className="md:col-span-1">
@@ -12,13 +13,20 @@ export default function Form() {
                 </p>
               </div>
             </div>
-            <div className="mt-5 md:mt-0 md:col-span-2">
+            {/* wrapper with media queries for screen sizes */}
+            <div className="mt-5 md:mt-0 md:col-span-2 border">
+            {/* form wrapper */}
               <form action="#" method="POST">
+                {/* card effect wrapper */}
                 <div className="shadow sm:rounded-md sm:overflow-hidden">
-                  <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+                {/* wrapper to give padding inside card */}
+                  <div className="px-4 py-5 bg-white space-y-6 sm:p-6 ">
+                   {/* wrapper that sets the columns up to control form widths*/}
                     <div className="grid grid-cols-3 gap-6">
+                      {/* media query to adjust the column size on a small screen */}
                       <div className="col-span-3 sm:col-span-2">
-                        <div>
+                        {/* wrapper around tutorial input and label */}
+                        <div className="py-3">
                           <label
                             htmlFor="about"
                             className="block text-sm font-medium font-sans text-green-backgroundtext"
@@ -36,7 +44,8 @@ export default function Form() {
                             />
                           </div>
                         </div>
-
+                        {/* wrapper around materials input and label */}
+                        <div className="py-3">
                         <label
                           htmlFor="about"
                           className="block text-sm font-medium font-sans text-green-backgroundtext"
@@ -53,8 +62,9 @@ export default function Form() {
                             defaultValue={""}
                           />
                         </div>
-
-                        <div className="col-span-6 sm:col-span-3">
+                        </div>
+                        {/* wrapper around youtube URL and label */}
+                        <div className="pt-3">
                           <label
                             htmlFor="about"
                             className="block text-sm font-medium font-sans text-green-backgroundtext"
@@ -72,14 +82,9 @@ export default function Form() {
                             />
                           </div>
                         </div>
-
-                        
-
-
-
                       </div>
                     </div>
-
+                    {/* wrapper around skill level and media query */}
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="country"
@@ -98,7 +103,7 @@ export default function Form() {
                         <option>Advanced</option>
                       </select>
                     </div>
-
+                    {/* wrapper around about and textarea */}
                     <div>
                       <label
                         htmlFor="about"
@@ -117,7 +122,7 @@ export default function Form() {
                         />
                       </div>
                     </div>
-
+                    {/* wrapper around upload */}
                     <div>
                       <label className="block text-sm font-medium font-sans text-green-backgroundtext">
                         Upload thumbnail image
@@ -160,6 +165,7 @@ export default function Form() {
                       </div>
                     </div>
                   </div>
+                  {/* wrapper around save button */}
                   <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                     <button
                       type="submit"
@@ -177,6 +183,7 @@ export default function Form() {
     </>
   );
 }
+// border border-red-700
 
 /* <p className="mt-2 text-sm text-gray-500">
                           Brief description for your profile. URLs are
