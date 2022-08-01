@@ -1,9 +1,7 @@
-import SpecificTutorialCard from "../components/SpecificTutorialCard"
+import SpecificTutorialCard from '../components/SpecificTutorialCard';
 
-function specifictutorial() {
-  return (
-    <SpecificTutorialCard/>
-  )
+function specificTutorial() {
+  return <SpecificTutorialCard />;
 }
 
-export default specifictutorial
+export default specificTutorial;
