@@ -20,22 +20,23 @@ const Header = () => {
 				{/* logo */}
 				{/* TODO need to work on the sizing for the image */}
 				<Image
-					className="h-8 float-left mr-4"
+					className="h-8 float-left mt-2 ml-3"
 					src="/images/logo.png"
 					alt="logo"
-					width="450px"
-					height="91px"
+					width="300px"
+					height="61px"
 				/>
 				{/* login button */}
-				<p className="h-8 float-right bg-white-cardbackground hover:bg-gray-700 black-text font-bold py-1 px-1 rounded-md">
+				<p className=" h-6 float-right bg-white-cardbackground hover:bg-gray-700 black-text font-bold px-2 m-3 rounded-3xl">
 					Login
 				</p>
 				{/* wrapper for the whole navbar */}
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					{/* links in the middle of the navbar */}
 					<div className="flex items-center justify-between h-30">
 						<div className="flex items-center">
 							{/* styles for the mobile menu */}
+						
 							<div className=" flex-shrink-0 ml-0 flex items-baseline space-x-6 text-white px-0 py-2 rounded-md text-sm font-medium">
 								{/* individual mobile links wrapper */}
 								<div className="md:hidden ml-0 flex items-baseline space-x-6">
@@ -48,15 +49,15 @@ const Header = () => {
 										<p>Home</p>
 									</div>
 									{/* wrapper for individual mobile link */}
-									<div className="">
-										<div className="text-4xl border-1 ">
+									<div className="block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+									<div className="block h-6 w-6 text-4xl mb-2">
 											<AiOutlineRead />
 										</div>
 										<p>Tutorials</p>
 									</div>
 									{/* wrapper for individual mobile link */}
-									<div>
-										<div className="text-4xl border-1 ">
+									<div className="block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+									<div className="block h-6 w-6 text-4xl mb-2">
 											<AiOutlinePlus />
 										</div>
 										<p>Create</p>
@@ -165,10 +166,14 @@ const Header = () => {
 									<p>More</p>
 								</div>
 							</button>
+					
 						</div>
+						
 					</div>
+					
 				</div>
-
+				
+ 
 				<Transition
 					show={isOpen}
 					enter="transition ease-out duration-100 transform"
@@ -221,6 +226,8 @@ const Header = () => {
 						</div>
 					)}
 				</Transition>
+			
+				
 			</nav>
 		</div>
 	);
