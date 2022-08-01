@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { AiOutlineLike } from "react-icons/ai";
+
 const Card = ({
   imageURL,
   title,
@@ -7,7 +10,7 @@ const Card = ({
   return (
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={imageURL} alt={title} />
+        <Image className="w-full" src={imageURL} alt={title} height="450px" width="600px"/>
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>
           <p className="text-gray-700 text-base">{description}</p>
@@ -18,6 +21,7 @@ const Card = ({
             {material}
           </span>
         )}
+          <p className="text-4xl float-right"><AiOutlineLike/></p>
         </div>
       </div>
     </div>
