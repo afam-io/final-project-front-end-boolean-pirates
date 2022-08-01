@@ -1,4 +1,3 @@
-import Header from '../components/Header';
 import Card from '../components/Card';
 import Image from 'next/image';
 
@@ -38,7 +37,6 @@ export default function Home() {
   return (
     //whole layout
     <div>
-      <Header />
       {/* wrapper for the image and text */}
       <div className='relative justify-self-center'>
         {/* TODO fix the white space on full screen on the left */}
