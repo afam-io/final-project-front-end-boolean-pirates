@@ -18,7 +18,7 @@ export default function Form() {
               {/* form wrapper */}
               <form action="#" method="POST">
                 {/* card effect wrapper  WIDTH TO BE ADJUSTED*/}
-                <div className="shadow sm:rounded-md sm:overflow-hidden xl:w-screen xl:m-10">
+                <div className="shadow sm:rounded-md sm:overflow-hidden md:max-w-xl lg:max-w-xl xl:w-screen xl:w-xl">
                   {/* wrapper to give padding inside card */}
                   <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                     {/* wrapper that sets the columns up to control form widths*/}
@@ -27,6 +27,14 @@ export default function Form() {
                       <div className="col-span-3 sm:col-span-3">
                         {/* wrapper around tutorial input and label */}
                         <div className="py-3">
+                          <div className="pb-4">
+                            <label
+                              htmlFor="FormTitle"
+                              className="alignContent: text-center block text-lg font-semibold font-sans text-green-backgroundtext"
+                            >
+                              Upload Tutorial Form
+                            </label>
+                          </div>
                           <label
                             htmlFor="about"
                             className="block text-sm font-semibold font-sans text-green-backgroundtext"
