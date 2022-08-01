@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Card from "../components/card.jsx";
+import Card from "../components/Card";
 import Image from "next/image";
 
 export default function Home() {
