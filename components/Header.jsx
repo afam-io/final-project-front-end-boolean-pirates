@@ -9,6 +9,7 @@ import {
 	AiOutlineUser,
 	AiOutlineHeart,
 	AiOutlineContacts,
+  AiOutlineMenu,
 } from "react-icons/ai";
 
 const Header = () => {
@@ -20,27 +21,28 @@ const Header = () => {
 				{/* logo */}
 				{/* TODO need to work on the sizing for the image */}
 				<Image
-					className="h-8 float-left mr-4"
+					className="h-8 float-left mt-2 ml-3"
 					src="/images/logo.png"
 					alt="logo"
-					width="450px"
-					height="91px"
+					width="300px"
+					height="61px"
 				/>
 				{/* login button */}
-				<p className="h-8 float-right bg-white-cardbackground hover:bg-gray-700 black-text font-bold py-1 px-1 rounded-md">
+				<p className=" h-6 float-right bg-white-cardbackground hover:bg-gray-700 black-text font-bold px-2 m-3 rounded-3xl">
 					Login
 				</p>
 				{/* wrapper for the whole navbar */}
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="max-w-fit mx-auto px-4 sm:px-6 lg:px-8">
 					{/* links in the middle of the navbar */}
 					<div className="flex items-center justify-between h-30">
 						<div className="flex items-center">
 							{/* styles for the mobile menu */}
+						
 							<div className=" flex-shrink-0 ml-0 flex items-baseline space-x-6 text-white px-0 py-2 rounded-md text-sm font-medium">
 								{/* individual mobile links wrapper */}
 								<div className="md:hidden ml-0 flex items-baseline space-x-6">
 									{/* wrapper for individual mobile link */}
-									<div className="block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+									<div className="block items-center justify-center px-7 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 										{/* wrapper for navbar icon and the icon */}
 										<div className="block h-6 w-6 text-4xl mb-2">
 											<AiOutlineHome />
@@ -48,29 +50,30 @@ const Header = () => {
 										<p>Home</p>
 									</div>
 									{/* wrapper for individual mobile link */}
-									<div className="">
-										<div className="text-4xl border-1 ">
+									<div className="block items-center justify-center px-7 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+									<div className="block h-6 w-6 pl-2 text-4xl mb-2">
 											<AiOutlineRead />
 										</div>
 										<p>Tutorials</p>
 									</div>
 									{/* wrapper for individual mobile link */}
-									<div>
-										<div className="text-4xl border-1 ">
+									<div className="block items-center justify-center px-7 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+									<div className="block h-6 w-6 text-4xl mb-2">
 											<AiOutlinePlus />
 										</div>
 										<p>Create</p>
 									</div>
+               
 								</div>
 							</div>
 
-							<div className="hidden md:block">
+							<div className="hidden md:block ">
 								{/* wrapper for desktop view middle link items */}
 								{/* TODO need to space out these links for the mobile site */}
-								<div className="flex">
-									<a
+								<div className="flex justify-evenly max-w-full w-screen">
+                  <a
 										href="#"
-										className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+										className= "hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Home
 									</a>
@@ -95,21 +98,21 @@ const Header = () => {
 
 									<a
 										href="#"
-										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+										className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Profile
 									</a>
 
 									<a
 										href="#"
-										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Favourites
 									</a>
 
 									<a
 										href="#"
-										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
 										Events
 									</a>
@@ -117,13 +120,13 @@ const Header = () => {
 							</div>
 						</div>
 						{/* wrapper around the more button */}
-						<div className="-mr-2 flex md:hidden">
+						<div className="flex md:hidden justify-center ml-5">
 							{/* mobile more button */}
 							{/* TODO need to align this button with icons */}
 							<button
 								onClick={() => setIsOpen(!isOpen)}
 								type="button"
-								className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+								className="inline-flex items-center justify-center pt-5 ml-5 h-12 w-16 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
 								aria-controls="mobile-menu"
 								aria-expanded="false"
 							>
@@ -131,7 +134,7 @@ const Header = () => {
 								<div>
 									{!isOpen ? (
 										<svg
-											className="block h-6 w-6"
+											className="block h-8 w-8"
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
 											viewBox="0 0 24 24"
@@ -147,7 +150,7 @@ const Header = () => {
 										</svg>
 									) : (
 										<svg
-											className="block h-6 w-6"
+											className="block h-8 w-8"
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
 											viewBox="0 0 24 24"
@@ -162,13 +165,17 @@ const Header = () => {
 											/>
 										</svg>
 									)}
-									<p>More</p>
+									<p className="text-white pb-5 pr-3 rounded-md text-sm font-medium">More</p>
 								</div>
 							</button>
+					
 						</div>
+						
 					</div>
+					
 				</div>
-
+				
+ 
 				<Transition
 					show={isOpen}
 					enter="transition ease-out duration-100 transform"
@@ -180,14 +187,17 @@ const Header = () => {
 				>
 					{(ref) => (
 						<div className="md:hidden" id="mobile-menu ">
-							<div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+							<div ref={ref} className="px-2 pt-2 space-y-1 sm:px-3">
 								<a
 									href="#"
 									className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
 								>
                 {/* TODO size the icons */}
 									{" "}
-									<AiOutlineSearch />
+									<div className="block h-6 w-6 text-3xl mb-2">
+                  <AiOutlineSearch />
+                  </div>
+                 
 									Search
 								</a>
 
@@ -196,7 +206,10 @@ const Header = () => {
 									className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 								>
 									{" "}
-									<AiOutlineUser />
+                  <div className="block h-6 w-6 text-3xl mb-2">
+                  <AiOutlineUser />
+                  </div>
+							
 									Profile
 								</a>
 
@@ -205,7 +218,10 @@ const Header = () => {
 									className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 								>
 									{" "}
-									<AiOutlineHeart />
+                  <div className="block h-6 w-6 text-3xl mb-2">
+                  <AiOutlineHeart />
+                  </div>
+									
 									Favourites
 								</a>
 
@@ -214,13 +230,18 @@ const Header = () => {
 									className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 								>
 									{" "}
-									<AiOutlineContacts />
+                  <div className="block h-6 w-6 text-3xl mb-2">
+                	<AiOutlineContacts />
+                  </div>
+								
 									Events
 								</a>
 							</div>
 						</div>
 					)}
 				</Transition>
+			
+				
 			</nav>
 		</div>
 	);
