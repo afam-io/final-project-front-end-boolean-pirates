@@ -10,7 +10,7 @@ function SpecificTutorial() {
     <>
       <h1>Title: {SpecificTutorial} </h1>{' '}
       {/* To show clearly that the dynamic routing is working*/}
-      <SpecificTutorialCard tutorialData={specificTutorialData} />
+      <SpecificTutorialCard tutorialData={specificTutorialData[0]} />
     </>
   );
 }
