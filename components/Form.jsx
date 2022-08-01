@@ -18,7 +18,7 @@ export default function Form() {
               {/* form wrapper */}
               <form action="#" method="POST">
                 {/* card effect wrapper  WIDTH TO BE ADJUSTED*/}
-                <div className="shadow sm:rounded-md sm:overflow-hidden xl:w-screen xl:m-32">
+                <div className="shadow sm:rounded-md sm:overflow-hidden xl:w-screen xl:m-10">
                   {/* wrapper to give padding inside card */}
                   <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                     {/* wrapper that sets the columns up to control form widths*/}
