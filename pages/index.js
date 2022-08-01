@@ -45,13 +45,13 @@ export default function Home() {
         alt="main-image"
       />
       {/* card */}
-      <div className="absolute bottom-8 left-0 right-0 px-4 py-2 bg-gray-300 opacity-70">
-        {/* TODO text is to big on the mobile screen */}
-        <h1 className="mt-2 text-4xl text-black-300">
+      {/* <div className="absolute bottom-8 left-0 right-0 px-4 py-2 bg-gray-300 opacity-70">
+        TODO text is to big on the mobile screen
+       <h1 className="mt-2 text-4xl text-black-300">
           From wind turbines to window farms, find your next project with
           Redeem.
-        </h1>
-      </div>
+        </h1> 
+      </div> */}
       </div>
       {/* card holder that aligns the cards to center */}
       <div className="flex items-center justify-center">
