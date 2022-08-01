@@ -1,35 +1,35 @@
 export default function Form() {
   return (
     <>
-    {/* main div wraps all content*/}
-      <div className="flex items-center justify-center h-screen ">
+      {/* main div wraps all content*/}
+      <div className="flex items-center justify-center h-screen w-full">
         <div>
           <div className="md:grid md:grid-cols-2 md:gap-6">
-            <div className="md:col-span-1">
+            {/* <div className="md:col-span-1">
               <div className="px-4 sm:px-0">
                 <p className="mt-1 text-sm text-green-backgroundtext">
                   This information will be displayed publicly so be careful what
                   you share.
                 </p>
               </div>
-            </div>
+            </div> */}
             {/* wrapper with media queries for screen sizes */}
             <div className="mt-5 md:mt-0 md:col-span-2 border">
-            {/* form wrapper */}
+              {/* form wrapper */}
               <form action="#" method="POST">
                 {/* card effect wrapper */}
                 <div className="shadow sm:rounded-md sm:overflow-hidden">
-                {/* wrapper to give padding inside card */}
+                  {/* wrapper to give padding inside card */}
                   <div className="px-4 py-5 bg-white space-y-6 sm:p-6 ">
-                   {/* wrapper that sets the columns up to control form widths*/}
+                    {/* wrapper that sets the columns up to control form widths*/}
                     <div className="grid grid-cols-3 gap-6">
                       {/* media query to adjust the column size on a small screen */}
-                      <div className="col-span-3 sm:col-span-2">
+                      <div className="col-span-3 sm:col-span-3">
                         {/* wrapper around tutorial input and label */}
                         <div className="py-3">
                           <label
                             htmlFor="about"
-                            className="block text-sm font-medium font-sans text-green-backgroundtext"
+                            className="block text-sm font-semibold font-sans text-green-backgroundtext"
                           >
                             Tutorial Title
                           </label>
@@ -38,96 +38,121 @@ export default function Form() {
                               id="about"
                               name="about"
                               rows={3}
-                              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-2/3 sm:text-sm border border-gray-300 rounded-md"
-                              placeholder="Type here"
+                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              placeholder="type here"
                               defaultValue={""}
                             />
                           </div>
                         </div>
+
                         {/* wrapper around materials input and label */}
                         <div className="py-3">
-                        <label
-                          htmlFor="about"
-                          className="block text-sm font-medium font-sans text-green-backgroundtext"
-                        >
-                          Materials Needed
-                        </label>
-                        <div className="mt-1">
-                          <input
-                            id="materials-input"
-                            name="materials-input"
-                            rows={3}
-                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-2/3 sm:text-sm border border-gray-300 rounded-md"
-                            placeholder="Type here"
-                            defaultValue={""}
-                          />
-                        </div>
-                        </div>
-                        {/* wrapper around youtube URL and label */}
-                        <div className="pt-3">
                           <label
                             htmlFor="about"
-                            className="block text-sm font-medium font-sans text-green-backgroundtext"
+                            className="block text-sm font-semibold font-sans text-green-backgroundtext"
+                          >
+                            Materials Needed
+                          </label>
+                          <div className="mt-1">
+                            <input
+                              id="materials-input"
+                              name="materials-input"
+                              rows={3}
+                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              placeholder="type here"
+                              defaultValue={""}
+                            />
+                          </div>
+                        </div>
+
+                        {/* wrapper around description and input */}
+                        <div className="py-3">
+                          <label
+                            htmlFor="description"
+                            className="block text-sm font-semibold font-sans text-green-backgroundtext"
+                          >
+                            Brief description of your build
+                          </label>
+                          <div className="mt-1">
+                            <input
+                              id="description"
+                              name="description"
+                              rows={3}
+                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              placeholder="type here"
+                              defaultValue={""}
+                            />
+                          </div>
+                        </div>
+
+                        {/* wrapper around ability level and media query */}
+                        <div className="col-span-6 sm:col-span-3 py-3">
+                          <label
+                            htmlFor="country"
+                            className="block text-sm font-semibold font-sans text-green-backgroundtext"
+                          >
+                            Ability Level
+                          </label>
+                          <select
+                            id="country"
+                            name="country"
+                            autoComplete="country-name"
+                            className="mt-1 block w-full py-2 px-2 border border-gray-300 bg-white rounded-lg shadow-md focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm font-sans"
+                          >
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                          </select>
+                        </div>
+
+                        {/* wrapper around youtube URL and label */}
+                        <div className="py-3">
+                          <label
+                            htmlFor="youtubeURL"
+                            className="block text-sm font-semibold font-sans text-green-backgroundtext"
                           >
                             Youtube URL
                           </label>
                           <div className="mt-1">
                             <input
-                              id="about"
-                              name="about"
+                              id="youtubeURL"
+                              name="youtubeURL"
                               rows={3}
-                              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-2/3 sm:text-sm border border-gray-300 rounded-md"
+                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="URL"
+                              defaultValue={""}
+                            />
+                          </div>
+                        </div>
+
+                        {/* wrapper around Image input */}
+                        <div className="py-3">
+                          <label
+                            htmlFor="instructions"
+                            className="block text-sm font-semibold font-sans text-green-backgroundtext"
+                          >
+                            Tutorial Instructions
+                          </label>
+                          <div className="mt-1">
+                            <textarea
+                              id="instructions"
+                              name="instructions"
+                              rows={3}
+                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              placeholder="Please be as detailed as you can."
                               defaultValue={""}
                             />
                           </div>
                         </div>
                       </div>
                     </div>
-                    {/* wrapper around skill level and media query */}
-                    <div className="col-span-6 sm:col-span-3">
-                      <label
-                        htmlFor="country"
-                        className="block text-sm font-medium font-sans text-green-backgroundtext"
-                      >
-                        Skill Level
-                      </label>
-                      <select
-                        id="country"
-                        name="country"
-                        autoComplete="country-name"
-                        className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm font-sans"
-                      >
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Advanced</option>
-                      </select>
-                    </div>
-                    {/* wrapper around about and textarea */}
-                    <div>
-                      <label
-                        htmlFor="about"
-                        className="block text-sm font-medium font-sans text-green-backgroundtext"
-                      >
-                        About
-                      </label>
-                      <div className="mt-1">
-                        <textarea
-                          id="about"
-                          name="about"
-                          rows={3}
-                          className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-                          placeholder="you@example.com"
-                          defaultValue={""}
-                        />
-                      </div>
-                    </div>
+
                     {/* wrapper around upload */}
                     <div>
-                      <label className="block text-sm font-medium font-sans text-green-backgroundtext">
+                      <label className="block text-sm font-semibold font-sans text-green-backgroundtext">
                         Upload thumbnail image
                       </label>
-                      <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                      <div className="shadow-md mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg">
                         <div className="space-y-1 text-center">
                           <svg
                             className="mx-auto h-12 w-12 text-gray-400"
@@ -146,7 +171,7 @@ export default function Form() {
                           <div className="flex text-sm text-gray-600 font-sans">
                             <label
                               htmlFor="file-upload"
-                              className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 font-sans"
+                              className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 font-sans"
                             >
                               <span>Upload a file</span>
                               <input
@@ -165,11 +190,12 @@ export default function Form() {
                       </div>
                     </div>
                   </div>
+
                   {/* wrapper around save button */}
                   <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                     <button
                       type="submit"
-                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 font-sans"
+                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans"
                     >
                       Save
                     </button>
@@ -183,6 +209,16 @@ export default function Form() {
     </>
   );
 }
+
+/* <textarea
+                          id="about"
+                          name="about"
+                          rows={3}
+                          className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                          placeholder="you@example.com"
+                          defaultValue={""}
+                        />*\
+
 // border border-red-700
 
 /* <p className="mt-2 text-sm text-gray-500">
