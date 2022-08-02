@@ -1,14 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import tutorialData from '../../library/specificTutorialData';
+import tutorialData from '../../../library/specificTutorialData';
 
 export default function handler(req, res) {
-  if (req.query.params) {
-    let tutorialId = Number(req.query.params);
-    console.log(tutorialData)
-    let selectedTutorial = getTutorialById(tutorialId)
+  let tutorialId = Number(req.query.id);
+  let arr = [1, 2, 3];
+  if (tutorialId !== undefined && arr.includes(tutorialId)) {
+    let selectedTutorial = getTutorialById(tutorialId);
     res.status(200).json(selectedTutorial);
+  } else {
+    res.status(200).json(tutorialData);
   }
-  res.status(200).json(tutorialData);
 }
 
 export function getTutorialById(id) {
@@ -17,4 +18,3 @@ export function getTutorialById(id) {
   });
   return found;
 }
-
