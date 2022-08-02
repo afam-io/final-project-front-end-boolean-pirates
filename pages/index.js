@@ -2,7 +2,6 @@ import Card from '../components/Card';
 import Image from 'next/image';
 
 export default function Home() {
-  // mock data used to test layout
   const mockData = [
     {
       imageURL: '/images/template.jpg',
@@ -10,6 +9,8 @@ export default function Home() {
       description:
         'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
+      likes: 27,
+      date: "1st August 2022"
     },
     {
       imageURL: '/images/template.jpg',
@@ -17,6 +18,8 @@ export default function Home() {
       description:
         'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
+      likes: 27,
+      date: "1st August 2022"
     },
     {
       imageURL: '/images/template.jpg',
@@ -24,6 +27,8 @@ export default function Home() {
       description:
         'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
+      likes: 25,
+      date: "1st August 2022"
     },
     {
       imageURL: '/images/template.jpg',
@@ -31,9 +36,12 @@ export default function Home() {
       description:
         'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
+      likes: 24,
+      date: "1st August 2022"
     },
   ];
 
+  // console.log(mockData.date)
   return (
     //whole layout
     <div>
@@ -66,7 +74,9 @@ export default function Home() {
                 title={mockData.title}
                 description={mockData.description}
                 materials={mockData.materials}
-              />
+                likes={mockData.likes}
+                date={mockData.date}
+             />
             </div>
           ))}
         </div>
