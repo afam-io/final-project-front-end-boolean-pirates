@@ -3,14 +3,18 @@ import tutorialData from '../../library/specificTutorialData';
 
 export default function handler(req, res) {
   if (req.query.params) {
-    tutorialId = req.query.params;
+    let tutorialId = Number(req.query.params);
+    console.log(tutorialData)
+    let selectedTutorial = getTutorialById(tutorialId)
+    res.status(200).json(selectedTutorial);
   }
   res.status(200).json(tutorialData);
 }
 
 export function getTutorialById(id) {
-  const found = tutorialData.find(function (book) {
-    return book.id === id;
+  const found = tutorialData.find(function (tutorial) {
+    return tutorial.id === id;
   });
   return found;
 }
+
