@@ -35,10 +35,10 @@ export default function tutorials() {
     },
   ];
 
-  // ========= On Click Event Handler ==============
-  function tutorialsSearch(event) {
-    console.log(`Search logged`);
+  // ========= OnChange Event Handler for input ==============
+  function handleInput(e) {
     event.preventDefault();
+    console.log(e.target.value);
   }
 
   return (
@@ -75,6 +75,7 @@ export default function tutorials() {
             </div>
             <input
               type="search"
+              onChange={handleInput}
               id="default-search"
               className="grid p-4 pl-10 w-full text-sm shadow-md focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 sm:text-sm border border-gray-300 rounded-xl"
               placeholder="Search Tutorials, Materials..."
@@ -83,7 +84,7 @@ export default function tutorials() {
             <button
               type="submit"
               // onClick Event for Function above
-              onClick={tutorialsSearch}
+              // onClick={}
               className="absolute right-1.5 bottom-1.5 p-2.5 ml-2 text-sm font-medium text-white bg-green-backgroundtext rounded-xl border border-green-700 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-700 dark:hover:bg-green-backgroundtext dark:focus:ring-green-800"
             >
               <svg
