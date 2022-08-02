@@ -35,6 +35,12 @@ export default function tutorials() {
     },
   ];
 
+  // ========= On Click Event Handler ==============
+  function tutorialsSearch(event) {
+    console.log(`Search logged`);
+    event.preventDefault();
+  }
+
   return (
     //whole layout
     <div className="w-screen">
@@ -76,6 +82,8 @@ export default function tutorials() {
             />
             <button
               type="submit"
+              // onClick Event for Function above
+              onClick={tutorialsSearch}
               className="absolute right-1.5 bottom-1.5 p-2.5 ml-2 text-sm font-medium text-white bg-green-backgroundtext rounded-xl border border-green-700 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-700 dark:hover:bg-green-backgroundtext dark:focus:ring-green-800"
             >
               <svg
