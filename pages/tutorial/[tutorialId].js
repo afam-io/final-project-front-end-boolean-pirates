@@ -17,7 +17,7 @@ function SpecificTutorial({ data }) {
 
 export const getServerSideProps = async ({ params }) => {
   const tutorialId = params.tutorialId.replace(/\-/g, '+');
-  const data = await fetch(`http://localhost:3000/api/tutorialData`).then((r) =>
+  const data = await fetch(`http://localhost:3000/api/tutorialData/${tutorialId}`).then((r) =>
     r.json()
   );
   return {
