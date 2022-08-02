@@ -12,7 +12,8 @@ import {
 } from 'react-icons/ai';
 import Link from 'next/link';
 
-const Header = () => {
+const Header = ({ user, loading }) => {
+  console.log(user)
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -28,10 +29,17 @@ const Header = () => {
             width='250px'
             height='50px'
           />
-          {/* login button */}
+          {/* login/logout button terniery operator to show conditionally */}
+          {!loading &&
+            user ? 
           <p className=' h-6 float-right bg-white-cardbackground hover:bg-gray-500 black-text font-bold px-2 m-4 rounded-3xl hover:cursor-pointer'>
-            Login
+          <a href="/api/logout">Logout</a>
           </p>
+          :
+          <p className=' h-6 float-right bg-white-cardbackground hover:bg-gray-500 black-text font-bold px-2 m-4 rounded-3xl hover:cursor-pointer'>
+          <a href="/api/login">Login</a>
+          </p>
+          }
           {/* wrapper for the whole navbar */}
           <div className='max-w-fit mx-auto'>
             {/* links in the middle of the navbar */}
