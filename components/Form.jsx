@@ -17,16 +17,24 @@ export default function Form() {
             <div className="mt-5 md:mt-0 md:col-span-2 border">
               {/* form wrapper */}
               <form action="#" method="POST">
-                {/* card effect wrapper */}
-                <div className="shadow sm:rounded-md sm:overflow-hidden">
+                {/* card effect wrapper  WIDTH TO BE ADJUSTED*/}
+                <div className="shadow sm:rounded-md sm:overflow-hidden md:max-w-xl lg:max-w-xl xl:w-screen xl:w-xl">
                   {/* wrapper to give padding inside card */}
-                  <div className="px-4 py-5 bg-white space-y-6 sm:p-6 ">
+                  <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                     {/* wrapper that sets the columns up to control form widths*/}
                     <div className="grid grid-cols-3 gap-6">
                       {/* media query to adjust the column size on a small screen */}
                       <div className="col-span-3 sm:col-span-3">
                         {/* wrapper around tutorial input and label */}
                         <div className="py-3">
+                          <div className="pb-4">
+                            <label
+                              htmlFor="FormTitle"
+                              className="alignContent: text-center block text-lg font-semibold font-sans text-green-backgroundtext"
+                            >
+                              Upload Tutorial Form
+                            </label>
+                          </div>
                           <label
                             htmlFor="about"
                             className="block text-sm font-semibold font-sans text-green-backgroundtext"
@@ -38,7 +46,7 @@ export default function Form() {
                               id="about"
                               name="about"
                               rows={3}
-                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="type here"
                               defaultValue={""}
                             />
@@ -58,7 +66,7 @@ export default function Form() {
                               id="materials-input"
                               name="materials-input"
                               rows={3}
-                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="type here"
                               defaultValue={""}
                             />
@@ -78,7 +86,7 @@ export default function Form() {
                               id="description"
                               name="description"
                               rows={3}
-                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="type here"
                               defaultValue={""}
                             />
@@ -97,7 +105,7 @@ export default function Form() {
                             id="country"
                             name="country"
                             autoComplete="country-name"
-                            className="mt-1 block w-full py-2 px-2 border border-gray-300 bg-white rounded-lg shadow-md focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm font-sans"
+                            className="mt-1 block w-full py-1 px-2 border border-gray-300 bg-white rounded-lg shadow-md focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm font-sans"
                           >
                             <option>Beginner</option>
                             <option>Intermediate</option>
@@ -118,7 +126,7 @@ export default function Form() {
                               id="youtubeURL"
                               name="youtubeURL"
                               rows={3}
-                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              className="shadow-md py-1 px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="URL"
                               defaultValue={""}
                             />
@@ -138,7 +146,7 @@ export default function Form() {
                               id="instructions"
                               name="instructions"
                               rows={3}
-                              className="shadow-md px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
+                              className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="Please be as detailed as you can."
                               defaultValue={""}
                             />
