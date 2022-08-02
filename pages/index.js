@@ -1,4 +1,3 @@
-import Header from '../components/Header';
 import Card from '../components/Card';
 import Image from 'next/image';
 
@@ -38,15 +37,15 @@ export default function Home() {
   return (
     //whole layout
     <div>
-      <Header />
       {/* wrapper for the image and text */}
-      <div className='relative justify-self-center'>
+      <div className='relative justify-self-center w-screen border'>
         {/* TODO fix the white space on full screen on the left */}
         <Image
           src='/images/hero-image.jpg'
-          width={1425}
-          height={980}
-          alt='main-image'
+          alt='thumbnail'
+          width='100%'
+          height='60%'
+          layout='responsive'
         />
         {/* card */}
         <div className='absolute bottom-8 left-0 right-0 px-4 py-2 bg-gray-300 opacity-70'>
