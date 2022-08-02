@@ -1,4 +1,3 @@
-import Header from '../components/Header';
 import Card from '../components/Card';
 import Image from 'next/image';
 
@@ -7,30 +6,30 @@ export default function tutorials() {
   const mockData = [
     {
       imageURL: '/images/template.jpg',
-      title: 'Wifi/Mobile Reflector Dish',
+      title: 'wi-fi/Mobile Reflector Dish',
       description:
-        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
+        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wi-fi or mobile signal and focusing them onto a receiver such as your phone, USB wi-fi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
     },
     {
       imageURL: '/images/template.jpg',
-      title: 'Wifi/Mobile Reflector Dish',
+      title: 'wi-fi/Mobile Reflector Dish',
       description:
-        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
+        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wi-fi or mobile signal and focusing them onto a receiver such as your phone, USB wi-fi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
     },
     {
       imageURL: '/images/template.jpg',
-      title: 'Wifi/Mobile Reflector Dish',
+      title: 'wi-fi/Mobile Reflector Dish',
       description:
-        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
+        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wi-fi or mobile signal and focusing them onto a receiver such as your phone, USB wi-fi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
     },
     {
       imageURL: '/images/template.jpg',
-      title: 'Wifi/Mobile Reflector Dish',
+      title: 'wi-fi/Mobile Reflector Dish',
       description:
-        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wifi or mobile signal and focusing them onto a receiver such as your phone, USB wifi adaptor, hotspotN, etc.',
+        'This is a paraboloidal reflector dish, more or less a sattelite dish, that can easily be made from one sheet of plywood or other board, chicken wire or other mesh, and cable/zip ties. It works by reflecting wi-fi or mobile signal and focusing them onto a receiver such as your phone, USB wi-fi adaptor, hotspotN, etc.',
       materials: ['plywood', 'wire', 'cable ties'],
     },
   ];
@@ -38,7 +37,6 @@ export default function tutorials() {
   return (
     //whole layout
     <div>
-      <Header />
       {/* wrapper for the image and text */}
       <div className='relative justify-self-center'>
         {/* ===== Search Bar ======= TODO: NEEDS TO BE MOVED UNDER IMAGE TEXT CARD */}
@@ -69,7 +67,7 @@ export default function tutorials() {
                 type='search'
                 id='default-search'
                 className='block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-                placeholder='Search Mockups, Logos...'
+                placeholder='Search Mock-ups, Logos...'
                 required
               />
               <button
