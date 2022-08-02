@@ -44,7 +44,6 @@ export default function Home() {
         {/* TODO fix the white space on full screen on the left */}
         <Image
           src='/images/hero-image.jpg'
-          alt="thumbnail"
           width="100%"
           height="60%"
           layout="responsive"
