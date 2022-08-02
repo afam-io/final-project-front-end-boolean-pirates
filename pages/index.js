@@ -40,12 +40,14 @@ export default function Home() {
     <div>
       <Header />
       {/* wrapper for the image and text */}
-      <div className='relative justify-self-center'>
+      <div className='relative justify-self-center w-screen border'>
         {/* TODO fix the white space on full screen on the left */}
         <Image
           src='/images/hero-image.jpg'
-          width={1425}
-          height={980}
+          alt="thumbnail"
+          width="100%"
+          height="60%"
+          layout="responsive"
           alt='main-image'
         />
         {/* card */}
