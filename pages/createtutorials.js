@@ -1,9 +1,9 @@
 import Form from '../components/Form';
 
-export default function createtutorials() {
+export default function CreateTutorials() {
   return (
     <>
-      <div>createtutorials</div>
+      <div>Create Tutorials</div>
       <Form />
     </>
   );
