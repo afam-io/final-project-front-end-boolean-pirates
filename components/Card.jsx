@@ -39,7 +39,7 @@ const Card = ({ imageURL, title, description, materials, likes, date }) => {
           <p className="mt-1 text-gray-700 text-base">{date}</p>
           <div className="flex display">
             <p onClick={handleClick} className="pt-1 pr-1 text-xl">
-              {!like ? <FaRegThumbsUp /> : <FaThumbsUp />}{' '}
+              {!like ? <FaRegThumbsUp /> : <FaThumbsUp />}
             </p>
             <p className="text-gray-700 text-base pt-1"> {likes} </p>
           </div>
