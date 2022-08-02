@@ -1,12 +1,13 @@
 import Header from './Header';
 
-const Layout = ({ children }) => {
-  return (
-    <div>
-      <Header />
-      {children}
-    </div>
-  );
-};
-
+const  Layout = ({ user, loading = false, children }) => {
+    return ( 
+        <div>
+            <Header user={user} loading={loading} />
+            { children }
+        </div>
+    );
+}
+ 
 export default Layout;
+

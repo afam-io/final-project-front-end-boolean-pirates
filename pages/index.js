@@ -41,11 +41,11 @@ export default function Home() {
       <div className='relative justify-self-center w-screen border'>
         {/* TODO fix the white space on full screen on the left */}
         <Image
-          src='/images/hero-image.jpg'
-          alt='thumbnail'
-          width='100%'
-          height='60%'
-          layout='responsive'
+          src='/images/hero-image.jpg
+          width="100%"
+          height="60%"
+          layout="responsive"
+          alt='main-image'
         />
         {/* card */}
         <div className='absolute bottom-8 left-0 right-0 px-4 py-2 bg-gray-300 opacity-70'>
