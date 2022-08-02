@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import SpecificTutorialCard from '../../components/SpecificTutorialCard';
 import specificTutorialData from '../../libs/specificTutorialData';
 
-function SpecificTutorial() {
+function SpecificTutorial({data}) {
   const router = useRouter();
   const { SpecificTutorial } = router.query;
 
@@ -10,9 +10,19 @@ function SpecificTutorial() {
     <>
       <h1>Title: {SpecificTutorial} </h1>{' '}
       {/* To show clearly that the dynamic routing is working*/}
-      <SpecificTutorialCard tutorialData={specificTutorialData[0]} />
+      <SpecificTutorialCard tutorialData={data[0]} />
     </>
   );
+}
+
+export const getServerSideProps = async ({params}) => {
+  const SpecificTutorial = params.SpecificTutorial.replace(/\-/g, '+')
+  const data = await fetch(`http://localhost:3000/api/tutorialData`)
+  return {
+    props:{
+      data
+    }
+  }
 }
 
 export default SpecificTutorial;
