@@ -1,151 +1,172 @@
 <mxfile host="65bd71144e">
     <diagram id="XPG2WbKTntQQ8cMpTWzy" name="Page-1">
-        <mxGraphModel dx="1576" dy="924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="2121" dy="516" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="48" value="Component Tree" style="swimlane;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;resizable=0;containerType=tree;" vertex="1" parent="1">
+                <mxCell id="48" value="Component Tree" style="swimlane;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;resizable=0;containerType=tree;" parent="1" vertex="1">
                     <mxGeometry x="227" y="50" width="459" height="470" as="geometry"/>
                 </mxCell>
-                <mxCell id="85" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="48" source="49" target="57">
+                <mxCell id="85" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="48" source="49" target="57" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="147" y="70"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="49" value="Auth" style="whiteSpace=wrap;html=1;" vertex="1" parent="48">
+                <mxCell id="49" value="Auth" style="whiteSpace=wrap;html=1;" parent="48" vertex="1">
                     <mxGeometry x="201" y="40" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="50" value="Home&lt;br&gt;&amp;lt;State = Tutorials&amp;gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="48">
+                <mxCell id="50" value="Home&lt;br&gt;&amp;lt;State = Tutorials&amp;gt;" style="whiteSpace=wrap;html=1;" parent="48" vertex="1">
                     <mxGeometry x="268" y="130" width="106" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="51" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" parent="48" source="49" target="50">
+                <mxCell id="51" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="48" source="49" target="50" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="56" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" target="57" source="50" parent="48">
+                <mxCell id="56" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="48" source="50" target="57" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="269.8" y="220" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="57" value="Navbar" style="whiteSpace=wrap;html=1;" vertex="1" parent="48">
+                <mxCell id="57" value="Navbar" style="whiteSpace=wrap;html=1;" parent="48" vertex="1">
                     <mxGeometry x="128" y="130" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="60" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;startArrow=none;" edge="1" target="61" source="92" parent="48">
+                <mxCell id="60" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;startArrow=none;" parent="48" source="92" target="61" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="409.79999999999995" y="310" as="sourcePoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="61" value="Tutorials" style="whiteSpace=wrap;html=1;" vertex="1" parent="48">
+                <mxCell id="61" value="Tutorials" style="whiteSpace=wrap;html=1;" parent="48" vertex="1">
                     <mxGeometry x="263.75" y="320" width="114.5" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="64" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" target="65" source="61" parent="48">
+                <mxCell id="64" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="48" source="61" target="65" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="649.8" y="210" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="65" value="Tutorial" style="whiteSpace=wrap;html=1;" vertex="1" parent="48">
+                <mxCell id="65" value="Tutorial" style="whiteSpace=wrap;html=1;" parent="48" vertex="1">
                     <mxGeometry x="203" y="410" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="66" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" edge="1" target="107" source="61" parent="48">
+                <mxCell id="66" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;" parent="48" source="61" target="107" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="719.8" y="300" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="86" value="ID" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;" vertex="1" parent="48">
+                <mxCell id="86" value="ID" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;" parent="48" vertex="1">
                     <mxGeometry x="67" y="50" width="83.33" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="92" value="Tutorials" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;" vertex="1" parent="48">
+                <mxCell id="92" value="Tutorials" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;" parent="48" vertex="1">
                     <mxGeometry x="279.335" y="220" width="83.33" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="93" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;endArrow=none;" edge="1" parent="48" source="50" target="92">
+                <mxCell id="93" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=0;endArrow=none;" parent="48" source="50" target="92" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="397" y="190" as="sourcePoint"/>
                         <mxPoint x="397" y="240" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="107" value="Add Tutorial" style="whiteSpace=wrap;html=1;" vertex="1" parent="48">
+                <mxCell id="107" value="Add Tutorial" style="whiteSpace=wrap;html=1;" parent="48" vertex="1">
                     <mxGeometry x="343" y="410" width="96" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="141" value="Add Comments" style="whiteSpace=wrap;html=1;" vertex="1" parent="48">
+                <mxCell id="141" value="Add Comments" style="whiteSpace=wrap;html=1;" parent="48" vertex="1">
                     <mxGeometry x="20" y="320" width="114.5" height="40" as="geometry"/>
                 </mxCell>
                 <UserObject label="Search Input&lt;br&gt;Ordered List (&lt;br&gt;Title&lt;br&gt;Thumbnail&lt;br&gt;Rating)" placeholders="1" name="Variable" id="155">
-                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" vertex="1" parent="48">
+                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" parent="48" vertex="1">
                         <mxGeometry x="48" y="190" width="180" height="95" as="geometry"/>
                     </mxCell>
                 </UserObject>
-                <mxCell id="87" value="PROPS" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;" vertex="1" parent="1">
+                <mxCell id="87" value="PROPS" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;" parent="1" vertex="1">
                     <mxGeometry x="687" y="110" width="83.33" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="94" value="Database" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="94" value="Database" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="747" y="310" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="113" style="edgeStyle=none;html=1;" edge="1" parent="1" source="50" target="94">
+                <mxCell id="113" style="edgeStyle=none;html=1;" parent="1" source="50" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="128" style="edgeStyle=none;html=1;" edge="1" parent="1" source="107" target="94">
+                <mxCell id="128" style="edgeStyle=none;html=1;" parent="1" source="107" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="129" style="edgeStyle=none;html=1;" edge="1" parent="1" source="57">
+                <mxCell id="129" style="edgeStyle=none;html=1;" parent="1" source="57" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="170" y="200" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <UserObject label="App Name - Title&lt;br&gt;Login Button - Button replaced with ID&lt;br&gt;Unordered List ( Links =List Items)" placeholders="1" name="Variable" id="131">
-                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" vertex="1" parent="1">
+                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" parent="1" vertex="1">
                         <mxGeometry x="-10" y="100" width="260" height="130" as="geometry"/>
                     </mxCell>
                 </UserObject>
                 <UserObject label="App Descrition/IImage&lt;br&gt;Card (image_thumb, Description)&lt;br&gt;Rating" placeholders="1" name="Variable" id="132">
-                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" vertex="1" parent="1">
+                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" parent="1" vertex="1">
                         <mxGeometry x="620" y="160" width="260" height="80" as="geometry"/>
                     </mxCell>
                 </UserObject>
-                <mxCell id="133" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="50" target="132">
+                <mxCell id="133" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="50" target="132" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <UserObject label="Title&lt;br&gt;Video&lt;br&gt;Level&lt;br&gt;Materials&lt;br&gt;Instructions&lt;br&gt;Rating&lt;br&gt;Comments&lt;br&gt;User ID&lt;br&gt;" placeholders="1" name="Variable" id="134">
-                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" vertex="1" parent="1">
+                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" parent="1" vertex="1">
                         <mxGeometry x="390" y="584" width="180" height="130" as="geometry"/>
                     </mxCell>
                 </UserObject>
-                <mxCell id="144" style="edgeStyle=none;html=1;" edge="1" parent="1" source="141">
+                <mxCell id="144" style="edgeStyle=none;html=1;" parent="1" source="141" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="190" y="460" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <UserObject label="Title&lt;br&gt;Input - comment&lt;br&gt;user ID" placeholders="1" name="Variable" id="145">
-                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" vertex="1" parent="1">
+                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" parent="1" vertex="1">
                         <mxGeometry x="60" y="440" width="180" height="80" as="geometry"/>
                     </mxCell>
                 </UserObject>
-                <mxCell id="148" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="65">
+                <mxCell id="148" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="65" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="479.7142857142858" y="570" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <UserObject label="INPUTS FOR&lt;br&gt;Title&lt;br&gt;Video&lt;br&gt;Level&lt;br&gt;Materials&lt;br&gt;Instructions&lt;br&gt;Rating&lt;br&gt;Comments&lt;br&gt;User ID" placeholders="1" name="Variable" id="149">
-                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" vertex="1" parent="1">
+                    <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;shadow=1;" parent="1" vertex="1">
                         <mxGeometry x="540" y="584" width="180" height="130" as="geometry"/>
                     </mxCell>
                 </UserObject>
-                <mxCell id="152" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="107">
+                <mxCell id="152" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="107" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="618.2857142857142" y="580" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="153" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="65">
+                <mxCell id="153" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="65" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="369.9999999999998" y="420" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="154" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="61">
+                <mxCell id="154" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="61" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="409.9999999999998" y="310" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="165" value="Posts" style="swimlane;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="60" width="320" height="420" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;postId: String&lt;br&gt;CreatedAt : Time stamp&lt;br style=&quot;box-sizing: inherit&quot;&gt;userId: String&lt;br&gt;Title: String&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Materials [ {material} ]&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Description :&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; background-color: rgb(34 , 37 , 41)&quot;&gt;String&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Ability:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; background-color: rgb(34 , 37 , 41)&quot;&gt;String&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Image URL:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; background-color: rgb(34 , 37 , 41)&quot;&gt;String&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Video URL:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; background-color: rgb(34 , 37 , 41)&quot;&gt;String&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Instructions: String&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Likes [ { userId } ]&lt;br&gt;&lt;br&gt;Favourites [ {userId} ]&lt;br&gt;&lt;br&gt;Comments [ {&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;CreatedAt : Time stamp,&lt;br style=&quot;box-sizing: inherit&quot;&gt;userId: String,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Comment: String,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;} ]&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="165">
+                    <mxGeometry x="15" y="15" width="305" height="405" as="geometry"/>
+                </mxCell>
+                <mxCell id="166" value="Events" style="swimlane;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="1300" y="60" width="320" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="167" value="&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;CreatedAt - Time stamp&lt;br style=&quot;box-sizing: inherit&quot;&gt;Title: String&lt;/span&gt;&lt;br style=&quot;box-sizing: inherit ; color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41)&quot;&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;Description :&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; background-color: rgb(34 , 37 , 41)&quot;&gt;String&lt;/span&gt;&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;&lt;br&gt;userId: String&lt;br&gt;lat: String&lt;br&gt;long: String&lt;br&gt;Time Starting: Time Stamp&lt;br&gt;Time Ending: Time Stamp&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="166">
+                    <mxGeometry x="7.5" y="7.5" width="305" height="195" as="geometry"/>
+                </mxCell>
+                <mxCell id="168" value="Users (Auth0)" style="swimlane;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="1300" y="262.5" width="320" height="202.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="&lt;span style=&quot;color: rgb(209 , 210 , 211) ; font-size: 15px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: left ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(34 , 37 , 41) ; display: inline ; float: none&quot;&gt;userId: String&lt;br&gt;name: String&lt;br&gt;email: String&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="168">
+                    <mxGeometry x="7.5" y="30" width="305" height="172.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="" style="edgeStyle=none;html=1;fontSize=10;" edge="1" parent="1" source="167" target="169">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
