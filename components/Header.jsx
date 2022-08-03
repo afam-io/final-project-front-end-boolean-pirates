@@ -143,7 +143,7 @@ const Header = ({ user, loading }) => {
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type='button'
-                  className='inline-flex items-center justify-center pt-9 h-12 w-19.8 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white'
+                  className='inline-flex items-center justify-center pt-1 h-12 w-19.8 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white'
                   aria-controls='mobile-menu'
                   aria-expanded='false'>
                   <span className='sr-only'>Open main menu</span>
@@ -179,7 +179,7 @@ const Header = ({ user, loading }) => {
                         />
                       </svg>
                     )}
-                    <p className="text-white pb-9 rounded-md text-sm font-medium">
+                    <p className="text-white rounded-md text-sm font-medium">
                       More
                     </p>
                   </div>
