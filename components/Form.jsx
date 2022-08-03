@@ -23,12 +23,15 @@ const uploadImage = async (e) => {
         formData.append("upload_preset", "redeemdefault")
         
 
-        const data = await fetch('https://api.cloudinary.com/v1_1/doolpp3ll/image/upload', {
+        const data = await fetch('https://api.cloudinary.com/v1_1/dcyovjaom/image/upload', {
         method: 'POST',
         body: formData
         });
         const response = await data.json()
-        console.log(response)
+        setFormData ({
+          ...formData, 
+          "url" : response.url
+          })
       }
 
       const selectImage = (e) => {
