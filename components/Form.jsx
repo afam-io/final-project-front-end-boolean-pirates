@@ -1,27 +1,25 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export default function Form() {
+  const [imageSelected, setImageSelected] = useState("");
+  const [formData, setFormData] = useState({});
+  const handleInput = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-const [imageSelected, setImageSelected] = useState("");
-const [formData, setFormData] = useState({}); 
-const handleInput = (e) => {
-  setFormData ({
-  ...formData, 
-  [e.target.name]: e.target.value
-  }) 
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
- console.log(formData)
-}
-
-const uploadImage = async (e) => {
-        e.preventDefault();
-        const formData = new FormData ()
-        formData.append("file", imageSelected)
-        formData.append("upload_preset", "redeemdefault")
-        
+  const uploadImage = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", imageSelected);
+    formData.append("upload_preset", "redeemdefault");
 
         const data = await fetch('https://api.cloudinary.com/v1_1/dcyovjaom/image/upload', {
         method: 'POST',
@@ -31,19 +29,21 @@ const uploadImage = async (e) => {
         setFormData ({
           ...formData, 
           "url" : response.url
-          })
       }
+    );
+    const response = await data.json();
+    console.log(response);
+  };
 
-      const selectImage = (e) => {
-        setImageSelected(e.target.files[0]);
-        console.log(imageSelected)
-        }
-
+  const selectImage = (e) => {
+    setImageSelected(e.target.files[0]);
+    console.log(imageSelected);
+  };
 
   return (
     <>
       {/* main div wraps all content*/}
-      <div className="flex items-center justify-center h-screen w-full">
+      <div className="flex items-center justify-center w-full">
         <div>
           <div className="md:grid md:grid-cols-2 md:gap-6">
             {/* <div className="md:col-span-1">
@@ -59,7 +59,7 @@ const uploadImage = async (e) => {
               {/* form wrapper */}
               <form action="#" method="POST">
                 {/* card effect wrapper  WIDTH TO BE ADJUSTED*/}
-                <div className="shadow sm:rounded-md sm:overflow-hidden md:max-w-xl lg:max-w-xl xl:w-screen xl:w-xl">
+                <div className="shadow w-screen lg:max-w-3xl rounded-md xl:max-w-4xl">
                   {/* wrapper to give padding inside card */}
                   <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                     {/* wrapper that sets the columns up to control form widths*/}
@@ -84,7 +84,7 @@ const uploadImage = async (e) => {
                           </label>
                           <div className="mt-1">
                             <input
-                              onChange={handleInput}                                                       
+                              onChange={handleInput}
                               id="title"
                               name="title"
                               rows={3}
@@ -105,7 +105,7 @@ const uploadImage = async (e) => {
                           </label>
                           <div className="mt-1">
                             <input
-                              onChange={handleInput} 
+                              onChange={handleInput}
                               id="materials"
                               name="materials"
                               rows={3}
@@ -126,7 +126,7 @@ const uploadImage = async (e) => {
                           </label>
                           <div className="mt-1">
                             <input
-                              onChange={handleInput} 
+                              onChange={handleInput}
                               id="description"
                               name="description"
                               rows={3}
@@ -146,11 +146,10 @@ const uploadImage = async (e) => {
                             Ability Level
                           </label>
                           <select
-                            onChange={handleInput} 
+                            onChange={handleInput}
                             id="level"
                             name="level"
                             autoComplete="country-name"
-                            
                             className="mt-1 block w-full py-1 px-2 border border-gray-300 bg-white rounded-lg shadow-md focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm font-sans"
                           >
                             <option>Beginner</option>
@@ -169,7 +168,7 @@ const uploadImage = async (e) => {
                           </label>
                           <div className="mt-1">
                             <input
-                              onChange={handleInput} 
+                              onChange={handleInput}
                               id="youtubeURL"
                               name="youtubeURL"
                               rows={3}
@@ -190,7 +189,7 @@ const uploadImage = async (e) => {
                           </label>
                           <div className="mt-1">
                             <textarea
-                              onChange={handleInput} 
+                              onChange={handleInput}
                               id="instructions"
                               name="instructions"
                               rows={3}
@@ -229,37 +228,40 @@ const uploadImage = async (e) => {
                               htmlFor="file-upload"
                               className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 font-sans"
                             >
-                              <span >Attach Image</span>
+                              <span>Attach Image</span>
                               <input
-                              onChange={selectImage}
+                                onChange={selectImage}
                                 id="file-upload"
                                 name="file-upload"
                                 type="file"
                                 className="sr-only"
                               />
-                            
                             </label>
-                            <p className="relative cursor-pointer text-black hover:text-grey-400 pl-1 font-sans">or Drag and Drop</p>
-                        
                           </div>
-                          
+
                           <p className="text-xs text-gray-500 font-sans">
                             PNG, JPG, GIF up to 10MB
                           </p>
-                          
-                          <p className ="text-xs text-red-500 font-sans">{imageSelected ? "Image is selected" : "Image is NOT selected"}</p>
+
+                          <p className="text-xs text-red-500 font-sans">
+                            {imageSelected
+                              ? "Image is selected"
+                              : "Image is NOT selected"}
+                          </p>
                           <div className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans">
-                          <button onClick={uploadImage}> Click to Upload Image </button>
+                            <button onClick={uploadImage}>
+                              {" "}
+                              Click to Upload Image{" "}
+                            </button>
                           </div>
                         </div>
-                        
                       </div>
                     </div>
                   </div>
 
                   {/* wrapper around save button */}
                   <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                    <button 
+                    <button
                       onClick={handleSubmit}
                       type="submit"
                       className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans"
@@ -269,7 +271,6 @@ const uploadImage = async (e) => {
                   </div>
                 </div>
               </form>
-              
             </div>
           </div>
         </div>
@@ -277,7 +278,6 @@ const uploadImage = async (e) => {
     </>
   );
 }
-
 
 /* <textarea
                           id="about"
