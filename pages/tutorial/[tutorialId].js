@@ -19,7 +19,6 @@ export const getServerSideProps = async ({ params }) => {
   const data = await fetch(
     `http://localhost:3000/api/tutorial-data/${tutorialId}`
   ).then((r) => r.json());
-
   return {
     props: {
       data,
