@@ -21,11 +21,14 @@ export default function Form() {
     formData.append("file", imageSelected);
     formData.append("upload_preset", "redeemdefault");
 
-    const data = await fetch(
-      "https://api.cloudinary.com/v1_1/doolpp3ll/image/upload",
-      {
-        method: "POST",
-        body: formData,
+        const data = await fetch('https://api.cloudinary.com/v1_1/dcyovjaom/image/upload', {
+        method: 'POST',
+        body: formData
+        });
+        const response = await data.json()
+        setFormData ({
+          ...formData, 
+          "url" : response.url
       }
     );
     const response = await data.json();
