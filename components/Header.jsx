@@ -12,14 +12,18 @@ import {
 } from 'react-icons/ai';
 import Link from 'next/link';
 
+
 const Header = ({ user, loading }) => {
   console.log(user)
+
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <div>
         {/* wrapper for the whole nav bar */}
+
         <nav className='bg-green-backgroundtext pt-0.5'>
+
           {/* logo */}
           {/* TODO need to work on the sizing for the image */}
           <Image
@@ -29,6 +33,7 @@ const Header = ({ user, loading }) => {
             width='250px'
             height='50px'
           />
+
           {/* login/logout button terniery operator to show conditionally */}
           {!loading &&
             user ? 
@@ -42,18 +47,23 @@ const Header = ({ user, loading }) => {
           }
           {/* wrapper for the whole navbar */}
           <div className='flex items-center max-w-fit mx-auto'>
+
             {/* links in the middle of the navbar */}
             <div className='flex items-center justify-between h-30'>
               <div className='flex items-center'>
                 {/* styles for the mobile menu */}
                 <div className=' flex-shrink-0 ml-0 flex items-baseline space-x-6 text-white px-0 py-2 rounded-md text-sm font-medium'>
                   {/* individual mobile links wrapper */}
+
                   <div className='md:hidden ml-0 flex items-baseline space-x-9'>
+
                     {/* wrapper for individual mobile link */}
                     <Link href='/'>
                       <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         {/* wrapper for navbar icon and the icon */}
+
                         <div className='block h-5 w-5 ml-1 text-3xl mb-2'>
+
                           <AiOutlineHome />
                         </div>
                         <p>Home</p>
@@ -62,7 +72,9 @@ const Header = ({ user, loading }) => {
                     {/* wrapper for individual mobile link */}
                     <Link href='/tutorials'>
                       <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+
                         <div className='block h-6 w-6 pl-3 text-3xl mb-1'>
+
                           <AiOutlineRead />
                         </div>
                         <p>Tutorials</p>
@@ -71,7 +83,9 @@ const Header = ({ user, loading }) => {
                     {/* wrapper for individual mobile link */}
                     <Link href='/createtutorials'>
                       <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+
                         <div className='block h-6 w-6 ml-2 text-3xl mb-1'>
+
                           <AiOutlinePlus />
                         </div>
                         <p>Create</p>
@@ -83,7 +97,9 @@ const Header = ({ user, loading }) => {
                 <div className='hidden md:block '>
                   {/* wrapper for desktop view middle link items */}
                   {/* TODO need to space out these links for the mobile site */}
+
                   <div className='flex px-20 justify-around max-w-full w-screen '>
+
                     <Link href='/'>
                       <a
                         href='#'
@@ -137,20 +153,26 @@ const Header = ({ user, loading }) => {
                 </div>
               </div>
               {/* wrapper around the more button */}
+
               <div className='pl-10 md:hidden'>
+
                 {/* mobile more button */}
                 {/* TODO need to align this button with icons */}
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type='button'
+
                   className='inline-flex items-center justify-center pt-1 h-12 w-19.8 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white'
+
                   aria-controls='mobile-menu'
                   aria-expanded='false'>
                   <span className='sr-only'>Open main menu</span>
                   <div>
                     {!isOpen ? (
                       <svg
+
                         className='block h-7 w-8'
+
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
                         viewBox='0 0 24 24'
@@ -180,6 +202,7 @@ const Header = ({ user, loading }) => {
                       </svg>
                     )}
                     <p className="text-white rounded-md text-sm font-medium">
+
                       More
                     </p>
                   </div>
