@@ -35,13 +35,13 @@ const Card = ({ imageURL, title, description, materials, likes, date }) => {
             </span>
           ))}
         </div>
-        <div className="flex display justify-between px-4 pb-2">
-          <p className="mt-1 text-gray-700 text-base">{date}</p>
+        <div className="flex display justify-between px-4 pt-1">
+          <p className="text-gray-700 text-base mt-2">{date}</p>
           <div className="flex display">
-            <p onClick={handleClick} className="pt-1 pr-1 text-xl">
+            <p onClick={handleClick} className="pt-1 pr-1 text-2xl">
               {!like ? <FaRegThumbsUp /> : <FaThumbsUp />}
             </p>
-            <p className="text-gray-700 text-base pt-1"> {likes} </p>
+            <p className="text-gray-700 text-base pb-2 pt-2"> {likes} </p>
           </div>
         </div>
       </div>
