@@ -1,4 +1,5 @@
-import Header from "./Header";
+import Header from './Header';
+
 
 const  Layout = ({ user, loading = false, children }) => {
     return ( 
@@ -10,3 +11,4 @@ const  Layout = ({ user, loading = false, children }) => {
 }
  
 export default Layout;
+
