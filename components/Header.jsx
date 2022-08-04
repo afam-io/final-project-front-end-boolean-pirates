@@ -38,7 +38,7 @@ const Header = ({ user, loading }) => {
           {!loading &&
             user ? 
           <p className=' h-6 float-right bg-white-cardbackground hover:bg-gray-500 black-text font-bold px-1.5 m-3.5 rounded-3xl hover:cursor-pointer'>
-          <Link href="/api/logout">Logout</Li>
+          <Link href="/api/logout">Logout</Link>
           </p>
           :
           <p className=' h-6 float-right bg-white-cardbackground hover:bg-gray-500 black-text font-bold px-1.5 m-3.5 rounded-3xl hover:cursor-pointer'>
