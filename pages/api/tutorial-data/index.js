@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import tutorialData from '../../../library/specificTutorialData';
+import tutorialData from '../../../library/specificTutorialData.js';
 
 export default function handler(req, res) {
   res.status(200).json(tutorialData);
