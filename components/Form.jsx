@@ -31,8 +31,6 @@ export default function Form() {
           "url" : response.url
       }
     );
-    const response = await data.json();
-    console.log(response);
   };
 
   const selectImage = (e) => {
