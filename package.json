@@ -12,6 +12,7 @@
     "@auth0/nextjs-auth0": "^1.9.1",
     "@headlessui/react": "^1.6.6",
     "axios": "^0.27.2",
+    "msw": "^0.44.2",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
