@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa'
 import { useState } from 'react'
+import moment from 'moment'
 
-const Card = ({ imageURL, title, description, materials, likes, date }) => {
+const Card = ({ imageUrl, title, description, materials, likes, date }) => {
   // mock data used to test layout
   const [like, setLike] = useState(false)
 
@@ -16,11 +17,11 @@ const Card = ({ imageURL, title, description, materials, likes, date }) => {
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <Image
           className="w-full"
-          src={imageURL}
+          src={imageUrl}
           alt={title}
           height="450px"
-          width="600px"
-        />
+          width="600px" 
+        /> 
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>
           <p className="text-gray-700 text-base">{description}</p>
@@ -36,7 +37,7 @@ const Card = ({ imageURL, title, description, materials, likes, date }) => {
           ))}
         </div>
         <div className="flex display justify-between px-4 pt-1">
-          <p className="text-gray-700 text-base mt-2">{date}</p>
+          <p className="text-gray-700 text-base mt-2">{moment().startOf('date').fromNow()}</p>
           <div className="flex display">
             <p onClick={handleClick} className="pt-1 pr-1 text-2xl">
               {!like ? <FaRegThumbsUp /> : <FaThumbsUp />}

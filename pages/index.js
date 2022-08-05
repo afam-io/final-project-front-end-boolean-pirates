@@ -1,5 +1,7 @@
 import Card from '../components/Card';
 import Image from 'next/image';
+import moment from "moment"
+
 
 export default function Home( {data} ) {
 
@@ -33,12 +35,12 @@ export default function Home( {data} ) {
           {data.map((data, index) => (
             <div key={index} className='m-2'>
               <Card
-                imageURL={data.youtubeUrl}
+                imageUrl={data.imageUrl}
                 title={data.title}
-                description={data.description}
+                // description={data.description}
                 materials={data.materials}
-                likes={data.likes}
-                date={data.date}
+                likes={[data.likes].length}
+                date={data.createdAt}
              />
             </div>
           ))}
@@ -48,9 +50,10 @@ export default function Home( {data} ) {
   );
 }
 
+
 export const getServerSideProps = async () => {
   const data = await fetch(
-    `https://redeem-soc.herokuapp.com/tutorials`
+    `https://backend-soc.herokuapp.com/tutorials`
   ).then((r) => r.json());
 
   return {
