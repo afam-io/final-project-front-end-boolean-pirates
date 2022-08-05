@@ -1,22 +1,23 @@
 export default function SpecificTutorialCard({ tutorialData }) {
+  console.log(tutorialData)
   return (
     <div className='flex flex-col min-h-screen justify-center items-center'>
-      <div className=' mt-10 max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
+      <div className=' mt-10 max-w-lg bg-white rounded-lg border border-gray-200 shadow-md'>
         <a href='#'>
           <h1 className='text-xl float-left text-green-backgroundtext font-semibold font-sans'>
             {tutorialData.title}
           </h1>
           <h1 className='text-xl float-right text-green-backgroundtext font-semibold font-sans'>
-            {tutorialData.likes} Likes
+            {tutorialData.likes.length} Likes
           </h1>
           <img
             className='rounded-t-lg text-green-backgroundtext'
-            src={tutorialData.youtubeUrl}
+            src={tutorialData.videoUrl}
             alt='image of the youtube thumbnail'
           />
         </a>
         <h1 className='text-xl text-green-backgroundtext font-semibold font-sans'>
-          Level: {tutorialData.level}
+          Level: {tutorialData.ability}
         </h1>
         <h1 className='text-xl text-green-backgroundtext font-semibold font-sans mt-2'>
           Materials: <br></br>
@@ -24,7 +25,7 @@ export default function SpecificTutorialCard({ tutorialData }) {
         </h1>
         <div className='mt-2'>
           <a href='#'>
-            <h5 className='mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext dark:text-white'>
+            <h5 className='mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext'>
               Instructions:
             </h5>
           </a>
@@ -36,7 +37,7 @@ export default function SpecificTutorialCard({ tutorialData }) {
 
       {/* Comment component */}
       <div className='flex items-center justify-center shadow-lg mt-5 mx-5 mb-4 max-w-lg'>
-        <form className='w-full max-w-xl bg-white rounded-lg border px-4 pt-2 border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
+        <form className='w-full max-w-xl bg-white rounded-lg border px-4 pt-2 border-gray-200 shadow-md'>
           <div className='flex flex-wrap -mx-3 mb-6'>
             <h2 className='px-4 pt-3 pb-2 text-green-backgroundtext'>
               Add a new comment
