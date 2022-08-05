@@ -1,11 +1,11 @@
 import Form from '../components/Form';
+import { useFetchUser } from '../lib/user'
 
-export default function CreateTutorials() {
+export default function CreateTutorials({ user }) {
   return (
 
     <div>
-
-      <Form />
+      <Form user={user}/>
     </div>
   );
 }

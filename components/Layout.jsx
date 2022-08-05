@@ -1,5 +1,5 @@
 import Header from './Header';
-
+import { UserProvider } from "@auth0/nextjs-auth0"
 
 const  Layout = ({ user, loading = false, children }) => {
     return ( 
