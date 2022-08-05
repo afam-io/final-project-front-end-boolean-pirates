@@ -1,5 +1,7 @@
 import Card from '../components/Card';
 import Image from 'next/image';
+import moment from "moment"
+
 
 export default function Home( {data} ) {
 
@@ -47,6 +49,7 @@ export default function Home( {data} ) {
     </div>
   );
 }
+
 
 export const getServerSideProps = async () => {
   const data = await fetch(
