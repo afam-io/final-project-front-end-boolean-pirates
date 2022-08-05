@@ -14,8 +14,6 @@ import Link from 'next/link';
 
 
 const Header = ({ user, loading }) => {
-  console.log(user)
-
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>

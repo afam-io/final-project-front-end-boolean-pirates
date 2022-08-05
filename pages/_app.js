@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   const { user, loading } = useFetchUser()
   return (
     <Layout user={user} loading={loading}>
-     <Component {...pageProps} />
+     <Component {...pageProps} user={user} loading={loading} />
     </Layout>
   )
 }
