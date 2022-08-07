@@ -3,13 +3,25 @@ import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa'
 import { useState } from 'react'
 import moment from 'moment'
 
-const Card = ({ imageUrl, title, description, materials, likes, date }) => {
+const Card = ({ imageUrl, title, description, materials, likes, date , id, user}) => {
   // mock data used to test layout
-  const [like, setLike] = useState(false)
+  const initialLikeState = user && likes.includes(user.sub);
+  const [liked, setLiked] = useState(initialLikeState);
+  const [likeCount, setLikeCount] = useState(likes.length)
 
-  function handleClick() {
-    setLike(!like)
-    console.log(like)
+  async function handleClick() {
+
+    const data = await fetch(`https://redeem-soc.herokuapp.com/tutorials/${id}/likeTutorial`, {
+      method: 'PATCH',
+      body: JSON.stringify({userId: user.sub}),
+      headers: {
+        'Content-Type':'application/json'
+      },
+      });
+    const response = await data.json();
+    console.log(response);
+    setLiked(response.likes.includes(user.sub));
+    setLikeCount(response.likes.length);
   }
 
   return (
@@ -40,9 +52,9 @@ const Card = ({ imageUrl, title, description, materials, likes, date }) => {
           <p className="text-gray-700 text-base mt-2">{moment().startOf('date').fromNow()}</p>
           <div className="flex display">
             <p onClick={handleClick} className="pt-1 pr-1 text-2xl">
-              {!like ? <FaRegThumbsUp /> : <FaThumbsUp />}
+              {liked ? <FaThumbsUp /> :  <FaRegThumbsUp />}
             </p>
-            <p className="text-gray-700 text-base pb-2 pt-2"> {likes} </p>
+            <p className="text-gray-700 text-base pb-2 pt-2"> {likeCount} </p>
           </div>
         </div>
       </div>
