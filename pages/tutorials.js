@@ -105,7 +105,7 @@ export default function tutorials({data}) {
 
 export const getServerSideProps = async () => {
 	const data = await fetch(
-	  `https://backend-soc.herokuapp.com/tutorials`
+	  `https://redeem-soc.herokuapp.com/tutorials`
 	).then((r) => r.json());
   
 	return {
