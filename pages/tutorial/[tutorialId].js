@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
-import SpecificTutorialCard from '../../components/SpecificTutorialCard';
+import { useRouter } from "next/router";
+import SpecificTutorialCard from "../../components/SpecificTutorialCard";
 
 function SpecificTutorial({ data }) {
   // const router = useRouter();
@@ -15,9 +15,9 @@ function SpecificTutorial({ data }) {
 }
 
 export const getServerSideProps = async ({ params }) => {
-  const tutorialId = params.tutorialId.replace(/\-/g, '+');
+  const tutorialId = params.tutorialId.replace(/\-/g, "+");
   const data = await fetch(
-    `http://localhost:3000/api/tutorial-data/${tutorialId}`
+    `https://backend-soc.herokuapp.com/tutorials/${tutorialId}`
   ).then((r) => r.json());
 
   return {
