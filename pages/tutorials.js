@@ -1,12 +1,11 @@
-import Card from '../components/Card'
-import Image from 'next/image'
+import Card from "../components/Card";
+import Image from "next/image";
 
-
-export default function tutorials({data}) {
+export default function tutorials({ data }) {
   // ========= OnChange Event Handler for input ==============
   function handleInput(e) {
-    e.preventDefault()
-    console.log(e.target.value)
+    e.preventDefault();
+    console.log(e.target.value);
   }
 
   return (
@@ -84,7 +83,13 @@ export default function tutorials({data}) {
             {/* media query which shows different amount of cards on different screen sizes */}
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {data.map((data, index) => (
-                <div key={index} className="m-2">
+                <div
+                  key={index}
+                  className="m-2"
+                  onClick={() => {
+                    console.log(data._id);
+                  }}
+                >
                   <Card
                     imageUrl={data.imageUrl}
                     title={data.title}
@@ -100,18 +105,19 @@ export default function tutorials({data}) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export const getServerSideProps = async () => {
-	const data = await fetch(
-	  `https://redeem-soc.herokuapp.com/tutorials`
-	).then((r) => r.json());
-  
-	return {
-	  props: {
-		data,
-	  },
-	};
+
+  const data = await fetch(`https://backend-soc.herokuapp.com/tutorials`).then(
+    (r) => r.json()
+  );
+
+  return {
+    props: {
+      data,
+    },
+
   };
-  
+};
