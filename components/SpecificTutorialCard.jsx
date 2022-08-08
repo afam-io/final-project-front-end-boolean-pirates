@@ -12,8 +12,10 @@ export default function SpecificTutorialCard({
     <div className="flex flex-col min-h-screen justify-center items-center">
       <div className=" mt-10 max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
-          <h1 className="text-xl float-left text-green-backgroundtext font-semibold font-sans">
-            {title}
+
+          <h1 className="text-xl pb-3 float-left text-green-backgroundtext font-semibold font-sans">
+            {tutorialData.title}
+
           </h1>
           <h1 className="text-xl float-right text-green-backgroundtext font-semibold font-sans">
             {likes.length} Likes
@@ -24,13 +26,23 @@ export default function SpecificTutorialCard({
             alt="image of the youtube thumbnail"
           />
         </a>
-        <h1 className="text-xl text-green-backgroundtext font-semibold font-sans">
-          Level: {ability}
+
+        <h1 className="text-xl pt-3 text-green-backgroundtext font-semibold font-sans">
+          Level:{" "}
+
         </h1>
+        <p className="font-semibold text-green-backgroundtext">
+          {tutorialData.ability}
+        </p>
+
         <h1 className="text-xl text-green-backgroundtext font-semibold font-sans mt-2">
-          Materials: <br></br>
-          {materials}
+
+          Materials:{" "}
+
         </h1>
+        <p className="font-semibold text-green-backgroundtext">
+          {tutorialData.materials}
+        </p>
         <div className="mt-2">
           <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext">
