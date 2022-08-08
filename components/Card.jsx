@@ -42,7 +42,7 @@ const Card = ({
 
   return (
     <div>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg hover:bg-green-100">
         <Link href={{ pathname: '/specifictutorial', query: { cardId: id } }}>
           <div>
             <Image
