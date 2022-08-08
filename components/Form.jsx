@@ -14,7 +14,7 @@ export default function Form({ user }) {
     e.preventDefault();
     console.log(formData);
 
-    const data = await fetch('https://backend-soc.herokuapp.com/tutorials', {
+    const data = await fetch('https://redeem-soc.herokuapp.com/tutorials', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
