@@ -22,7 +22,7 @@ const Card = ({
 
   async function handleClick() {
     const data = await fetch(
-      `https://redeem-soc.herokuapp.com/tutorials/${id}/likeTutorial`,
+      `https://backend-soc.herokuapp.com/tutorials/${id}/likeTutorial`,
       {
         method: 'PATCH',
         body: JSON.stringify({ userId: user.sub }),

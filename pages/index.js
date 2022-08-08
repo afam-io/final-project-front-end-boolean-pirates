@@ -55,7 +55,7 @@ export default function Home( {data, user} ) {
 
 export const getServerSideProps = async () => {
   const data = await fetch(
-    `https://redeem-soc.herokuapp.com/tutorials`
+    `https://backend-soc.herokuapp.com/tutorials`
   ).then((r) => r.json());
 
   return {
