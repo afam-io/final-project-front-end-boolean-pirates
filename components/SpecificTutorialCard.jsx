@@ -7,7 +7,6 @@ export default function SpecificTutorialCard({
   materials,
   instructions,
 }) {
-
   return (
     <div className="flex flex-col min-h-screen justify-center items-center">
       <div className=" mt-10 max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -57,7 +56,7 @@ export default function SpecificTutorialCard({
 
       {/* Comment component */}
       <div className="flex items-center justify-center shadow-lg mt-5 mx-5 mb-4 max-w-lg">
- <form className="w-full max-w-xl bg-white rounded-lg border px-4 pt-2 border-gray-200 shadow-md">
+        <form className="w-full max-w-xl bg-white rounded-lg border px-4 pt-2 border-gray-200 shadow-md">
           <div className="flex flex-wrap -mx-3 mb-6">
             <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext">
               Add a new comment

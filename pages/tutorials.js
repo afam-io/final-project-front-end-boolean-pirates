@@ -1,12 +1,34 @@
 import Card from "../components/Card";
 import Image from "next/image";
+import {useEffect, useState} from "react"
 
-export default function tutorials({ data }) {
+export default function tutorials({ data, user }) {
+
+ 
+  const [search, setSearch] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
   // ========= OnChange Event Handler for input ==============
   function handleInput(e) {
     e.preventDefault();
-    console.log(e.target.value);
+    setSearch(e.target.value);
   }
+
+  const handleClick = ()=> {
+    if (search === ""){
+    setFilteredData(data) 
+    }
+    let searchKeyword = data.filter((alldata => alldata.title.includes(search)))
+    setFilteredData(searchKeyword)
+    console.log(filteredData)
+
+  }
+
+  useEffect(()=> {
+  setFilteredData(data) 
+
+  },[])
+  
+
 
   return (
     //whole layout
@@ -19,7 +41,7 @@ export default function tutorials({ data }) {
           {/* ===== Search Bar ======= */}
           <div className="flex justify-center px-4 py-5">
             {/* form div which wraps tightly around input */}
-            <form className="flex w-screen justify-center">
+            <div className="flex w-screen justify-center">
               <label
                 htmlFor="default-search"
                 className="m-4 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -54,6 +76,7 @@ export default function tutorials({ data }) {
                   required
                 />
                 <button
+                  onClick={handleClick}
                   type="submit"
                   // onClick Event for Function above
                   // onClick={}
@@ -76,13 +99,13 @@ export default function tutorials({ data }) {
                   <span className="sr-only">Search</span>
                 </button>
               </div>
-            </form>
+            </div>
           </div>
           {/* card holder that aligns the cards to center */}
           <div className="flex items-center justify-center">
             {/* media query which shows different amount of cards on different screen sizes */}
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {data.map((data, index) => (
+              {filteredData.map((data, index) => (
                 <div
                   key={index}
                   className="m-2"
@@ -91,12 +114,13 @@ export default function tutorials({ data }) {
                   }}
                 >
                   <Card
+                    user={user}
                     imageUrl={data.imageUrl}
                     title={data.title}
-                    // description={data.description}
                     materials={data.materials}
-                    likes={[data.likes].length}
+                    likes={data.likes}
                     date={data.createdAt}
+                    id={data._id}
                   />
                 </div>
               ))}
@@ -110,7 +134,7 @@ export default function tutorials({ data }) {
 
 export const getServerSideProps = async () => {
 
-  const data = await fetch(`https://backend-soc.herokuapp.com/tutorials`).then(
+  const data = await fetch(`https://redeem-soc.herokuapp.com/tutorials`).then(
     (r) => r.json()
   );
 
