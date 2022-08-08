@@ -5,7 +5,7 @@ import { me } from '../pages/api/me'
 
 export default function Home( {data, user} ) {
 
-  console.log(data)
+  
   return (
     //whole layout
     <div>
@@ -64,3 +64,4 @@ export const getServerSideProps = async () => {
     },
   };
 };
+
