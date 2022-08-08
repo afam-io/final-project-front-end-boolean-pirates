@@ -7,47 +7,54 @@ export default function SpecificTutorialCard({
   materials,
   instructions,
 }) {
+ const embeddedVideoUrl = videoUrl.replace('watch?v=','embed/');
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center">
-      <div className=" mt-10 max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-
-          <h1 className="text-xl pb-3 float-left text-green-backgroundtext font-semibold font-sans">
-            {tutorialData.title}
-
+    <div className="flex flex-col justify-center items-center">
+      <div className=" p-2 mt-2 max-w-2xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 md:w-144">
+       <div className="flex justify-between">
+          <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
+            {title}
           </h1>
-          <h1 className="text-xl float-right text-green-backgroundtext font-semibold font-sans">
+          <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
             {likes.length} Likes
           </h1>
-          <img
-            className="rounded-t-lg text-green-backgroundtext"
-            src={videoUrl}
-            alt="image of the youtube thumbnail"
-          />
-        </a>
-
-        <h1 className="text-xl pt-3 text-green-backgroundtext font-semibold font-sans">
-          Level:{" "}
-
+  </div>
+          <div className="rounded-t-lg text-green-backgroundtext flex justify-center pt-5 w-full">
+          
+          <iframe
+              src={embeddedVideoUrl}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+       {console.log(embeddedVideoUrl)}
+        <h1 className="text-xl text-green-backgroundtext font-semibold font-sans pt-4">
+          Level: {ability}
         </h1>
-        <p className="font-semibold text-green-backgroundtext">
-          {tutorialData.ability}
-        </p>
 
         <h1 className="text-xl text-green-backgroundtext font-semibold font-sans mt-2">
-
-          Materials:{" "}
-
+          Materials:
         </h1>
-        <p className="font-semibold text-green-backgroundtext">
-          {tutorialData.materials}
-        </p>
+
+        <div className="px-2 pt-2 pb-2">
+            {materials.map((material, index) => (
+              <span
+                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                key={index}
+              >
+                {material}
+              </span>
+            ))}
+          </div>
+
         <div className="mt-2">
-          <a href="#">
+          
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext">
               Instructions:
             </h5>
-          </a>
+          
           <p className="mb-3 font-normal text-green-backgroundtext">
             {instructions}
           </p>

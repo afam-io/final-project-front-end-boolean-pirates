@@ -35,7 +35,7 @@ const Header = ({ user, loading }) => {
           {/* login/logout button terniery operator to show conditionally */}
           {!loading &&
             user ? 
-          <p className=' h-6 float-right bg-white-cardbackground hover:bg-gray-500 black-text font-bold px-1.5 m-3.5 rounded-3xl hover:cursor-pointer'>
+          <p className=' h-6 float-right bg-white-cardbackground hover:bg-red-700 black-text font-bold px-1.5 m-3.5 rounded-3xl hover:cursor-pointer'>
           <Link href="/api/logout">Logout</Link>
           </p>
           :
@@ -57,7 +57,7 @@ const Header = ({ user, loading }) => {
 
                     {/* wrapper for individual mobile link */}
                     <Link href='/'>
-                      <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                      <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         {/* wrapper for navbar icon and the icon */}
 
                         <div className='block h-5 w-5 ml-1 text-3xl mb-2'>
@@ -69,7 +69,7 @@ const Header = ({ user, loading }) => {
                     </Link>
                     {/* wrapper for individual mobile link */}
                     <Link href='/tutorials'>
-                      <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                      <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
 
                         <div className='block h-6 w-6 pl-3 text-3xl mb-1'>
 
@@ -80,7 +80,7 @@ const Header = ({ user, loading }) => {
                     </Link>
                     {/* wrapper for individual mobile link */}
                     <Link href='/createtutorials'>
-                      <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                      <div className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
 
                         <div className='block h-6 w-6 ml-2 text-3xl mb-1'>
 
@@ -101,49 +101,49 @@ const Header = ({ user, loading }) => {
                     <Link href='/'>
                       <a
                         href='#'
-                        className='hover:bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className='hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Home
                       </a>
                     </Link>
                     <Link href='/tutorials'>
                       <a
                         href='#'
-                        className=' hover:bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Tutorials
                       </a>
                     </Link>
                     <Link href='/createtutorials'>
                       <a
                         href='#'
-                        className=' hover:bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Create
                       </a>
                     </Link>
                     <Link href='/tutorials'>
                       <a
                         href='#'
-                        className=' hover:bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Search
                       </a>
                     </Link>
                     <Link href='/'>
                       <a
                         href='#'
-                        className=' hover:bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Profile
                       </a>
                     </Link>
                     <Link href='/'>
                       <a
                         href='#'
-                        className=' hover:bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Favourites
                       </a>
                     </Link>
                     <Link href='/'>
                       <a
                         href='#'
-                        className=' hover:bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Events
                       </a>
                     </Link>
@@ -160,7 +160,7 @@ const Header = ({ user, loading }) => {
                   onClick={() => setIsOpen(!isOpen)}
                   type='button'
 
-                  className='inline-flex items-center justify-center pt-1 h-12 w-19.8 px-2 rounded-md text-white hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white'
+                  className='inline-flex items-center justify-center pt-1 h-12 w-19.8 px-2 rounded-md text-white hover:text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white'
 
                   aria-controls='mobile-menu'
                   aria-expanded='false'>
@@ -222,7 +222,7 @@ const Header = ({ user, loading }) => {
                   <Link href='tutorials'>
                     <a
                       href='#'
-                      className='hover:bg-gray-500 text-white block px-3 py-2 rounded-md text-base font-medium'>
+                      className='hover:bg-green-700 text-white block px-3 py-2 rounded-md text-base font-medium'>
                       {/* TODO size the icons */}{' '}
                       <div className='block h-6 w-6 text-3xl mb-2'>
                         <AiOutlineSearch />
@@ -233,7 +233,7 @@ const Header = ({ user, loading }) => {
                   <Link href='/'>
                     <a
                       href='#'
-                      className='text-white hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+                      className='text-white hover:bg-green-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                       {' '}
                       <div className='block h-6 w-6 text-3xl mb-2'>
                         <AiOutlineUser />
@@ -244,7 +244,7 @@ const Header = ({ user, loading }) => {
                   <Link href='/'>
                     <a
                       href='#'
-                      className='text-white hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+                      className='text-white hover:bg-green-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                       {' '}
                       <div className='block h-6 w-6 text-3xl mb-2'>
                         <AiOutlineHeart />
@@ -255,7 +255,7 @@ const Header = ({ user, loading }) => {
                   <Link href='/'>
                     <a
                       href='#'
-                      className='text-white hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+                      className='text-white hover:bg-green-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                       {' '}
                       <div className='block h-6 w-6 text-3xl mb-2'>
                         <AiOutlineContacts />
