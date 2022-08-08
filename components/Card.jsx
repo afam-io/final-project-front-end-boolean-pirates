@@ -39,8 +39,10 @@ const Card = ({
 
   return (
     <div>
-      <Link href={{ pathname: '/specifictutorial', query: { cardId: id } }}>
+     
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <Link href={{ pathname: '/specifictutorial', query: { cardId: id } }}>
+          <div>
           <Image
             className="w-full"
             src={imageUrl}
@@ -62,9 +64,12 @@ const Card = ({
               </span>
             ))}
           </div>
+          </div>
+          </Link>
+
           <div className="flex display justify-between px-4 pt-1">
             <p className="text-gray-700 text-base mt-2">
-              {moment().startOf('date').fromNow()}
+              {moment(date).fromNow()}
             </p>
             <div className="flex display">
               <p onClick={handleClick} className="pt-1 pr-1 text-2xl">
@@ -74,7 +79,7 @@ const Card = ({
             </div>
           </div>
         </div>
-      </Link>
+    
     </div>
   )
 }
