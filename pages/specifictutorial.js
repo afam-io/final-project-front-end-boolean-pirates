@@ -13,7 +13,7 @@ export default function SpecificTutorial({ data, cardId }) {
               cardId={card._id}
               title={card.title}
               likes={card.likes}
-              videoUrl={card.imageUrl}
+              videoUrl={card.videoUrl}
               ability={card.ability}
               materials={card.materials}
               instructions={card.instructions}
