@@ -1,11 +1,11 @@
 import Card from '../components/Card';
 import Image from 'next/image';
-import moment from "moment"
+import moment from "moment";
+import { me } from '../pages/api/me'
 
+export default function Home( {data, user} ) {
 
-export default function Home( {data} ) {
-
-  console.log(data)
+  
   return (
     //whole layout
     <div>
@@ -35,12 +35,14 @@ export default function Home( {data} ) {
           {data.map((data, index) => (
             <div key={index} className='m-2'>
               <Card
+                user={user}
                 imageUrl={data.imageUrl}
                 title={data.title}
                 // description={data.description}
                 materials={data.materials}
-                likes={[data.likes].length}
+                likes={data.likes}
                 date={data.createdAt}
+                id={data._id}
              />
             </div>
           ))}
@@ -62,3 +64,4 @@ export const getServerSideProps = async () => {
     },
   };
 };
+

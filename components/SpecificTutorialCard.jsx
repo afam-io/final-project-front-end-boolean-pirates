@@ -1,30 +1,44 @@
-export default function SpecificTutorialCard({ tutorialData }) {
-  console.log(tutorialData);
+export default function SpecificTutorialCard({
+  cardId,
+  title,
+  likes,
+  videoUrl,
+  ability,
+  materials,
+  instructions,
+}) {
+
   return (
     <div className="flex flex-col min-h-screen justify-center items-center">
-      <div className=" mt-10 max-w-lg p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+      <div className=" mt-10 max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
+
           <h1 className="text-xl pb-3 float-left text-green-backgroundtext font-semibold font-sans">
             {tutorialData.title}
+
           </h1>
           <h1 className="text-xl float-right text-green-backgroundtext font-semibold font-sans">
-            {tutorialData.likes.length} Likes
+            {likes.length} Likes
           </h1>
           <img
             className="rounded-t-lg text-green-backgroundtext"
-            src={tutorialData.videoUrl}
+            src={videoUrl}
             alt="image of the youtube thumbnail"
           />
         </a>
+
         <h1 className="text-xl pt-3 text-green-backgroundtext font-semibold font-sans">
           Level:{" "}
+
         </h1>
         <p className="font-semibold text-green-backgroundtext">
           {tutorialData.ability}
         </p>
 
         <h1 className="text-xl text-green-backgroundtext font-semibold font-sans mt-2">
+
           Materials:{" "}
+
         </h1>
         <p className="font-semibold text-green-backgroundtext">
           {tutorialData.materials}
@@ -36,14 +50,14 @@ export default function SpecificTutorialCard({ tutorialData }) {
             </h5>
           </a>
           <p className="mb-3 font-normal text-green-backgroundtext">
-            {tutorialData.instructions}
+            {instructions}
           </p>
         </div>
       </div>
 
       {/* Comment component */}
       <div className="flex items-center justify-center shadow-lg mt-5 mx-5 mb-4 max-w-lg">
-        <form className="w-full max-w-xl bg-white rounded-lg border px-4 pt-2 border-gray-200 shadow-md">
+ <form className="w-full max-w-xl bg-white rounded-lg border px-4 pt-2 border-gray-200 shadow-md">
           <div className="flex flex-wrap -mx-3 mb-6">
             <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext">
               Add a new comment
@@ -77,5 +91,5 @@ export default function SpecificTutorialCard({ tutorialData }) {
         </form>
       </div>
     </div>
-  );
+  )
 }

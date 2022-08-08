@@ -109,6 +109,7 @@ export default function tutorials({ data }) {
 }
 
 export const getServerSideProps = async () => {
+
   const data = await fetch(`https://backend-soc.herokuapp.com/tutorials`).then(
     (r) => r.json()
   );
@@ -117,5 +118,6 @@ export const getServerSideProps = async () => {
     props: {
       data,
     },
+
   };
 };
