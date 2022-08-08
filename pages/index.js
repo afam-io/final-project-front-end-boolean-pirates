@@ -1,9 +1,7 @@
 import Card from '../components/Card';
 import Image from 'next/image';
-import moment from "moment";
-import { me } from '../pages/api/me'
 
-export default function Home( {data, user} ) {
+export default function Home( { data, user } ) {
 
   
   return (
@@ -38,7 +36,6 @@ export default function Home( {data, user} ) {
                 user={user}
                 imageUrl={data.imageUrl}
                 title={data.title}
-                // description={data.description}
                 materials={data.materials}
                 likes={data.likes}
                 date={data.createdAt}
