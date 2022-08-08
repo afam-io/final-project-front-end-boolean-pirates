@@ -2,7 +2,7 @@ import Card from "../components/Card";
 import Image from "next/image";
 import {useEffect, useState} from "react"
 
-export default function tutorials({ data, user }) {
+export default function Tutorials({ data, user }) {
 
  
   const [search, setSearch] = useState("");
@@ -26,7 +26,7 @@ export default function tutorials({ data, user }) {
   useEffect(()=> {
   setFilteredData(data) 
 
-  },[])
+  },[data])
   
 
 

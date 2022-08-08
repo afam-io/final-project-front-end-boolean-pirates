@@ -21,7 +21,7 @@ const Card = ({
 
   useEffect(() => {
     setLiked(user && likes.includes(user.sub))
-  }, [user])
+  }, [user, likes])
 
   async function handleClick() {
     const data = await fetch(
