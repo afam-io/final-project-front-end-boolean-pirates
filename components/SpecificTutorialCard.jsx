@@ -7,37 +7,48 @@ export default function SpecificTutorialCard({
   materials,
   instructions,
 }) {
-
+ const embeddedVideoUrl = videoUrl.replace('watch?v=','embed/');
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center">
-      <div className=" mt-10 max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-       
-          <h1 className="text-xl float-left text-green-backgroundtext font-semibold font-sans">
+    <div className="flex flex-col justify-center items-center">
+      <div className=" p-2 mt-2 max-w-2xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 md:w-144">
+       <div className="flex justify-between">
+          <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
             {title}
           </h1>
-          <h1 className="text-xl float-right text-green-backgroundtext font-semibold font-sans">
+          <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
             {likes.length} Likes
           </h1>
-
-          <div className="rounded-t-lg text-green-backgroundtext">
+  </div>
+          <div className="rounded-t-lg text-green-backgroundtext flex justify-center pt-5 w-full">
+          
           <iframe
-              src={`https://www.youtube.com/embed/${videoUrl}`}
-              width="560"
-              height="315"
+              src={embeddedVideoUrl}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
-       
-        <h1 className="text-xl text-green-backgroundtext font-semibold font-sans">
+       {console.log(embeddedVideoUrl)}
+        <h1 className="text-xl text-green-backgroundtext font-semibold font-sans pt-4">
           Level: {ability}
         </h1>
+
         <h1 className="text-xl text-green-backgroundtext font-semibold font-sans mt-2">
-          Materials: <br></br>
-          {materials}
+          Materials:
         </h1>
+
+        <div className="px-2 pt-2 pb-2">
+            {materials.map((material, index) => (
+              <span
+                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                key={index}
+              >
+                {material}
+              </span>
+            ))}
+          </div>
+
         <div className="mt-2">
           
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext">
