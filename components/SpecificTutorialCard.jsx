@@ -113,7 +113,7 @@ export default function SpecificTutorialCard({
 
       {/* Comment card */}
 
-      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 md:w-144">
+      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
         <form className="w-full max-w-xl">
           <div className="flex flex-wrap -mx-3 mb-6">
             <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext">
