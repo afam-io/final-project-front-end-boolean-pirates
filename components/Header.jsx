@@ -23,6 +23,7 @@ const Header = ({ user, loading }) => {
         <nav className='bg-green-backgroundtext pt-0.5'>
 
           {/* logo */}
+          <Link href="/">
           <Image
             className='h-8 float-left mt-2 ml-3'
             src='/images/logo.png'
@@ -30,6 +31,7 @@ const Header = ({ user, loading }) => {
             width='250px'
             height='50px'
           />
+          </Link>
 
           {/* login/logout button terniery operator to show conditionally */}
           {!loading &&
@@ -101,53 +103,53 @@ const Header = ({ user, loading }) => {
 
                     <Link href='/'>
                       <div
-                        className='hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className='hover:bg-green-700  text-white px-3 py-2 rounded-md text-lg font-medium'>
                         Home
                       </div>
                     </Link>
                     <Link href='/tutorials'>
                       <div
-                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium'>
                         Tutorials
                       </div>
                     </Link>
                     {(user === null) ?
                       <Link href='/api/login'>
                         <div
-                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium'>
                           Create
                         </div>
                       </Link>
                       :
                       <Link href='/createtutorials'>
                         <div
-                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium'>
                           Create
                         </div>
                       </Link>}
                     <Link href='/tutorials'>
                       <div
-                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium'>
                         Search
                       </div>
                     </Link>
                     {(user === null) ?
                       <Link href='/api/login'>
                         <div
-                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium'>
                           Profile
                         </div>
                       </Link>
                       :
                       <Link href='/profile'>
                         <div
-                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium'>
                           Profile
                         </div>
                       </Link>}
                     <Link href='/favourites'>
                       <div
-                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium'>
                         Favourites
                       </div>
                     </Link>
