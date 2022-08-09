@@ -1,5 +1,5 @@
 import SpecificTutorialCard from '../components/SpecificTutorialCard'
-export default function SpecificTutorial({ data, cardId }) {
+export default function SpecificTutorial({ data, cardId, user }) {
   // console.log(context);
   console.log(data)
   console.log(cardId)
@@ -10,6 +10,7 @@ export default function SpecificTutorial({ data, cardId }) {
         .map((card, index) => (
           <div key={index} className="m-2">
             <SpecificTutorialCard
+              user = {user}
               cardId={card._id}
               title={card.title}
               likes={card.likes}
