@@ -16,6 +16,7 @@ export default function SpecificTutorialCard({
   const initialLikeState = user && likes.includes(user.sub)
   const [liked, setLiked] = useState(initialLikeState)
   const [likeCount, setLikeCount] = useState(likes.length)
+  const [comment, setComment] = useState(false)
 
   useEffect(() => {
     setLiked(user && likes.includes(user.sub))
@@ -46,9 +47,10 @@ export default function SpecificTutorialCard({
     setCommentInput(e.target.value)
   }
 
-  // useEffect(() => {
-  //   setIsLoggedIn(user !== null)
-  // }, [user])
+  useEffect(() => {
+
+    // setIsLoggedIn(user !== null)
+  }, [user])
 
   async function handleSubmitComment(e) {
     e.preventDefault()
@@ -66,6 +68,7 @@ export default function SpecificTutorialCard({
     )
     const response = await data.json()
     setCommentInput('')
+    setComment(true)
   }
 
   const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/')
@@ -151,6 +154,7 @@ export default function SpecificTutorialCard({
               {singleComment}
             </span>
           ))}
+          {comment ? <p>Your Comment is under review.</p> : " "}
         </div>
       </div>
       {user && (
