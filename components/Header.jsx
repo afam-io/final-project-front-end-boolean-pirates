@@ -264,7 +264,7 @@ const Header = ({ user, loading }) => {
                         :
                         <Link href='/profile'>
                           <a
-                            href='/profile'
+                            href='#'
                             className='text-white hover:bg-green-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                             {' '}
                             <div className='block h-6 w-6 text-3xl mb-2'>
