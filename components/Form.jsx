@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useRouter } from "next/router"
 
 export default function Form({ user }) {
+  const router = useRouter()
+
   const [imageSelected, setImageSelected] = useState("");
   const [formData, setFormData] = useState({creator: user, ability: "Beginner"});
   const handleInput = (e) => {
@@ -14,7 +17,7 @@ export default function Form({ user }) {
     e.preventDefault();
     console.log(formData);
 
-    const data = await fetch('https://backend-soc.herokuapp.com/tutorials/tutorials', {
+    const data = await fetch('https://backend-soc.herokuapp.com/tutorials', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
@@ -23,11 +26,13 @@ export default function Form({ user }) {
       });
       console.log(formData)
       const response = await data.json()
-      console.log(response)
+      const id = response._id
+      router.push(`/specifictutorial?cardId=${id}`)
   };
 
   //post request which uploads image to cloudinary 
-  const uploadImage = async () => {
+  const uploadImage = async (e) => {
+    e.preventDefault();
     const imageData = new FormData();
     imageData.append("file", imageSelected);
     imageData.append("upload_preset", "redeemdefault");
@@ -211,7 +216,7 @@ export default function Form({ user }) {
                           <div className="flex flex-col text-s text-gray-600 font-sans">
                             <label
                               htmlFor="file-upload"
-                              className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 font-sans"
+                              className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 font-sans"
                             >
                               <span className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans p-2">Select Your Image Here</span>
                               <input
