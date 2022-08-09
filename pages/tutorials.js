@@ -4,6 +4,7 @@ import {useEffect, useState} from "react"
 
 export default function Tutorials({ data, user }) {
 
+  console.log(user)
  
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);
