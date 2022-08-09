@@ -1,5 +1,5 @@
 import SpecificTutorialCard from '../components/SpecificTutorialCard'
-export default function SpecificTutorial({ data, cardId }) {
+export default function SpecificTutorial({ data, cardId, user }) {
   // console.log(context);
   console.log(data)
   console.log(cardId)
@@ -17,6 +17,8 @@ export default function SpecificTutorial({ data, cardId }) {
               ability={card.ability}
               materials={card.materials}
               instructions={card.instructions}
+              user={user}
+              comments={card.comments}
             />
           </div>
         ))}
