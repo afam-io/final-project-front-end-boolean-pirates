@@ -100,64 +100,56 @@ const Header = ({ user, loading }) => {
                   <div className='flex px-20 justify-around max-w-full w-screen '>
 
                     <Link href='/'>
-                      <a
-                        href='#'
+                      <div
                         className='hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Home
-                      </a>
+                      </div>
                     </Link>
                     <Link href='/tutorials'>
-                      <a
-                        href='#'
+                      <div
                         className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Tutorials
-                      </a>
+                      </div>
                     </Link>
                     {(user === null) ?
                       <Link href='/api/login'>
-                        <a
-                          href='#'
+                        <div
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                           Create
-                        </a>
+                        </div>
                       </Link>
                       :
                       <Link href='/createtutorials'>
-                        <a
-                          href='#'
+                        <div
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                           Create
-                        </a>
+                        </div>
                       </Link>}
                     <Link href='/tutorials'>
-                      <a
-                        href='#'
+                      <div
                         className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Search
-                      </a>
+                      </div>
                     </Link>
                     {(user === null) ?
                       <Link href='/api/login'>
-                        <a
-                          href='#'
+                        <div
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                           Profile
-                        </a>
+                        </div>
                       </Link>
                       :
                       <Link href='/profile'>
-                        <a
-                          href='#'
+                        <div
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                           Profile
-                        </a>
+                        </div>
                       </Link>}
                     <Link href='/favourites'>
-                      <a
-                        href='#'
+                      <div
                         className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium'>
                         Favourites
-                      </a>
+                      </div>
                     </Link>
                     {/* <Link href='/'>
                       <a
@@ -239,50 +231,46 @@ const Header = ({ user, loading }) => {
               <div className='md:hidden' id='mobile-menu '>
                 <div ref={ref} className='px-2 pt-2 space-y-1 sm:px-3'>
                   <Link href='tutorials'>
-                    <a
-                      href='#'
+                    <div
                       className='hover:bg-green-700 text-white block px-3 py-2 rounded-md text-base font-medium'>
                       {/* TODO size the icons */}{' '}
                       <div className='block h-6 w-6 text-3xl mb-2'>
                         <AiOutlineSearch />
                       </div>
                       Search
-                    </a>
+                    </div>
                   </Link>
                   {(user === null) ?
                     <Link href='/api/login'>
-                      <a
-                        href='#'
+                      <div
                         className='text-white hover:bg-green-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                         {' '}
                         <div className='block h-6 w-6 text-3xl mb-2'>
                           <AiOutlineUser />
                         </div>
                         Profile
-                        </a>
+                        </div>
                         </Link>
                         :
                         <Link href='/profile'>
-                          <a
-                            href='#'
+                          <div
                             className='text-white hover:bg-green-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                             {' '}
                             <div className='block h-6 w-6 text-3xl mb-2'>
                               <AiOutlineUser />
                             </div>
                             Profile
-                          </a>
+                          </div>
                         </Link>}
                         <Link href='/favourites'>
-                          <a
-                            href='#'
+                          <div
                             className='text-white hover:bg-green-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
                             {' '}
                             <div className='block h-6 w-6 text-3xl mb-2'>
                               <AiOutlineHeart />
                             </div>
                             Favourites
-                          </a>
+                          </div>
                         </Link>
                         {/* <Link href='/'>
                     <a
