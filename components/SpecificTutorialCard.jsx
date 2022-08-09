@@ -48,7 +48,6 @@ export default function SpecificTutorialCard({
   }
 
   useEffect(() => {
-
     // setIsLoggedIn(user !== null)
   }, [user])
 
@@ -68,7 +67,7 @@ export default function SpecificTutorialCard({
     )
     const response = await data.json()
     setCommentInput('')
-    setComment(true)
+    setComment(commentInput + ' ' + '---' + ' ' + user.given_name)
   }
 
   const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/')
@@ -147,14 +146,16 @@ export default function SpecificTutorialCard({
         <p>Comments</p>
         <div className="px-4 pt-4 pb-2">
           {comments.map((singleComment, index) => (
-            <span
-              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            <div
+              className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
               key={index}
             >
               {singleComment}
-            </span>
+            </div>
           ))}
-          {comment ? <p>Your Comment is under review.</p> : " "}
+          {comment ? <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+           <p>{comment}</p> 
+          </div> :""}
         </div>
       </div>
       {user && (
