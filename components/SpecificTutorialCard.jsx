@@ -1,6 +1,5 @@
 import { FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
-
-// Small Change
+import { useState, useEffect } from "react";
 
 export default function SpecificTutorialCard({
   cardId,
@@ -10,7 +9,37 @@ export default function SpecificTutorialCard({
   ability,
   materials,
   instructions,
+  user
 }) {
+
+
+  const initialLikeState = user && likes.includes(user.sub)
+  const [liked, setLiked] = useState(initialLikeState)
+  const [likeCount, setLikeCount] = useState(likes.length)
+
+  useEffect(() => {
+    setLiked(user && likes.includes(user.sub))
+  }, [user, likes])
+
+  async function handleClick() {
+    const data = await fetch(
+      `https://backend-soc.herokuapp.com/tutorials/${cardId}/likeTutorial`,
+      {
+        method: 'PATCH',
+        body: JSON.stringify({ userId: user.sub }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+    const response = await data.json()
+    console.log(response)
+    setLiked(response.likes.includes(user.sub))
+    setLikeCount(response.likes.length)
+  }
+
+
+
   const embeddedVideoUrl = videoUrl.replace("watch?v=", "embed/");
   return (
     <div className="flex flex-col justify-center items-center">
@@ -26,7 +55,8 @@ export default function SpecificTutorialCard({
         ></iframe>
       </div>
 
-      <div className=" p-2 mt-2 max-w-2xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 md:w-144">
+      {/*Tutorial Card*/}
+      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
         <div className="flex justify-between">
           <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
             {title}
@@ -39,7 +69,7 @@ export default function SpecificTutorialCard({
           </h1>
 
           <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans pt-4">
-            {likes.length} Likes
+            {likeCount} Likes
           </h1>
         </div>
 
@@ -49,7 +79,15 @@ export default function SpecificTutorialCard({
           </h1>
 
           <div className="flex display pt-1 pr-1 text-2xl">
-            <FaThumbsUp />
+           {user === null ? (
+              <p className="pt-1 pr-1 text-2xl">
+                {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
+              </p>
+            ) : (
+              <p onClick={handleClick} className="pt-1 pr-1 text-2xl">
+                {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
+              </p>
+            )}
           </div>
         </div>
 
@@ -73,9 +111,9 @@ export default function SpecificTutorialCard({
         </div>
       </div>
 
-      {/* Comment component */}
+      {/* Comment card */}
 
-      <div className=" p-2 mt-2 max-w-2xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 md:w-144">
+      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 md:w-144">
         <form className="w-full max-w-xl">
           <div className="flex flex-wrap -mx-3 mb-6">
             <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext">
