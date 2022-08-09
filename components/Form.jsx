@@ -14,7 +14,7 @@ export default function Form({ user }) {
     e.preventDefault();
     console.log(formData);
 
-    const data = await fetch('https://backend-soc.herokuapp.com/tutorials', {
+    const data = await fetch('https://backend-soc.herokuapp.com/tutorials/tutorials', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
@@ -27,8 +27,7 @@ export default function Form({ user }) {
   };
 
   //post request which uploads image to cloudinary 
-  const uploadImage = async (e) => {
-    e.preventDefault();
+  const uploadImage = async () => {
     const imageData = new FormData();
     imageData.append("file", imageSelected);
     imageData.append("upload_preset", "redeemdefault");
@@ -56,18 +55,10 @@ export default function Form({ user }) {
       <div className="flex items-center justify-center w-full">
         <div>
           <div className="md:grid md:grid-cols-2 md:gap-6">
-            {/* <div className="md:col-span-1">
-              <div className="px-4 sm:px-0">
-                <p className="mt-1 text-sm text-green-backgroundtext">
-                  This information will be displayed publicly so be careful what
-                  you share.
-                </p>
-              </div>
-            </div> */}
             {/* wrapper with media queries for screen sizes */}
             <div className="mt-5 md:mt-0 md:col-span-2 border">
               {/* form wrapper action="#" method="POST"*/}
-              <form>
+              <form onSubmit={handleSubmit}>
                 {/* card effect wrapper  WIDTH TO BE ADJUSTED*/}
                 <div className="shadow w-screen lg:max-w-3xl rounded-md xl:max-w-4xl">
                   {/* wrapper to give padding inside card */}
@@ -101,6 +92,7 @@ export default function Form({ user }) {
                               className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="type here"
                               defaultValue={""}
+                              required
                             />
                           </div>
                         </div>
@@ -122,31 +114,10 @@ export default function Form({ user }) {
                               className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="type here"
                               defaultValue={""}
+                              required
                             />
                           </div>
                         </div>
-
-                        {/* wrapper around description and input */}
-                        <div className="py-3">
-                          <label
-                            htmlFor="description"
-                            className="block text-sm font-semibold font-sans text-green-backgroundtext"
-                          >
-                            Brief description of your build
-                          </label>
-                          <div className="mt-1">
-                            <input
-                              // onChange={handleInput} not currently in use
-                              id="description"
-                              name="description"
-                              rows={3}
-                              className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
-                              placeholder="type here"
-                              defaultValue={""}
-                            />
-                          </div>
-                        </div>
-
                         {/* wrapper around ability level and media query */}
                         <div className="col-span-6 sm:col-span-3 py-3">
                           <label
@@ -161,6 +132,7 @@ export default function Form({ user }) {
                             name="ability"
                             autoComplete="country-name"
                             className="mt-1 block w-full py-1 px-2 border border-gray-300 bg-white rounded-lg shadow-md focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm font-sans"
+                            required
                           >
                             <option value="beginner">Beginner</option>
                             <option>Intermediate</option>
@@ -185,6 +157,7 @@ export default function Form({ user }) {
                               className="shadow-md py-1 px-2 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="URL"
                               defaultValue={""}
+                              required
                             />
                           </div>
                         </div>
@@ -206,6 +179,7 @@ export default function Form({ user }) {
                               className="shadow-md px-2 py-1 focus:outline-none focus:ring-green-500 focus:border-green-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-lg"
                               placeholder="Please be as detailed as you can."
                               defaultValue={""}
+                              required
                             />
                           </div>
                         </div>
@@ -233,37 +207,35 @@ export default function Form({ user }) {
                               strokeLinejoin="round"
                             />
                           </svg>
-                          <div className="flex text-sm text-gray-600 font-sans">
+                          {!imageSelected ?
+                          <div className="flex flex-col text-s text-gray-600 font-sans">
                             <label
                               htmlFor="file-upload"
                               className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 font-sans"
                             >
-                              <span>Attach Image</span>
+                              <span className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans p-2">Select Your Image Here</span>
                               <input
                                 onChange={selectImage}
                                 id="file-upload"
                                 name="file-upload"
                                 type="file"
-                                className="sr-only"
+                                className="sr-only "
+                                required
                               />
                             </label>
-                          </div>
-
-                          <p className="text-xs text-gray-500 font-sans">
+                          <p className="text-s text-gray-500 font-sans p-4">
                             PNG, JPG, GIF up to 10MB
                           </p>
-
-                          <p className="text-xs text-red-500 font-sans">
-                            {imageSelected
-                              ? "Image is selected"
-                              : "Image is NOT selected"}
-                          </p>
-                          <div className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans">
-                            <button onClick={uploadImage}>
-                              {" "}
-                              Click to Upload Image{" "}
-                            </button>
                           </div>
+
+                          :
+                          <div className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans p-2">
+                            {(!formData.imageUrl) ?
+                            <button onClick={uploadImage}>
+                              Click to Upload Image
+                            </button>
+                            : <p className="hover:none">Image Uploaded Successfully</p>}
+                          </div>}
                         </div>
                       </div>
                     </div>
@@ -272,11 +244,10 @@ export default function Form({ user }) {
                   {/* wrapper around save button */}
                   <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                     <button
-                      onClick={handleSubmit}
                       type="submit"
                       className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-backgroundtext hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 font-sans"
                     >
-                      Save
+                      Submit
                     </button>
                   </div>
                 </div>
