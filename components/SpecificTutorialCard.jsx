@@ -47,10 +47,6 @@ export default function SpecificTutorialCard({
     setCommentInput(e.target.value)
   }
 
-  useEffect(() => {
-    // setIsLoggedIn(user !== null)
-  }, [user])
-
   async function handleSubmitComment(e) {
     e.preventDefault()
     const data = await fetch(
