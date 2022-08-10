@@ -5,7 +5,7 @@ export default function Form({ user }) {
   const router = useRouter()
 
   const [imageSelected, setImageSelected] = useState("");
-  const [formData, setFormData] = useState({creator: user.name, ability: "Beginner"});
+  const [formData, setFormData] = useState({creator: user?.name, ability: "Beginner"});
   const handleInput = (e) => {
     setFormData({
       ...formData,
