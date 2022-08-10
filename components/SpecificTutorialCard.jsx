@@ -63,7 +63,7 @@ export default function SpecificTutorialCard({
     )
     const response = await data.json()
     setCommentInput('')
-    setComment(commentInput + ' ' + '---' + ' ' + user.given_name)
+    setComment(commentInput + ' ' + '---' + ' ' + user.nickname)
   }
 
   const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/')
