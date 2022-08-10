@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Card from '../components/Card'
 import { useState, useEffect } from 'react'
 
-const Profile = ({user}) => {
+const Profile = ({user,data}) => {
   console.log(user)
 
   return (
@@ -44,7 +44,7 @@ const Profile = ({user}) => {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {
             data
-              .filter((myCard) => myCard.creator === user.sub)
+              .filter((myCard) => myCard.creator === user?.sub)
               .map((data, index) => (
                 <div key={index} className="m-2">
                   <Card
