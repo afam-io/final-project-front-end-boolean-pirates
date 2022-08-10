@@ -6,6 +6,7 @@ const  Layout = ({ user, loading = false, children }) => {
     return ( 
         <div>
             <Header user={user} loading={loading} />
+            <div className="h-24"></div>
             { children }
             <Footer />
         </div>
