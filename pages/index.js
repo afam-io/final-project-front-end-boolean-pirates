@@ -8,19 +8,19 @@ export default function Home( { data, user } ) {
     //whole layout
     <div>
       {/* wrapper for the image and text */}
-      <div className='relative justify-self-center w-screen border'>
+      <div className='relative justify-self-center w-screen md:min-w-fit'>
         {/* TODO fix the white space on full screen on the left */}
         <Image
-          src='/images/hero-image.jpg'
+          src='/images/full-screen-hero-image.jpg'
           width="100%"
-          height="60%"
+          height="40.6%"
           layout="responsive"
           alt='main-image'
 
         />
         {/* card */}
-        <div className='absolute bottom-8 left-0 right-0 px-4 py-2 bg-gray-300 opacity-70'>
-          <h1 className='mt-2 sm:text-3xl text-black-300'>
+        <div className='bottom-8 left-0 right-0 px-4 py-2 p-4 bg-gray-300 opacity-70'>
+          <h1 className='sm:text-3xl text-black-300'>
             From wind turbines to window farms, find your next project with
             Redeem.
           </h1>
