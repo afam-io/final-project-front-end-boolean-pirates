@@ -14,7 +14,7 @@ export default function Tutorials({ data, user }) {
 
   return (
     //whole layout
-    <div className="mt-5">
+    <div className="mt-10">
     <div className="flex justify-center sm:text-2xl text-black-300">
       Favourites
     </div>
