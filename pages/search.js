@@ -10,15 +10,15 @@ export default function Tutorials({ data, user }) {
   // ========= OnChange Event Handler for input ==============
   function handleInput(e) {
     e.preventDefault();
-    setSearch(e.target.value);
+    setSearch(e.target.value.toLowerCase());
   }
-
+ 
   const handleClick = ()=> {
     if (search === ""){
     setFilteredData(data) 
     }
-    let searchKeyword = data.filter((alldata => alldata.title.includes(search)))
-    setFilteredData(searchKeyword)
+    let filteredByTitle = data.filter((alldata => alldata.title.toLowerCase().includes(search)))
+    setFilteredData(filteredByTitle)
     console.log(filteredData)
 
   }
@@ -33,7 +33,7 @@ export default function Tutorials({ data, user }) {
   return (
     //whole layout
 
-    <div>
+    <div className="mt-5">
       {/* wrapper for the image and text */}
       <div className="relative justify-self-center">
         {/* card */}

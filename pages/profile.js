@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Card from '../components/Card'
 import { useState, useEffect } from 'react'
 
-const Profile = ({ user, data }) => {
-  
+const Profile = ({user}) => {
+  console.log(user)
 
   return (
     <div className="mt-5">
