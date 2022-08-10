@@ -14,7 +14,7 @@ export default function Tutorials({ data, user }) {
 
   return (
     //whole layout
-    <div>
+    <div className="mt-10">
       {/* wrapper for the image and text */}
       <div className="relative justify-self-center">
         {/* card */}

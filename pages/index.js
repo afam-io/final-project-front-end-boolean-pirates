@@ -6,7 +6,7 @@ export default function Home( { data, user } ) {
   
   return (
     //whole layout
-    <div>
+    <div >
       {/* wrapper for the image and text */}
       <div className='relative justify-self-center w-screen md:min-w-fit'>
         {/* TODO fix the white space on full screen on the left */}
