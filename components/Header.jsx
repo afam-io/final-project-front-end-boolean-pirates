@@ -39,13 +39,13 @@ const Header = ({ user, loading }) => {
           {/* login/logout button terniery operator to show conditionally */}
           {!loading &&
             user ?
-            <p className=' h-6 float-right bg-white-cardbackground hover:bg-red-700 black-text font-bold px-1.5 m-3.5 rounded-3xl hover:cursor-pointer'>
-              <Link href="/api/logout">Logout</Link>
-            </p>
+            <button className="float-right bg-white-cardbackground hover:bg-gray-300 font-medium text-gray-700 py-0.9 px-3 m-3.5 border border-gray-300 rounded-3xl">
+            <Link href="/api/logout">Logout</Link>
+            </button>
             :
-            <p className=' h-6 float-right bg-white-cardbackground hover:bg-gray-500 black-text font-bold px-1.5 m-3.5 rounded-3xl hover:cursor-pointer'>
-              <Link href="/api/login">Login</Link>
-            </p>
+            <button className="float-right bg-white-cardbackground hover:bg-gray-300 font-medium text-gray-700 py-0.9 px-3 m-3.5 border border-gray-300 rounded-3xl">
+            <Link href="/api/login">Login</Link>
+            </button>
           }
           {/* wrapper for the whole navbar */}
           <div className='flex items-center max-w-fit mx-auto'>
@@ -206,16 +206,14 @@ const Header = ({ user, loading }) => {
                 </div>
               </div>
               {/* wrapper around the more button */}
-
               <div className='pl-10 md:hidden'>
-
                 {/* mobile more button */}
                 {/* TODO need to align this button with icons */}
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type='button'
 
-                  className='inline-flex items-center justify-center pt-1 h-12 w-19.8 px-2 rounded-md text-white hover:text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500'
+                  className='inline-flex items-center justify-center pt-1 h-12 w-19.8 px-2 rounded-md text-white hover:text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 hover:bg-green-700'
 
                   aria-controls='mobile-menu'
                   aria-expanded='false'>
@@ -274,44 +272,44 @@ const Header = ({ user, loading }) => {
                 <div ref={ref} className='px-2 pt-2 space-y-1 sm:px-3'>
                   <Link href='/search'>
                     <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                      <div className='block h-5 w-5 ml-1 text-3xl mb-2'>
+                      <div className='block h-5 w-5 ml-6 text-3xl mb-2'>
                         <AiOutlineSearch />
                       </div>
                       {(router.pathname) === '/search' ?
-                        <p className="underline">Search</p>
+                        <p className="underline ml-4">Search</p>
                         :
-                        <p >Search</p>}
+                        <p className="ml-4">Search</p>}
                     </li>
                   </Link>
                   {(user === null) ?
                     <Link href='/api/login'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 ml-1 text-3xl mb-2'>
+                        <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <AiOutlineUser />
                         </div>
                         {(router.pathname) === '/profile' ?
-                        <p className="underline">Profile</p>
+                        <p className="underline ml-4">Profile</p>
                         :
-                        <p >Profile</p>}
+                        <p className="ml-4">Profile</p>}
                       </li>
                     </Link>
                     :
                     <Link href='/profile'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 ml-1 text-3xl mb-2'>
+                        <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <AiOutlineUser />
                         </div>
                         {(router.pathname) === '/profile' ?
-                        <p className="underline">Profile</p>
+                        <p className="underline ml-4">Profile</p>
                         :
-                        <p >Profile</p>}
+                        <p className="ml-4">Profile</p>}
                       </li>
                     </Link>}
                     {(user === null) ?
                     <Link href='/api/login'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 ml-1 text-3xl mb-2'>
-                          <AiOutlineUser />
+                        <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
+                          <AiOutlineHeart />
                         </div>
                         {(router.pathname) === '/favourites' ?
                         <p className="underline">Favourites</p>
@@ -322,7 +320,7 @@ const Header = ({ user, loading }) => {
                     :
                     <Link href='/favourites'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 text-3xl mb-2'>
+                        <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <AiOutlineHeart />
                         </div>
                         {(router.pathname) === '/favourites' ?
@@ -342,8 +340,8 @@ const Header = ({ user, loading }) => {
                         <p >Events</p>}
                       </li>
                     </Link>} */}
+                    </div>
                 </div>
-              </div>
             )}
           </Transition>
         </nav>
