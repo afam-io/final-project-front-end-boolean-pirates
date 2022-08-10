@@ -14,9 +14,12 @@ export default function Tutorials({ data, user }) {
 
   return (
     //whole layout
-    <div className="mt-10">
+    <div className="mt-5">
+    <div className="flex justify-center sm:text-2xl text-black-300">
+      Favourites
+    </div>
       {/* wrapper for the image and text */}
-      <div className="relative justify-self-center">
+      <div className="pt-5 relative justify-self-center">
         {/* card */}
         <div className="w-screen">
           {/* card holder that aligns the cards to center */}
