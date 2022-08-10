@@ -1,8 +1,6 @@
 import SpecificTutorialCard from '../components/SpecificTutorialCard'
 export default function SpecificTutorial({ data, cardId, user }) {
-  // console.log(context);
-  console.log(data)
-  console.log(cardId)
+  console.log(user)
   return (
     <div>
       {data

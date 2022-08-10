@@ -12,7 +12,8 @@ const Card = ({
   likes,
   date,
   id,
-  user
+  user,
+  creator
 }) => {
   // mock data used to test layout
   const initialLikeState = user && likes.includes(user.sub)
