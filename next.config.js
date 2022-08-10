@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
 
   images: {
-    domains: ["static.vecteezy.com","res.cloudinary.com"],
+    domains: ["static.vecteezy.com","res.cloudinary.com","lh3.googleusercontent.com"],
     formats: ["image/avif", "image/webp"],
   },
 };

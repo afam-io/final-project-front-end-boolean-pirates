@@ -30,7 +30,7 @@ export default function Home( { data, user } ) {
       <div className='flex items-center justify-center'>
         {/* media query which shows different amount of cards on different screen sizes */}
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-          {data.map((data, index) => (
+          { data.map((data, index) => (
             <div key={index} className='m-2'>
               <Card
                 user={user}
