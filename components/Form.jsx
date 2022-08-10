@@ -3,9 +3,9 @@ import { useRouter } from "next/router"
 
 export default function Form({ user }) {
   const router = useRouter()
-
+  const [error, setError] = useState("")
   const [imageSelected, setImageSelected] = useState("");
-  const [formData, setFormData] = useState({creator: user.name, ability: "Beginner"});
+  const [formData, setFormData] = useState({creator: user?.name, ability: "Beginner"});
   const handleInput = (e) => {
     setFormData({
       ...formData,
@@ -15,8 +15,8 @@ export default function Form({ user }) {
   //handles the submits on the form post request
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-
+    console.log(formData.imageUrl);
+    if(formData.imageUrl) {
     const data = await fetch('https://backend-soc.herokuapp.com/tutorials', {
       method: 'POST',
       body: JSON.stringify(formData),
@@ -27,7 +27,8 @@ export default function Form({ user }) {
       console.log(formData)
       const response = await data.json()
       const id = response._id
-      router.push(`/specifictutorial?cardId=${id}`)
+      router.push(`/specifictutorial?cardId=${id}`)}
+      setError('Please click here')
   };
 
   //post request which uploads image to cloudinary 
@@ -42,6 +43,7 @@ export default function Form({ user }) {
         body: imageData
         });
         const response = await data.json()
+        setError('')
         setFormData ({
           ...formData, 
           "imageUrl" : response.url
@@ -239,7 +241,10 @@ export default function Form({ user }) {
                             <button onClick={uploadImage}>
                               Click to Upload Image
                             </button>
-                            : <p className="hover:none">Image Uploaded Successfully</p>}
+                            : 
+                            <p className="hover:none">Image Uploaded Successfully</p>
+                            }
+                            <p>{error}</p>
                           </div>}
                         </div>
                       </div>
