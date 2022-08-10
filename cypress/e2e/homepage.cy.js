@@ -4,8 +4,8 @@
 
 //Checking everything renders
 describe("Visit Home Page", () => {
-  it("The nav bar has the correct text", () => {
+  it("The Tutorials link on navbar works correctly", () => {
     cy.visit("http://localhost:3000");
-    cy.get("Nav").should("contain", "Tutorials");
+    cy.get(".hidden > .flex > :nth-child(2)").click();
   });
 });
