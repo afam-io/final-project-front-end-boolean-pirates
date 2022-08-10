@@ -54,6 +54,7 @@ describe("Clicking links from Home Page", () => {
     // cy.get(".right-1.5 > .w-5 > path").click();
   });
 
+  // Testing card button
   it("Clicking on a tutorial card results in the link opening with elements rendering.", () => {
     cy.visit("https://final-project-front-end-boolean-pirates.vercel.app/");
     cy.get(":nth-child(1) > :nth-child(1) > .max-w-sm > :nth-child(1)").click();
