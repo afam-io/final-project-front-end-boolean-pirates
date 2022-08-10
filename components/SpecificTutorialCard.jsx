@@ -1,5 +1,5 @@
-import { FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa'
+import { useState, useEffect } from 'react'
 
 export default function SpecificTutorialCard({
   cardId,
@@ -9,13 +9,14 @@ export default function SpecificTutorialCard({
   ability,
   materials,
   instructions,
-  user
+  user,
+  comments,
 }) {
-
-
+  //Fuctions for Like thumb on the card
   const initialLikeState = user && likes.includes(user.sub)
   const [liked, setLiked] = useState(initialLikeState)
   const [likeCount, setLikeCount] = useState(likes.length)
+  const [comment, setComment] = useState(false)
 
   useEffect(() => {
     setLiked(user && likes.includes(user.sub))
@@ -33,14 +34,39 @@ export default function SpecificTutorialCard({
       },
     )
     const response = await data.json()
-    console.log(response)
     setLiked(response.likes.includes(user.sub))
     setLikeCount(response.likes.length)
   }
 
+  //Functions for comment section on specifictutorial.
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [commentInput, setCommentInput] = useState('')
 
+  function handleChange(e) {
+    e.preventDefault()
+    setCommentInput(e.target.value)
+  }
 
-  const embeddedVideoUrl = videoUrl.replace("watch?v=", "embed/");
+  async function handleSubmitComment(e) {
+    e.preventDefault()
+    const data = await fetch(
+      `https://backend-soc.herokuapp.com/tutorials/${cardId}/commentPost`,
+      {
+        method: 'PATCH',
+        body: JSON.stringify({
+          addComments: commentInput + ' ' + '---' + ' ' + user.given_name,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+    const response = await data.json()
+    setCommentInput('')
+    setComment(commentInput + ' ' + '---' + ' ' + user.nickname)
+  }
+
+  const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/')
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="rounded-t-lg text-green-backgroundtext flex justify-center pt-5 w-full">
@@ -79,7 +105,7 @@ export default function SpecificTutorialCard({
           </h1>
 
           <div className="flex display pt-1 pr-1 text-2xl">
-           {user === null ? (
+            {user === null ? (
               <p className="pt-1 pr-1 text-2xl">
                 {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
               </p>
@@ -112,41 +138,61 @@ export default function SpecificTutorialCard({
       </div>
 
       {/* Comment card */}
-
-      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-        <form className="w-full max-w-xl">
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext">
-              Add a new comment
-            </h2>
-            <div className="w-full md:w-full px-3 mb-2 mt-2">
-              <textarea
-                className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium text-green-backgroundtext focus:outline-none focus:bg-white"
-                name="body"
-                placeholder="Type Your Comment"
-                required
-              ></textarea>
+      <div>
+        <p>Comments</p>
+        <div className="px-4 pt-4 pb-2">
+          {comments.map((singleComment, index) => (
+            <div
+              className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
+              key={index}
+            >
+              {singleComment}
             </div>
-            <div className="w-full flex items-start md:w-full px-3">
-              <div className="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
-                <svg
-                  fill="none"
-                  className="w-5 h-5 text-gray-600 mr-1"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                ></svg>
-              </div>
-              <div className="-mr-1">
-                <input
-                  type="submit"
-                  className="bg-green-backgroundtext text-white-text font-medium py-1 px-4 border border-gray-400 rounded-lg tracking-wide mr-1  hover:bg-green-700"
-                  value="Post Comment"
-                />
-              </div>
-            </div>
-          </div>
-        </form>
+          ))}
+          {comment ? <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+           <p>{comment}</p> 
+          </div> :""}
+        </div>
       </div>
+      {user && (
+        <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+          <form className="w-full max-w-xl">
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext">
+                Add a new comment
+              </h2>
+              <div className="w-full md:w-full px-3 mb-2 mt-2">
+                <textarea
+                  className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium text-green-backgroundtext focus:outline-none focus:bg-white"
+                  name="body"
+                  placeholder="Type Your Comment"
+                  onChange={handleChange}
+                  value={commentInput}
+                  required
+                ></textarea>
+              </div>
+              <div className="w-full flex items-start md:w-full px-3">
+                <div className="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
+                  <svg
+                    fill="none"
+                    className="w-5 h-5 text-gray-600 mr-1"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  ></svg>
+                </div>
+                <div className="-mr-1">
+                  <input
+                    type="submit"
+                    className="bg-green-backgroundtext text-white-text font-medium py-1 px-4 border border-gray-400 rounded-lg tracking-wide mr-1  hover:bg-green-700"
+                    value="Post Comment"
+                    onClick={handleSubmitComment}
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      )}
     </div>
-  );
+  )
 }

@@ -18,6 +18,7 @@ export default function SpecificTutorial({ data, cardId, user }) {
               ability={card.ability}
               materials={card.materials}
               instructions={card.instructions}
+              comments={card.comments}
             />
           </div>
         ))}
