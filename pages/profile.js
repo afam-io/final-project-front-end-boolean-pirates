@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const profile = ({user}) => {
+const Profile = ({user}) => {
   console.log(user)
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
@@ -19,4 +19,4 @@ const profile = ({user}) => {
   )
 }
 
-export default profile
+export default Profile
