@@ -23,7 +23,7 @@ const Header = ({ user, loading }) => {
     <div>
       <div>
         {/* wrapper for the whole nav bar */}
-        <nav className='bg-green-backgroundtext pt-0.5'>
+        <nav className='bg-green-backgroundtext fixed w-full z-10 pt-0.5'>
 
           {/* logo */}
           <Link href="/">
