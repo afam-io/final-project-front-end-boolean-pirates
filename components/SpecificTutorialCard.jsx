@@ -49,12 +49,13 @@ export default function SpecificTutorialCard({
 
   async function handleSubmitComment(e) {
     e.preventDefault()
+    const date = new Date()
     const data = await fetch(
       `https://backend-soc.herokuapp.com/tutorials/${cardId}/commentPost`,
       {
         method: 'PATCH',
         body: JSON.stringify({
-          addComments: commentInput + ' ' + '---' + ' ' + user.given_name,
+          addComments: commentInput + ' - ' + 'posted by ' + user.given_name + ' at ' + date.toLocaleString()
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +64,7 @@ export default function SpecificTutorialCard({
     )
     const response = await data.json()
     setCommentInput('')
-    setComment(commentInput + ' ' + '---' + ' ' + user.nickname)
+    setComment(commentInput + ' - ' + 'posted by ' + user.given_name + ' at ' + date.toLocaleString())
   }
 
   const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/')
@@ -132,26 +133,7 @@ export default function SpecificTutorialCard({
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext pt-4">
             Instructions:
           </h5>
-
           <p className="mb-3 font-normal text-gray-700">{instructions}</p>
-        </div>
-      </div>
-
-      {/* Comment card */}
-      <div>
-        <p>Comments</p>
-        <div className="px-4 pt-4 pb-2">
-          {comments.map((singleComment, index) => (
-            <div
-              className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
-              key={index}
-            >
-              {singleComment}
-            </div>
-          ))}
-          {comment ? <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-           <p>{comment}</p> 
-          </div> :""}
         </div>
       </div>
       {user && (
@@ -193,6 +175,23 @@ export default function SpecificTutorialCard({
           </form>
         </div>
       )}
+            {/* Comment card */}
+            <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+            <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext font-bold">Comments</h2>
+        <div className="px-4 pt-4 pb-2">
+        {comment ? <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+           <p>{comment}</p> 
+          </div> :""}
+          {comments.slice(0).reverse().map((singleComment, index) => (
+            <div
+              className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
+              key={index}
+            >
+              {singleComment}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
