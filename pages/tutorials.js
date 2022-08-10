@@ -1,10 +1,8 @@
 import Card from "../components/Card";
 import Image from "next/image";
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react";
 
 export default function Tutorials({ data, user }) {
-
- 
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   // ========= OnChange Event Handler for input ==============
@@ -13,22 +11,20 @@ export default function Tutorials({ data, user }) {
     setSearch(e.target.value);
   }
 
-  const handleClick = ()=> {
-    if (search === ""){
-    setFilteredData(data) 
+  const handleClick = () => {
+    if (search === "") {
+      setFilteredData(data);
     }
-    let searchKeyword = data.filter((alldata => alldata.title.includes(search)))
-    setFilteredData(searchKeyword)
-    console.log(filteredData)
+    let searchKeyword = data.filter((alldata) =>
+      alldata.title.includes(search)
+    );
+    setFilteredData(searchKeyword);
+    console.log(filteredData);
+  };
 
-  }
-
-  useEffect(()=> {
-  setFilteredData(data) 
-
-  },[data])
-  
-
+  useEffect(() => {
+    setFilteredData(data);
+  }, [data]);
 
   return (
     //whole layout
@@ -78,6 +74,7 @@ export default function Tutorials({ data, user }) {
                 <button
                   onClick={handleClick}
                   type="submit"
+                  id="search-button"
                   // onClick Event for Function above
                   // onClick={}
                   className="absolute right-1.5 bottom-1.5 p-2.5 ml-2 text-sm font-medium text-white bg-green-backgroundtext rounded-xl border border-green-700 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-700 dark:hover:bg-green-backgroundtext dark:focus:ring-green-800"
@@ -133,7 +130,6 @@ export default function Tutorials({ data, user }) {
 }
 
 export const getServerSideProps = async () => {
-
   const data = await fetch(`https://redeem-soc.herokuapp.com/tutorials`).then(
     (r) => r.json()
   );
@@ -142,6 +138,5 @@ export const getServerSideProps = async () => {
     props: {
       data,
     },
-
   };
 };
