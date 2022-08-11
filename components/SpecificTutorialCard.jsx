@@ -218,6 +218,7 @@ export default function SpecificTutorialCard({
             <Image
                   className="inline object-cover w-3 h-3 rounded-full"
                   src={user.picture}
+                  alt ={creatorImageUrl}
                   height="35%"
                   width="35%"
                 />
@@ -237,6 +238,7 @@ export default function SpecificTutorialCard({
                 <Image
                   className="inline object-cover w-3 h-3 rounded-full"
                   src={singleComment.split('#£)*$%^!!%')[1]}
+                  alt ={creatorImageUrl}
                   height="35%"
                   width="35%"
                 />
