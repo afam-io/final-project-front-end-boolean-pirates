@@ -2,7 +2,7 @@ import Card from '../components/Card';
 import Image from 'next/image';
 
 export default function Home( { data, user } ) {
-
+  console.log(data)
   
   return (
     //whole layout
@@ -47,6 +47,7 @@ export default function Home( { data, user } ) {
                 date={data.createdAt}
                 id={data._id}
                 creator={data.creator}
+                creatorImageUrl={data.favourites[0]}
              />
             </div>
           ))}
