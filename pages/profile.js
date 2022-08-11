@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Card from '../components/Card'
+import { useState } from 'react'
 
 const Profile = ({user,firstData}) => {
   const [data, setData] = useState(firstData)
