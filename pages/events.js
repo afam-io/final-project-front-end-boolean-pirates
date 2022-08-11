@@ -6,7 +6,7 @@ const DynamicComponentWithNoSSR = dynamic(() => import( '../components/Map'), {
 
 export default function MapPage() {
   return (
-    <div className="mt-5 h-screen">
+    <div className="sticky mt-5 w-full h-screen">
   <DynamicComponentWithNoSSR />
   </div>
   )
