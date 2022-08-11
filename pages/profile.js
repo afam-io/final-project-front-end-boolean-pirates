@@ -1,11 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Card from '../components/Card'
-import { useState, useEffect } from 'react'
 
 const Profile = ({user,firstData}) => {
-  console.log(user)
-  console.log(firstData)
   const [data, setData] = useState(firstData)
 
   async function handleDelete (myCardId) {
@@ -22,14 +19,12 @@ const Profile = ({user,firstData}) => {
       },
     )
     const response = await data.json()
-    console.log(response)
     setData(await fetch(
       `https://backend-soc.herokuapp.com/tutorials`,
     ).then((r) => r.json()))
    
   }
   
-
   return (
     <div className="mt-5">
       <div>
@@ -57,7 +52,6 @@ const Profile = ({user,firstData}) => {
         </div>
 
         {/* card */}
-
         <div className="flex justify-center sm:text-1xl text-black-300 py-12">
           <p className="underline text-bold">My Uploads</p>
         </div>
@@ -68,8 +62,8 @@ const Profile = ({user,firstData}) => {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {
             data
-              .filter((myCard) => myCard.creator === user?.given_name)
-              .map((myCard, index) => (
+              .filter((myCard) => myCard.creator === user?.name)
+              .map((data, index) => (
                 <div key={index} className="m-2">
                   <Card
                     user={user}

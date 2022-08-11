@@ -1,9 +1,8 @@
 import SpecificTutorialCard from '../components/SpecificTutorialCard'
 
 export default function SpecificTutorial({ data, cardId, user }) {
-  console.log(user)
   return (
-    <div>
+    <div className="mt-10">
       {data
         .filter((card) => card._id === cardId)
         .map((card, index) => (

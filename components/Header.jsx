@@ -18,7 +18,6 @@ const Header = ({ user, loading }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <div>
       <div>
@@ -192,16 +191,16 @@ const Header = ({ user, loading }) => {
                           <p >Favourites</p>}
                       </li>
                     </Link>
-                    {/* <Link href='/'>
+                    <Link href='/'>
                       <li
                         href='#'
-                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-sm font-medium list-none hover:cursor-pointer'>
+                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
                           {(router.pathname) === '/events' ?
                           <p className="underline">Events</p>
                           :
                           <p >Events</p>}
-                      </a>
-                    </Link> */}
+                      </li>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -326,20 +325,20 @@ const Header = ({ user, loading }) => {
                         {(router.pathname) === '/favourites' ?
                         <p className="underline">Favourites</p>
                         :
-                        <p>Favourites</p>}
+                        <p >Favourites</p>}
                       </li>
                     </Link>}
-                  {/* <Link href='/events'>
+                  <Link href='/events'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 ml-1 text-3xl mb-2'>
+                        <div className='block h-5 w-5 ml-6 text-3xl mb-2'>
                           <AiOutlineContacts/>
                         </div>
                         {(router.pathname) === '/events' ?
-                        <p className="underline">Events</p>
+                        <p className="underline ml-4">Events</p>
                         :
-                        <p >Events</p>}
+                        <p className="ml-4">Events</p>}
                       </li>
-                    </Link>} */}
+                    </Link>
                     </div>
                 </div>
             )}

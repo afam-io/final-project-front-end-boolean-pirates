@@ -19,8 +19,6 @@ export default function Tutorials({ data, user }) {
     }
     let filteredByTitle = data.filter((alldata => alldata.title.toLowerCase().includes(search)))
     setFilteredData(filteredByTitle)
-    console.log(filteredData)
-
   }
 
   useEffect(()=> {
@@ -105,12 +103,12 @@ export default function Tutorials({ data, user }) {
           <div className="flex items-center justify-center">
             {/* media query which shows different amount of cards on different screen sizes */}
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {filteredData.map((data, index) => (
+              {/* Filters the first 10 results before mapping */}
+              {filteredData.filter((item, index) => index < 10).map((data, index) => (
                 <div
                   key={index}
                   className="m-2"
                   onClick={() => {
-                    console.log(data._id);
                   }}
                 >
                   <Card
