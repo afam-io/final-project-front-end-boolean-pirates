@@ -3,8 +3,32 @@ import Image from 'next/image'
 import Card from '../components/Card'
 import { useState, useEffect } from 'react'
 
-const Profile = ({user,data}) => {
+const Profile = ({user,firstData}) => {
   console.log(user)
+  console.log(firstData)
+  const [data, setData] = useState(firstData)
+
+  async function handleDelete (myCardId) {
+    //post to backend to delete that post that a user was created
+    
+    const data = await fetch(
+      `https://backend-soc.herokuapp.com/tutorials/${myCardId}`,
+      {
+        method: 'DELETE',
+     
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+    const response = await data.json()
+    console.log(response)
+    setData(await fetch(
+      `https://backend-soc.herokuapp.com/tutorials`,
+    ).then((r) => r.json()))
+   
+  }
+  
 
   return (
     <div className="mt-5">
@@ -44,18 +68,19 @@ const Profile = ({user,data}) => {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {
             data
-              .filter((myCard) => myCard.creator === user?.sub)
-              .map((data, index) => (
+              .filter((myCard) => myCard.creator === user?.given_name)
+              .map((myCard, index) => (
                 <div key={index} className="m-2">
                   <Card
                     user={user}
-                    imageUrl={data.imageUrl}
-                    title={data.title}
-                    materials={data.materials}
-                    likes={data.likes}
-                    date={data.createdAt}
-                    id={data._id}
+                    imageUrl={myCard.imageUrl}
+                    title={myCard.title}
+                    materials={myCard.materials}
+                    likes={myCard.likes}
+                    date={myCard.createdAt}
+                    id={myCard._id}
                   />
+                  <button onClick={() => {handleDelete(myCard._id)}}>Delete</button>
                 </div>
               ))}
         </div>
@@ -65,13 +90,13 @@ const Profile = ({user,data}) => {
 }
 
 export const getServerSideProps = async () => {
-  const data = await fetch(
+  const firstData = await fetch(
     `https://backend-soc.herokuapp.com/tutorials`,
   ).then((r) => r.json())
 
   return {
     props: {
-      data,
+      firstData,
     },
   }
 }
