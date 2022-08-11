@@ -4,7 +4,7 @@ import { useFetchUser } from '../lib/user'
 export default function CreateTutorials({ user }) {
   return (
 
-    <div>
+    <div className="h-screen ">
       <Form user={user}/>
     </div>
   );

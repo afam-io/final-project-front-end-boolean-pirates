@@ -78,7 +78,7 @@ export default function Form({ user }) {
                               htmlFor="FormTitle"
                               className="alignContent: text-center block text-lg font-semibold font-sans text-green-backgroundtext"
                             >
-                              Upload Tutorial Form
+                              Upload Tutorial
                             </label>
                           </div>
                           <label
