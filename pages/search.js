@@ -104,7 +104,7 @@ export default function Tutorials({ data, user }) {
             {/* media query which shows different amount of cards on different screen sizes */}
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Filters the first 10 results before mapping */}
-              {filteredData.filter((item, index) => index < 10).map((data, index) => (
+              {filteredData.filter((item, index) => index < 12).map((data, index) => (
                 <div
                   key={index}
                   className="m-2"
