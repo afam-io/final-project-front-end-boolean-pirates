@@ -119,6 +119,7 @@ export default function Tutorials({ data, user }) {
                     likes={data.likes}
                     date={data.createdAt}
                     id={data._id}
+                    creatorImageUrl={data.favourites[0]}
                   />
                 </div>
               ))}

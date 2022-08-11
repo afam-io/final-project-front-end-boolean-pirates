@@ -3,29 +3,30 @@ import Image from 'next/image'
 import Card from '../components/Card'
 import { useState } from 'react'
 
-const Profile = ({user,firstData}) => {
+const Profile = ({ user, firstData }) => {
   const [data, setData] = useState(firstData)
 
-  async function handleDelete (myCardId) {
+  async function handleDelete(myCardId) {
     //post to backend to delete that post that a user was created
-    
+
     const data = await fetch(
       `https://backend-soc.herokuapp.com/tutorials/${myCardId}`,
       {
         method: 'DELETE',
-     
+
         headers: {
           'Content-Type': 'application/json',
         },
       },
     )
     const response = await data.json()
-    setData(await fetch(
-      `https://backend-soc.herokuapp.com/tutorials`,
-    ).then((r) => r.json()))
-   
+    setData(
+      await fetch(`https://backend-soc.herokuapp.com/tutorials`).then((r) =>
+        r.json(),
+      ),
+    )
   }
-  
+
   return (
     <div className="mt-5">
       <div>
@@ -61,23 +62,32 @@ const Profile = ({user,firstData}) => {
       <div className="flex items-center justify-center">
         {/* media query which shows different amount of cards on different screen sizes */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {
-            data
-              .filter((myCard) => myCard.creator === user?.name)
-              .map((data, index) => (
-                <div key={index} className="m-2">
-                  <Card
-                    user={user}
-                    imageUrl={myCard.imageUrl}
-                    title={myCard.title}
-                    materials={myCard.materials}
-                    likes={myCard.likes}
-                    date={myCard.createdAt}
-                    id={myCard._id}
-                  />
-                  <button onClick={() => {handleDelete(myCard._id)}}>Delete</button>
+          {data
+            .filter((myCard) => myCard.creator === user?.name)
+            .map((data, index) => (
+              <div key={index} className="m-2">
+                <Card
+                  user={user}
+                  imageUrl={data.imageUrl}
+                  title={data.title}
+                  materials={data.materials}
+                  likes={data.likes}
+                  date={data.createdAt}
+                  id={data._id}
+                  creator={data.creator}
+                  creatorImageUrl={data.favourites[0]}
+                />
+                <div className="bg-red-500 hover:bg-red-700 text-white text-center px-4 mt-2 rounded">
+                  <button
+                    onClick={() => {
+                      handleDelete(data._id)
+                    }}
+                  >
+                    Delete
+                  </button>
                 </div>
-              ))}
+              </div>
+            ))}
         </div>
       </div>
     </div>

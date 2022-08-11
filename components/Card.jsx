@@ -13,7 +13,7 @@ const Card = ({
   date,
   id,
   user,
-  creator,
+  creatorImageUrl,
 }) => {
   const initialLikeState = user && likes.includes(user.sub)
   const [liked, setLiked] = useState(initialLikeState)
@@ -41,7 +41,7 @@ const Card = ({
 
   return (
     <div>
-        <div className="max-w-sm rounded overflow-hidden shadow-lg hover:bg-green-100 hover:cursor-pointer">
+      <div className="max-w-sm rounded overflow-hidden shadow-lg hover:bg-green-100 hover:cursor-pointer">
         <Link href={{ pathname: '/specifictutorial', query: { cardId: id } }}>
           <div>
             <Image
@@ -71,22 +71,17 @@ const Card = ({
         <div className="flex display justify-between px-4 pt-2">
           <div>
             <div className="flex display">
-              <div>
               <Image
                 className="inline object-cover w-3 h-3 rounded-full"
-                src={user?.picture}
+                src={creatorImageUrl} 
                 alt={user?.sub}
                 height="35%"
                 width="35%"
               />
+              <div className="text-gray-700 ml-2 mt-2">
+                {moment(date).fromNow()}
               </div>
-              <div className="pt-2 pl-1">{creator}</div>
             </div>
-           
-
-            <p className="text-gray-700 ml-10 my-1">
-              {moment(date).fromNow()}
-            </p>
           </div>
 
           <div className="flex display">
