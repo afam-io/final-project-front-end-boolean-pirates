@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <nav className="bg-green-backgroundtext p-1 mt-8">
+    <nav className="bg-green-backgroundtext p-1 mt-8 ">
       <div className="flex justify-between text-white ">
         <div className="flex justify-content ml-6 pt-1">
         <AiOutlineCopyrightCircle className="pt-1"/>
