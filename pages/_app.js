@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout user={user} loading={loading}>
     <Head>
+    <title>Redeem</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     </Head>
      <Component {...pageProps} user={user} loading={loading} />
