@@ -32,6 +32,6 @@ yarn-error.log*
 .vercel
 
 # VsCode settings
-.vscode
 
 
+config.bat

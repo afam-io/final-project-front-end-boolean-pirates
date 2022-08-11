@@ -12,7 +12,7 @@ import {
 } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import { BsHandThumbsUp } from 'react-icons/bs'
 
 const Header = ({ user, loading }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,15 +70,15 @@ const Header = ({ user, loading }) => {
                       </li>
                     </Link>
                     {/* wrapper for individual mobile link */}
-                    <Link href='/tutorials'>
+                    <Link href='/search'>
                       <li className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-6 w-6 pl-3 text-3xl mb-1'>
-                          <AiOutlineRead />
+                          <AiOutlineSearch />
                         </div>
-                        {(router.pathname) === '/tutorials' ?
-                          <p className="underline">Tutorials</p>
+                        {(router.pathname) === '/search' ?
+                          <p className="underline">Search</p>
                           :
-                          <p>Tutorials</p>}
+                          <p>Search</p>}
                       </li>
                     </Link>
                     {/* wrapper for individual mobile link */}
@@ -124,13 +124,13 @@ const Header = ({ user, loading }) => {
                           <p >Home</p>}
                       </li>
                     </Link>
-                    <Link href='/tutorials'>
+                    <Link href='/search'>
                       <li
                         className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
-                        {(router.pathname) === '/tutorials' ?
-                          <p className="underline">Tutorials</p>
+                        {(router.pathname) === '/search' ?
+                          <p className="underline">Search</p>
                           :
-                          <p >Tutorials</p>}
+                          <p >Search</p>}
                       </li>
                     </Link>
                     {(user === null) ?
@@ -153,15 +153,6 @@ const Header = ({ user, loading }) => {
                             <p >Create</p>}
                         </li>
                       </Link>}
-                    <Link href='/search'>
-                      <li
-                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
-                        {(router.pathname) === '/search' ?
-                          <p className="underline">Search</p>
-                          :
-                          <p >Search</p>}
-                      </li>
-                    </Link>
                     {(user === null) ?
                       <Link href='/api/login'>
                         <li
@@ -191,7 +182,7 @@ const Header = ({ user, loading }) => {
                           <p >Favourites</p>}
                       </li>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/events'>
                       <li
                         href='#'
                         className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
@@ -269,17 +260,6 @@ const Header = ({ user, loading }) => {
             {(ref) => (
               <div className='md:hidden' id='mobile-menu '>
                 <div ref={ref} className='px-2 pt-2 space-y-1 sm:px-3'>
-                  <Link href='/search'>
-                    <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                      <div className='block h-5 w-5 ml-6 text-3xl mb-2'>
-                        <AiOutlineSearch />
-                      </div>
-                      {(router.pathname) === '/search' ?
-                        <p className="underline ml-4">Search</p>
-                        :
-                        <p className="ml-4">Search</p>}
-                    </li>
-                  </Link>
                   {(user === null) ?
                     <Link href='/api/login'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
@@ -308,7 +288,7 @@ const Header = ({ user, loading }) => {
                     <Link href='/api/login'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
-                          <AiOutlineHeart />
+                          <BsHandThumbsUp />
                         </div>
                         {(router.pathname) === '/favourites' ?
                         <p className="underline">Favourites</p>
@@ -320,7 +300,7 @@ const Header = ({ user, loading }) => {
                     <Link href='/favourites'>
                       <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
-                          <AiOutlineHeart />
+                          <BsHandThumbsUp />
                         </div>
                         {(router.pathname) === '/favourites' ?
                         <p className="underline">Favourites</p>
