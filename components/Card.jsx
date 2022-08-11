@@ -13,9 +13,8 @@ const Card = ({
   date,
   id,
   user,
-  creator
+  creator,
 }) => {
-  // mock data used to test layout
   const initialLikeState = user && likes.includes(user.sub)
   const [liked, setLiked] = useState(initialLikeState)
   const [likeCount, setLikeCount] = useState(likes.length)
@@ -69,10 +68,27 @@ const Card = ({
           </div>
         </Link>
 
-        <div className="flex display justify-between px-4 pt-1">
-          <p className="text-gray-700 text-base mt-2">
-            {moment(date).fromNow()}
-          </p>
+        <div className="flex display justify-between px-4 pt-2">
+          <div>
+            <div className="flex display">
+              <div>
+              <Image
+                className="inline object-cover w-3 h-3 rounded-full"
+                src={user?.picture}
+                alt={user?.sub}
+                height="35%"
+                width="35%"
+              />
+              </div>
+              <div className="pt-2 pl-1">{creator}</div>
+            </div>
+           
+
+            <p className="text-gray-700 ml-10 my-1">
+              {moment(date).fromNow()}
+            </p>
+          </div>
+
           <div className="flex display">
             {user === null ? (
               <p className="pt-1 pr-1 text-2xl">

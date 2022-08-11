@@ -1,5 +1,6 @@
 import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function SpecificTutorialCard({
   cardId,
@@ -11,6 +12,7 @@ export default function SpecificTutorialCard({
   instructions,
   user,
   comments,
+  creator
 }) {
   //Fuctions for Like thumb on the card
   const initialLikeState = user && likes.includes(user.sub)
@@ -55,7 +57,13 @@ export default function SpecificTutorialCard({
       {
         method: 'PATCH',
         body: JSON.stringify({
-          addComments: commentInput + ' - ' + 'posted by ' + user.given_name + ' at ' + date.toLocaleString()
+          addComments:
+            commentInput +
+            ' - ' +
+            'posted by ' +
+            user.given_name +
+            ' at ' +
+            date.toLocaleString(),
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +72,14 @@ export default function SpecificTutorialCard({
     )
     const response = await data.json()
     setCommentInput('')
-    setComment(commentInput + ' - ' + 'posted by ' + user.given_name + ' at ' + date.toLocaleString())
+    setComment(
+      commentInput +
+        ' - ' +
+        'posted by ' +
+        user.given_name +
+        ' at ' +
+        date.toLocaleString(),
+    )
   }
 
   const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/')
@@ -84,10 +99,25 @@ export default function SpecificTutorialCard({
 
       {/*Tutorial Card*/}
       <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+       
+
         <div className="flex justify-between">
           <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
             {title}
           </h1>
+        </div>
+
+        <div className="pt-3 flex display ">
+          <div>
+            <Image
+              className="inline object-cover w-3 h-3 rounded-full"
+              src={user?.picture}
+              alt={user?.sub}
+              height="35%"
+              width="35%"
+            />
+          </div>
+          <div className="pt-2 pl-1">{creator}</div>
         </div>
 
         <div className="flex justify-between">
@@ -175,21 +205,30 @@ export default function SpecificTutorialCard({
           </form>
         </div>
       )}
-            {/* Comment card */}
-            <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-            <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext font-bold">Comments</h2>
+      {/* Comment card */}
+      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+        <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext font-bold">
+          Comments
+        </h2>
         <div className="px-4 pt-4 pb-2">
-        {comment ? <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-           <p>{comment}</p> 
-          </div> :""}
-          {comments.slice(0).reverse().map((singleComment, index) => (
-            <div
-              className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
-              key={index}
-            >
-              {singleComment}
+          {comment ? (
+            <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+              <p>{comment}</p>
             </div>
-          ))}
+          ) : (
+            ''
+          )}
+          {comments
+            .slice(0)
+            .reverse()
+            .map((singleComment, index) => (
+              <div
+                className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
+                key={index}
+              >
+                {singleComment}
+              </div>
+            ))}
         </div>
       </div>
     </div>
