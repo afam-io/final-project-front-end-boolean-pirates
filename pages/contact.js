@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <div className="pt-7">
+        <div className="pt-7 h-screen">
         <h1>Contact : Booleanpirates@gmail.com </h1>
         <p> Github details here perhaps</p>
         </div>
