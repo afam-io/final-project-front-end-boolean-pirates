@@ -12,7 +12,8 @@ export default function SpecificTutorialCard({
   instructions,
   user,
   comments,
-  creator
+  creator,
+  creatorImageUrl,
 }) {
   //Fuctions for Like thumb on the card
   const initialLikeState = user && likes.includes(user.sub)
@@ -63,7 +64,10 @@ export default function SpecificTutorialCard({
             'posted by ' +
             user.given_name +
             ' at ' +
-            date.toLocaleString(),
+            date.toLocaleString() +
+            // delimiter
+            '#£)*$%^!!%' +
+            user.picture,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -99,8 +103,6 @@ export default function SpecificTutorialCard({
 
       {/*Tutorial Card*/}
       <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-       
-
         <div className="flex justify-between">
           <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
             {title}
@@ -111,13 +113,13 @@ export default function SpecificTutorialCard({
           <div>
             <Image
               className="inline object-cover w-3 h-3 rounded-full"
-              src={user?.picture}
-              alt={user?.sub}
+              src={creatorImageUrl}
+              alt={creator}
               height="35%"
               width="35%"
             />
           </div>
-          <div className="pt-2 pl-1">{creator}</div>
+          <div className="pt-2 pl-2">{creator}</div>
         </div>
 
         <div className="flex justify-between">
@@ -213,7 +215,13 @@ export default function SpecificTutorialCard({
         <div className="px-4 pt-4 pb-2">
           {comment ? (
             <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-              <p>{comment}</p>
+            <Image
+                  className="inline object-cover w-3 h-3 rounded-full"
+                  src={user.picture}
+                  height="35%"
+                  width="35%"
+                />
+              {comment}
             </div>
           ) : (
             ''
@@ -226,7 +234,13 @@ export default function SpecificTutorialCard({
                 className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
                 key={index}
               >
-                {singleComment}
+                <Image
+                  className="inline object-cover w-3 h-3 rounded-full"
+                  src={singleComment.split('#£)*$%^!!%')[1]}
+                  height="35%"
+                  width="35%"
+                />
+                {singleComment.split('#£)*$%^!!%')[0]}
               </div>
             ))}
         </div>
