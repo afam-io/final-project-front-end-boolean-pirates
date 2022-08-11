@@ -37,7 +37,7 @@ export default function Home({ data, user }) {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-1">
           {/* Filters the first 6 results before mapping */}
           {data
-            .filter((item, index) => index < 6)
+            .filter((item, index) => index < 8)
             .map((data, index) => (
               <div key={index} className="m-2">
                 <Card
