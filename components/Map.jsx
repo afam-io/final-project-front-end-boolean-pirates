@@ -12,7 +12,6 @@ export default function Map() {
 
   return (
     <div>
-      (
           <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: "50vh", width: "100%" }}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
