@@ -1,4 +1,5 @@
 import SpecificTutorialCard from '../components/SpecificTutorialCard'
+
 export default function SpecificTutorial({ data, cardId, user }) {
   return (
     <div className="mt-10">
@@ -16,6 +17,8 @@ export default function SpecificTutorial({ data, cardId, user }) {
               materials={card.materials}
               instructions={card.instructions}
               comments={card.comments}
+              creator={card.creator}
+              
             />
           </div>
         ))}

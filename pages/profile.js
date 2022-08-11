@@ -2,7 +2,29 @@ import React from 'react'
 import Image from 'next/image'
 import Card from '../components/Card'
 
-const Profile = ({user,data}) => {
+const Profile = ({user,firstData}) => {
+  const [data, setData] = useState(firstData)
+
+  async function handleDelete (myCardId) {
+    //post to backend to delete that post that a user was created
+    
+    const data = await fetch(
+      `https://backend-soc.herokuapp.com/tutorials/${myCardId}`,
+      {
+        method: 'DELETE',
+     
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+    const response = await data.json()
+    setData(await fetch(
+      `https://backend-soc.herokuapp.com/tutorials`,
+    ).then((r) => r.json()))
+   
+  }
+  
   return (
     <div className="mt-5">
       <div>
@@ -45,13 +67,14 @@ const Profile = ({user,data}) => {
                 <div key={index} className="m-2">
                   <Card
                     user={user}
-                    imageUrl={data.imageUrl}
-                    title={data.title}
-                    materials={data.materials}
-                    likes={data.likes}
-                    date={data.createdAt}
-                    id={data._id}
+                    imageUrl={myCard.imageUrl}
+                    title={myCard.title}
+                    materials={myCard.materials}
+                    likes={myCard.likes}
+                    date={myCard.createdAt}
+                    id={myCard._id}
                   />
+                  <button onClick={() => {handleDelete(myCard._id)}}>Delete</button>
                 </div>
               ))}
         </div>
@@ -61,13 +84,13 @@ const Profile = ({user,data}) => {
 }
 
 export const getServerSideProps = async () => {
-  const data = await fetch(
+  const firstData = await fetch(
     `https://backend-soc.herokuapp.com/tutorials`,
   ).then((r) => r.json())
 
   return {
     props: {
-      data,
+      firstData,
     },
   }
 }
