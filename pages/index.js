@@ -6,31 +6,37 @@ export default function Home( { data, user } ) {
   
   return (
     //whole layout
-    <div >
+    <div>
       {/* wrapper for the image and text */}
-      <div className='relative justify-self-center w-screen md:min-w-fit'>
+      <div className='relative justify-self-center w-full h-80 md:min-w-fit'>
         {/* TODO fix the white space on full screen on the left */}
         <Image
           src='/images/full-screen-hero-image.jpg'
-          width="100%"
-          height="40.6%"
-          layout="responsive"
+          layout="fill"
+          objectFit="cover"
           alt='main-image'
-
         />
         {/* card */}
-        <div className='bottom-8 left-0 right-0 px-4 py-2 p-4 bg-gray-300 opacity-70'>
-          <h1 className='sm:text-3xl text-black-300'>
+        <div className='lg:block absolute text-center bottom-4 left-0 right-0 px-4 py-2 p-4 bg-gray-300 opacity-70 w-10/12 mx-auto rounded-lg'>
+          <h1 className='text-xl lg:text-3xl text-green-backgroundtext'>
             From wind turbines to window farms, find your next project with
             Redeem.
           </h1>
         </div>
       </div>
+      {/* this is currently unused */}
+      <div className='hidden mt-3 text-center bottom-4 left-0 right-0 px-4 py-2 p-4 bg-gray-300 opacity-70 w-10/12 mx-auto rounded-lg'>
+          <h1 className='text-xl lg:text-3xl text-green-backgroundtext'>
+            From wind turbines to window farms, find your next project with
+            Redeem.
+          </h1>
+        </div>
       {/* card holder that aligns the cards to center */}
-      <div className='flex items-center justify-center'>
+      <div className='flex items-center justify-center mt-2'>
         {/* media query which shows different amount of cards on different screen sizes */}
-        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-          {data.map((data, index) => (
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-1'>
+          {/* Filters the first 6 results before mapping */}
+          {data.filter((item, index) => index < 6).map((data, index) => (
             <div key={index} className='m-2'>
               <Card
                 user={user}

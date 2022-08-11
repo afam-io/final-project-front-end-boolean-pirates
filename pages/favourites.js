@@ -31,7 +31,6 @@ export default function Tutorials({ data, user }) {
                   key={index}
                   className="m-2"
                   onClick={() => {
-                    console.log(data._id);
                   }}
                 >
                   <Card
