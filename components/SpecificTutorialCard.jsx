@@ -214,7 +214,7 @@ export default function SpecificTutorialCard({
         </h2>
         <div className="px-4 pt-4 pb-2">
           {comment ? (
-            <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+            <div className=" p-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
             <Image
                   className="inline object-cover w-3 h-3 rounded-full"
                   src={user.picture}

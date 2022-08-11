@@ -77,7 +77,7 @@ const Profile = ({ user, firstData }) => {
                   creator={data.creator}
                   creatorImageUrl={data.favourites[0]}
                 />
-                <div className="bg-red-500 hover:bg-red-700 text-white text-center font-bold px-4 mt-2 rounded">
+                <div className="bg-red-500 hover:bg-red-700 text-white text-center px-4 mt-2 rounded">
                   <button
                     onClick={() => {
                       handleDelete(data._id)
