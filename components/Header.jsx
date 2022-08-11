@@ -3,11 +3,9 @@ import { Transition } from '@headlessui/react';
 import Image from 'next/image';
 import {
   AiOutlineHome,
-  AiOutlineRead,
   AiOutlinePlus,
   AiOutlineSearch,
   AiOutlineUser,
-  AiOutlineHeart,
   AiOutlineContacts,
 } from 'react-icons/ai';
 import Link from 'next/link';
@@ -39,11 +37,11 @@ const Header = ({ user, loading }) => {
           {!loading &&
             user ?
             <button className="float-right bg-white-cardbackground hover:bg-gray-300 font-medium text-gray-700 py-0.9 px-3 m-3.5 border border-gray-300 rounded-3xl">
-            <Link href="/api/logout">Logout</Link>
+              <Link href="/api/logout">Logout</Link>
             </button>
             :
             <button className="float-right bg-white-cardbackground hover:bg-gray-300 font-medium text-gray-700 py-0.9 px-3 m-3.5 border border-gray-300 rounded-3xl">
-            <Link href="/api/login">Login</Link>
+              <Link href="/api/login">Login</Link>
             </button>
           }
           {/* wrapper for the whole navbar */}
@@ -112,9 +110,7 @@ const Header = ({ user, loading }) => {
                 <div className='hidden md:block '>
                   {/* wrapper for desktop view middle link items */}
                   {/* TODO need to space out these links for the mobile site */}
-
                   <div className='flex px-20 justify-around max-w-full w-screen '>
-
                     <Link href='/'>
                       <li
                         className='hover:bg-green-700  text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
@@ -173,20 +169,31 @@ const Header = ({ user, loading }) => {
                             <p >Profile</p>}
                         </li>
                       </Link>}
-                    <Link href='/favourites'>
-                      <li
-                        className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
-                        {(router.pathname) === '/favourites' ?
-                          <p className="underline">Favourites</p>
-                          :
-                          <p >Favourites</p>}
-                      </li>
-                    </Link>
+                    {(user === null) ?
+                      <Link href='/api/login'>
+                        <li
+                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
+                          {(router.pathname) === '/favourites' ?
+                            <p className="underline">Favourites</p>
+                            :
+                            <p >Favourites</p>}
+                        </li>
+                      </Link>
+                      :
+                      <Link href='/favourites'>
+                        <li
+                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
+                          {(router.pathname) === '/favourites' ?
+                            <p className="underline">Favourites</p>
+                            :
+                            <p >Favourites</p>}
+                        </li>
+                      </Link>}
                     <Link href='/events'>
                       <li
                         href='#'
                         className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
-                          {(router.pathname) === '/events' ?
+                        {(router.pathname) === '/events' ?
                           <p className="underline">Events</p>
                           :
                           <p >Events</p>}
@@ -203,7 +210,7 @@ const Header = ({ user, loading }) => {
                   onClick={() => setIsOpen(!isOpen)}
                   type='button'
 
-                  className='inline-flex items-center justify-center pt-1 h-12 w-19.8 px-2 rounded-md text-white hover:text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 hover:bg-green-700'
+                  className='inline-flex items-center justify-center pt-1 h-13 w-19.8 px-2 rounded-md text-white hover:text-white  focus:outline-none  hover:bg-green-700'
 
                   aria-controls='mobile-menu'
                   aria-expanded='false'>
@@ -241,7 +248,6 @@ const Header = ({ user, loading }) => {
                       </svg>
                     )}
                     <p className="text-white rounded-md text-sm font-medium">
-
                       More
                     </p>
                   </div>
@@ -261,66 +267,66 @@ const Header = ({ user, loading }) => {
               <div className='md:hidden' id='mobile-menu '>
                 <div ref={ref} className='px-2 pt-2 space-y-1 sm:px-3'>
                   {(user === null) ?
-                    <Link href='/api/login'>
-                      <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                    <Link href='/api/login' >
+                      <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <AiOutlineUser />
                         </div>
                         {(router.pathname) === '/profile' ?
-                        <p className="underline ml-4">Profile</p>
-                        :
-                        <p className="ml-4">Profile</p>}
+                          <p className="underline ml-4">Profile</p>
+                          :
+                          <p className="ml-4">Profile</p>}
                       </li>
                     </Link>
                     :
-                    <Link href='/profile'>
-                      <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                    <Link href='/profile' >
+                      <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <AiOutlineUser />
                         </div>
                         {(router.pathname) === '/profile' ?
-                        <p className="underline ml-4">Profile</p>
-                        :
-                        <p className="ml-4">Profile</p>}
+                          <p className="underline ml-4">Profile</p>
+                          :
+                          <p className="ml-4">Profile</p>}
                       </li>
                     </Link>}
-                    {(user === null) ?
+                  {(user === null) ?
                     <Link href='/api/login'>
-                      <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                      <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <BsHandThumbsUp />
                         </div>
                         {(router.pathname) === '/favourites' ?
-                        <p className="underline">Favourites</p>
-                        :
-                        <p>Favourites</p>}
+                          <p className="underline">Favourites</p>
+                          :
+                          <p>Favourites</p>}
                       </li>
                     </Link>
                     :
                     <Link href='/favourites'>
-                      <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                      <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <BsHandThumbsUp />
                         </div>
                         {(router.pathname) === '/favourites' ?
-                        <p className="underline">Favourites</p>
-                        :
-                        <p >Favourites</p>}
+                          <p className="underline">Favourites</p>
+                          :
+                          <p >Favourites</p>}
                       </li>
                     </Link>}
                   <Link href='/events'>
-                      <li className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 ml-6 text-3xl mb-2'>
-                          <AiOutlineContacts/>
-                        </div>
-                        {(router.pathname) === '/events' ?
+                    <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
+                      <div className='block h-5 w-5 ml-6 text-3xl mb-2'>
+                        <AiOutlineContacts />
+                      </div>
+                      {(router.pathname) === '/events' ?
                         <p className="underline ml-4">Events</p>
                         :
                         <p className="ml-4">Events</p>}
-                      </li>
-                    </Link>
-                    </div>
+                    </li>
+                  </Link>
                 </div>
+              </div>
             )}
           </Transition>
         </nav>
