@@ -74,7 +74,7 @@ const Card = ({
               <Image
                 className="inline object-cover w-3 h-3 rounded-full"
                 src={creatorImageUrl} 
-                alt={user?.sub}
+                alt={creatorImageUrl}
                 height="35%"
                 width="35%"
               />
