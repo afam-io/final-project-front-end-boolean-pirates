@@ -208,7 +208,7 @@ export default function SpecificTutorialCard({
         </div>
       )}
       {/* Comment card */}
-      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md w-full md:w-144">
         <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext font-bold">
           Comments
         </h2>
@@ -232,7 +232,7 @@ export default function SpecificTutorialCard({
             .reverse()
             .map((singleComment, index) => (
               <div
-                className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
+                className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md max-w-2xl"
                 key={index}
               >
                 <Image
