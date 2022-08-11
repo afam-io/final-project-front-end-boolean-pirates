@@ -23,7 +23,6 @@ function Cloudinary () {
         body: formData
         });
         const response = await data.json()
-        console.log(response)
        
 
         // Axios.post(
@@ -42,7 +41,6 @@ function Cloudinary () {
             type="file"
              onChange={(event) => {
                 setImageSelected(event.target.files[0]);
-                console.log(event.target.files[0])
                 }}
 
             />

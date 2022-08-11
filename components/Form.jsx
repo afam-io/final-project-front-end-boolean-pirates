@@ -15,7 +15,6 @@ export default function Form({ user }) {
   //handles the submits on the form post request
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData.imageUrl);
     if(formData.imageUrl) {
     const data = await fetch('https://backend-soc.herokuapp.com/tutorials', {
       method: 'POST',
@@ -24,7 +23,6 @@ export default function Form({ user }) {
         'Content-Type':'application/json'
       },
       });
-      console.log(formData)
       const response = await data.json()
       const id = response._id
       router.push(`/specifictutorial?cardId=${id}`)}
@@ -53,7 +51,6 @@ export default function Form({ user }) {
   //function that selects the image
   const selectImage = (e) => {
     setImageSelected(e.target.files[0]);
-    console.log(e.target.files[0]);
   };
 
   return (

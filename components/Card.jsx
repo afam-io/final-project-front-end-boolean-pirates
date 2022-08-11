@@ -35,14 +35,13 @@ const Card = ({
       },
     )
     const response = await data.json()
-    console.log(response)
     setLiked(response.likes.includes(user.sub))
     setLikeCount(response.likes.length)
   }
 
   return (
     <div>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg hover:bg-green-100">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg hover:bg-green-100 hover:cursor-pointer">
         <Link href={{ pathname: '/specifictutorial', query: { cardId: id } }}>
           <div>
             <Image

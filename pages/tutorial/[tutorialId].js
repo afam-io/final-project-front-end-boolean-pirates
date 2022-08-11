@@ -4,7 +4,6 @@ import SpecificTutorialCard from "../../components/SpecificTutorialCard";
 function SpecificTutorial({ data }) {
   // const router = useRouter();
   // const { SpecificTutorial } = router.query;
-  console.log(data);
   return (
     <>
       {/* <h1>Title: {SpecificTutorial} </h1>{' '} */}
