@@ -6,6 +6,8 @@ const DynamicComponentWithNoSSR = dynamic(() => import( '../components/Map'), {
 
 export default function MapPage() {
   return (
+    <div className="mt-5 h-screen">
   <DynamicComponentWithNoSSR />
+  </div>
   )
 }
