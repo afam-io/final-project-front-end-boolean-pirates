@@ -6,5 +6,6 @@
     "hotspot",
     "paraboloidal",
     "sattelite"
-  ]
+  ],
+  "eslint.packageManager": "npm"
 }
