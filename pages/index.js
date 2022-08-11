@@ -40,6 +40,7 @@ export default function Home( { data, user } ) {
                 likes={data.likes}
                 date={data.createdAt}
                 id={data._id}
+                creator={data.creator}
              />
             </div>
           ))}
