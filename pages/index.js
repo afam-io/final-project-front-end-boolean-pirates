@@ -11,7 +11,7 @@ export default function Home({ data, user }) {
       <div className="relative justify-self-center w-full h-80 md:min-w-fit">
         {/* TODO fix the white space on full screen on the left */}
         <Image
-          src="/images/up-cycling1"
+          src="/images/full-screen-hero-image.jpg"
           layout="fill"
           objectFit="cover"
           alt="main-image"
