@@ -29,7 +29,7 @@ const Profile = ({ user, firstData }) => {
   }
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 h-screen">
       <div>
         <div className="shadow-lg">
           <div className="flex justify-center py-10 bg-gradient-to-r from-sky-200 via-teal-200 to-sky-200">
