@@ -1,8 +1,10 @@
 import Card from "../components/Card";
 import Image from "next/image";
 import {useEffect, useState} from "react"
+import { useUser } from '@auth0/nextjs-auth0';
 
-export default function Tutorials({ data, user }) {
+export default function Tutorials({ data }) {
+  const { user, error, isLoading } = useUser();
 
  
   const [search, setSearch] = useState("");

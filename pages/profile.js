@@ -1,11 +1,13 @@
-import React from "react";
-import Image from "next/image";
-import Card from "../components/Card";
-import { useState } from "react";
-import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import React from 'react'
+import Image from 'next/image'
+import Card from '../components/Card'
+import { useState } from 'react'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { useUser } from '@auth0/nextjs-auth0';
 
-const Profile = ({ user, firstData }) => {
-  const [data, setData] = useState(firstData);
+const Profile = ({ firstData }) => {
+  const [data, setData] = useState(firstData)
+  const { user, error, isLoading } = useUser();
 
   async function handleDelete(myCardId) {
     //post to backend to delete that post that a user was created
