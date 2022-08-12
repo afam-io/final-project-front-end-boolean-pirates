@@ -1,6 +1,8 @@
 import SpecificTutorialCard from '../components/SpecificTutorialCard'
+import { useUser } from '@auth0/nextjs-auth0';
 
-export default function SpecificTutorial({ data, cardId, user }) {
+export default function SpecificTutorial({ data, cardId }) {
+  const { user, error, isLoading } = useUser();
   return (
     <div className="mt-10">
       {data
