@@ -5,14 +5,14 @@ import { UserProvider } from '@auth0/nextjs-auth0';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
     <UserProvider>
+    <Layout>
     <Head>
     <title>Redeem</title>
     </Head>
      <Component {...pageProps}/>
-     </UserProvider>
     </Layout>
+    </UserProvider>
   )
 }
 
