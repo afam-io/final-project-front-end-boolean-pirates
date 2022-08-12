@@ -1,8 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Redeem Front End
 
-## Getting Started
+The problem... I'm sure everyone has noticed the changes that are are going on with the world in terms of changes in weather patterns and changing temperatures. 
+the trouble being that not everyone knows what they can do about. Most of us recycle and save water but often we want to know if there is more we can do.
 
-First, run the development server:
+For our final project we developed an App for eco-minded individuals who are looking for inspiration as to how they can lessen their environmental impact in an approachable and accessible way.
+
+Our App aims to provide a platform for creators to showcase their builds, helping others to follow every step of the way and guiding users of varying ability. From wind turbines made of old car parts, to window farms made of plastic bottles.
+
+## Get Started
+
+First, clone the repository:
+
+```bash
+git clone https://github.com/afam-io/final-project-front-end-boolean-pirates.git
+
+```
+
+Create a copy of the env.local.example file and add in your credentials:
+
+```bash
+Details below
+
+```
+
+Then, install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Finally, run the development server:
 
 ```bash
 npm run dev
@@ -10,25 +39,27 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Enviroment Variables.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/auth/hello](http://localhost:3000/api/auth/hello). This endpoint can be edited in `pages/api/auth/hello.js`.
+The app currently uses Auth0 you will need to set up an account and add the credentials to the env.example file (to be completed...)
 
-The `pages/api` directory is mapped to `/api/auth/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## The Stack
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
+We used Next.js on the front end styled with TailwindCSS. (need to add Auth0)
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Tailwind CSS Docs](https://tailwindcss.com/docs/installation) - info about Tailwind.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## See the App Running on Vercel
 
-## Deploy on Vercel
+The app is deployed and running on [Vercel](https://final-project-front-end-boolean-pirates.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Authors
+- [@Afam](https://github.com/afam-io)
+- [@danielknight261](https://github.com/danielknight261)
+- [@Harri](https://github.com/HairiBeast)
+- [@Tass](https://github.com/tassanee-atsa)
+- [@Jojok](https://github.com/JojokCreator)
+- [@Musy88](https://github.com/Musy88)
