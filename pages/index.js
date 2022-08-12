@@ -11,9 +11,10 @@ export default function Home({ data, user }) {
       <div className="relative justify-self-center w-full h-80 md:min-w-fit">
         {/* TODO fix the white space on full screen on the left */}
         <Image
-          src="/images/full-screen-hero-image.jpg"
+          src="/images/Larger.jpeg"
           layout="fill"
           objectFit="cover"
+          objectPosition="center"
           alt="main-image"
         />
         {/* card */}
