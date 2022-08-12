@@ -37,11 +37,11 @@ const Header = ({ user, loading }) => {
           {!loading &&
             user ?
             <button className="float-right bg-white-cardbackground hover:bg-gray-300 font-medium text-gray-700 py-0.9 px-3 m-3.5 border border-gray-300 rounded-3xl">
-              <Link href="/api/logout">Logout</Link>
+              <Link href="/api/auth/logout">Logout</Link>
             </button>
             :
             <button className="float-right bg-white-cardbackground hover:bg-gray-300 font-medium text-gray-700 py-0.9 px-3 m-3.5 border border-gray-300 rounded-3xl">
-              <Link href="/api/login">Login</Link>
+              <Link href="/api/auth/login">Login</Link>
             </button>
           }
           {/* wrapper for the whole navbar */}
@@ -80,19 +80,6 @@ const Header = ({ user, loading }) => {
                       </li>
                     </Link>
                     {/* wrapper for individual mobile link */}
-                    {(user === null) ?
-                      <Link href='/api/login'>
-                        <li className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                          <div className='block h-6 w-6 ml-2 text-3xl mb-1'>
-                            <AiOutlinePlus />
-                          </div>
-                          {(router.pathname) === '/createtutorials' ?
-                            <p className="underline">Create</p>
-                            :
-                            <p>Create</p>}
-                        </li>
-                      </Link>
-                      :
                       <Link href='/createtutorials'>
                         <li className='block items-center justify-center sm:px-7 px-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                           <div className='block h-6 w-6 ml-2 text-3xl mb-1'>
@@ -103,7 +90,7 @@ const Header = ({ user, loading }) => {
                             :
                             <p>Create</p>}
                         </li>
-                      </Link>}
+                      </Link>
                   </div>
                 </div>
 
@@ -129,17 +116,6 @@ const Header = ({ user, loading }) => {
                           <p >Search</p>}
                       </li>
                     </Link>
-                    {(user === null) ?
-                      <Link href='/api/login'>
-                        <li
-                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
-                          {(router.pathname) === '/createtutorials' ?
-                            <p className="underline">Create</p>
-                            :
-                            <p >Create</p>}
-                        </li>
-                      </Link>
-                      :
                       <Link href='/createtutorials'>
                         <li
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
@@ -148,9 +124,9 @@ const Header = ({ user, loading }) => {
                             :
                             <p >Create</p>}
                         </li>
-                      </Link>}
+                      </Link>
                     {(user === null) ?
-                      <Link href='/api/login'>
+                      <Link href='/api/auth/login'>
                         <li
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
                           {(router.pathname) === '/profile' ?
@@ -169,17 +145,6 @@ const Header = ({ user, loading }) => {
                             <p >Profile</p>}
                         </li>
                       </Link>}
-                    {(user === null) ?
-                      <Link href='/api/login'>
-                        <li
-                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
-                          {(router.pathname) === '/favourites' ?
-                            <p className="underline">Favourites</p>
-                            :
-                            <p >Favourites</p>}
-                        </li>
-                      </Link>
-                      :
                       <Link href='/favourites'>
                         <li
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
@@ -188,7 +153,7 @@ const Header = ({ user, loading }) => {
                             :
                             <p >Favourites</p>}
                         </li>
-                      </Link>}
+                      </Link>
                     <Link href='/events'>
                       <li
                         href='#'
@@ -267,7 +232,7 @@ const Header = ({ user, loading }) => {
               <div className='md:hidden' id='mobile-menu '>
                 <div ref={ref} className='px-2 pt-2 space-y-1 sm:px-3'>
                   {(user === null) ?
-                    <Link href='/api/login' >
+                    <Link href='/api/auth/login' >
                       <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
                           <AiOutlineUser />
@@ -290,19 +255,6 @@ const Header = ({ user, loading }) => {
                           <p className="ml-4">Profile</p>}
                       </li>
                     </Link>}
-                  {(user === null) ?
-                    <Link href='/api/login'>
-                      <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
-                          <BsHandThumbsUp />
-                        </div>
-                        {(router.pathname) === '/favourites' ?
-                          <p className="underline">Favourites</p>
-                          :
-                          <p>Favourites</p>}
-                      </li>
-                    </Link>
-                    :
                     <Link href='/favourites'>
                       <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
@@ -313,7 +265,7 @@ const Header = ({ user, loading }) => {
                           :
                           <p >Favourites</p>}
                       </li>
-                    </Link>}
+                    </Link>
                   <Link href='/events'>
                     <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                       <div className='block h-5 w-5 ml-6 text-3xl mb-2'>
