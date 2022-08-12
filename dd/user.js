@@ -7,7 +7,7 @@ export async function fetchUser(cookie = '') {
   }
 
   const res = await fetch(
-    '/api/me',
+    '/api/auth/me',
     cookie
       ? {
           headers: {
@@ -56,7 +56,7 @@ export function useFetchUser(
         if (isMounted) {
           // When the user is not logged in but login is required
           if (required && !user) {
-            window.location.href = '/api/login'
+            window.location.href = '/api/auth/login'
             return
           }
           setUser(user)
