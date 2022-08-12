@@ -1,6 +1,6 @@
-import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa'
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import { FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function SpecificTutorialCard({
   cardId,
@@ -16,77 +16,77 @@ export default function SpecificTutorialCard({
   creatorImageUrl,
 }) {
   //Fuctions for Like thumb on the card
-  const initialLikeState = user && likes.includes(user.sub)
-  const [liked, setLiked] = useState(initialLikeState)
-  const [likeCount, setLikeCount] = useState(likes.length)
-  const [comment, setComment] = useState(false)
+  const initialLikeState = user && likes.includes(user.sub);
+  const [liked, setLiked] = useState(initialLikeState);
+  const [likeCount, setLikeCount] = useState(likes.length);
+  const [comment, setComment] = useState(false);
 
   useEffect(() => {
-    setLiked(user && likes.includes(user.sub))
-  }, [user, likes])
+    setLiked(user && likes.includes(user.sub));
+  }, [user, likes]);
 
   async function handleClick() {
     const data = await fetch(
       `https://backend-soc.herokuapp.com/tutorials/${cardId}/likeTutorial`,
       {
-        method: 'PATCH',
+        method: "PATCH",
         body: JSON.stringify({ userId: user.sub }),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      },
-    )
-    const response = await data.json()
-    setLiked(response.likes.includes(user.sub))
-    setLikeCount(response.likes.length)
+      }
+    );
+    const response = await data.json();
+    setLiked(response.likes.includes(user.sub));
+    setLikeCount(response.likes.length);
   }
 
   //Functions for comment section on specifictutorial.
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [commentInput, setCommentInput] = useState('')
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [commentInput, setCommentInput] = useState("");
 
   function handleChange(e) {
-    e.preventDefault()
-    setCommentInput(e.target.value)
+    e.preventDefault();
+    setCommentInput(e.target.value);
   }
 
   async function handleSubmitComment(e) {
-    e.preventDefault()
-    const date = new Date()
+    e.preventDefault();
+    const date = new Date();
     const data = await fetch(
       `https://backend-soc.herokuapp.com/tutorials/${cardId}/commentPost`,
       {
-        method: 'PATCH',
+        method: "PATCH",
         body: JSON.stringify({
           addComments:
             commentInput +
-            ' - ' +
-            'posted by ' +
+            " - " +
+            "posted by " +
             user.given_name +
-            ' at ' +
+            " at " +
             date.toLocaleString() +
             // delimiter
-            '#£)*$%^!!%' +
+            "#£)*$%^!!%" +
             user.picture,
         }),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      },
-    )
-    const response = await data.json()
-    setCommentInput('')
+      }
+    );
+    const response = await data.json();
+    setCommentInput("");
     setComment(
       commentInput +
-        ' - ' +
-        'posted by ' +
+        " - " +
+        "posted by " +
         user.given_name +
-        ' at ' +
-        date.toLocaleString(),
-    )
+        " at " +
+        date.toLocaleString()
+    );
   }
 
-  const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/')
+  const embeddedVideoUrl = videoUrl.replace("watch?v=", "embed/");
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="rounded-t-lg text-green-backgroundtext flex justify-center pt-5 w-full">
@@ -214,39 +214,39 @@ export default function SpecificTutorialCard({
         </h2>
         <div className="px-4 pt-4 pb-2">
           {comment ? (
-            <div className="  p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+            <div className="  p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md">
               <Image
                 className="inline object-cover w-3 h-3 rounded-full"
                 src={user.picture}
                 alt={creatorImageUrl}
                 height="35%"
                 width="35%"
-              />{' '}
+              />{" "}
               {comment}
             </div>
           ) : (
-            ''
+            ""
           )}
           {comments
             .slice(0)
             .reverse()
             .map((singleComment, index) => (
               <div
-                className="p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
+                className="p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md"
                 key={index}
               >
                 <Image
                   className="inline object-cover w-3 h-3 rounded-full"
-                  src={singleComment.split('#£)*$%^!!%')[1]}
+                  src={singleComment.split("#£)*$%^!!%")[1]}
                   alt={creatorImageUrl}
                   height="35%"
                   width="35%"
-                />{' '}
-                {singleComment.split('#£)*$%^!!%')[0]}
+                />{" "}
+                {singleComment.split("#£)*$%^!!%")[0]}
               </div>
             ))}
         </div>
       </div>
     </div>
-  )
+  );
 }

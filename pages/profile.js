@@ -15,23 +15,23 @@ const Profile = ({ firstData }) => {
     const data = await fetch(
       `https://backend-soc.herokuapp.com/tutorials/${myCardId}`,
       {
-        method: 'DELETE',
+        method: "DELETE",
 
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      },
-    )
-    const response = await data.json()
+      }
+    );
+    const response = await data.json();
     setData(
       await fetch(`https://backend-soc.herokuapp.com/tutorials`).then((r) =>
-        r.json(),
-      ),
-    )
+        r.json()
+      )
+    );
   }
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 h-screen">
       <div>
         <div className="shadow-lg">
           <div className="flex justify-center py-10 bg-gradient-to-r from-sky-200 via-teal-200 to-sky-200">
@@ -50,15 +50,15 @@ const Profile = ({ firstData }) => {
               {user?.name}
             </p>
             <p className="sm:text-1xl text-black-300 pb-5 text-center">
-              {' '}
+              {" "}
               Last logged in : {user?.updated_at}
             </p>
           </div>
         </div>
 
         {/* card */}
-        <div className="flex justify-center sm:text-1xl text-black-300 py-12">
-          <p className="underline text-bold">My Uploads</p>
+        <div className="flex justify-center sm:text-1xl text-lg font-semibold font-sans text-green-backgroundtext py-12">
+          <p>My Uploads</p>
         </div>
       </div>
       {/* card holder that aligns the cards to center */}
@@ -83,7 +83,7 @@ const Profile = ({ firstData }) => {
                 <div className="bg-red-500 hover:bg-red-700 text-white text-center px-4 mt-2 rounded">
                   <button
                     onClick={() => {
-                      handleDelete(data._id)
+                      handleDelete(data._id);
                     }}
                   >
                     Delete
@@ -94,20 +94,21 @@ const Profile = ({ firstData }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const getServerSideProps = withPageAuthRequired({
   getServerSideProps: async () => {
-  const firstData = await fetch(
-    `https://backend-soc.herokuapp.com/tutorials`,
-  ).then((r) => r.json())
+    const firstData = await fetch(
+      `https://backend-soc.herokuapp.com/tutorials`
+    ).then((r) => r.json());
 
-  return {
-    props: {
-      firstData},
-    }
+    return {
+      props: {
+        firstData,
+      },
+    };
   },
 });
 
-export default Profile
+export default Profile;
