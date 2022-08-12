@@ -68,7 +68,7 @@ const Card = ({
           </div>
         </Link>
 
-        <div className="flex display justify-between px-4 pt-2">
+        <div className="flex display justify-between px-4 pt-2 pb-2">
           <div>
             <div className="flex display">
               <Image

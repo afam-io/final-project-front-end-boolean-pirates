@@ -137,7 +137,7 @@ export default function SpecificTutorialCard({
             Materials:
           </h1>
 
-          <div className="flex display pt-1 pr-1 text-2xl">
+          <div className="flex display pt-1 pr-3 text-2xl">
             {user === null ? (
               <p className="pt-1 pr-1 text-2xl">
                 {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
@@ -214,14 +214,14 @@ export default function SpecificTutorialCard({
         </h2>
         <div className="px-4 pt-4 pb-2">
           {comment ? (
-            <div className=" p-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-            <Image
-                  className="inline object-cover w-3 h-3 rounded-full"
-                  src={user.picture}
-                  alt ={creatorImageUrl}
-                  height="35%"
-                  width="35%"
-                />
+            <div className="  p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
+              <Image
+                className="inline object-cover w-3 h-3 rounded-full"
+                src={user.picture}
+                alt={creatorImageUrl}
+                height="35%"
+                width="35%"
+              />{' '}
               {comment}
             </div>
           ) : (
@@ -232,16 +232,16 @@ export default function SpecificTutorialCard({
             .reverse()
             .map((singleComment, index) => (
               <div
-                className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md max-w-2xl"
+                className="p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144"
                 key={index}
               >
                 <Image
                   className="inline object-cover w-3 h-3 rounded-full"
                   src={singleComment.split('#£)*$%^!!%')[1]}
-                  alt ={creatorImageUrl}
+                  alt={creatorImageUrl}
                   height="35%"
                   width="35%"
-                />
+                />{' '}
                 {singleComment.split('#£)*$%^!!%')[0]}
               </div>
             ))}
