@@ -3,6 +3,7 @@ import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import moment from 'moment'
 import Link from 'next/link'
+import { useUser } from '@auth0/nextjs-auth0';
 
 const Card = ({
   imageUrl,
@@ -18,7 +19,7 @@ const Card = ({
   const initialLikeState = user && likes.includes(user.sub)
   const [liked, setLiked] = useState(initialLikeState)
   const [likeCount, setLikeCount] = useState(likes.length)
-
+  
   useEffect(() => {
     setLiked(user && likes.includes(user.sub))
   }, [user, likes])
@@ -85,7 +86,7 @@ const Card = ({
           </div>
 
           <div className="flex display">
-            {user === null ? (
+            {user === undefined ? (
               <p className="pt-1 pr-1 text-2xl">
                 {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
               </p>
