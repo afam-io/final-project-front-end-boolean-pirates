@@ -215,14 +215,16 @@ export default function SpecificTutorialCard({
         <div className="px-4 pt-4 pb-2">
           {comment ? (
             <div className=" p-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-            <Image
+              <div>
+                <Image
                   className="inline object-cover w-3 h-3 rounded-full"
                   src={user.picture}
-                  alt ={creatorImageUrl}
+                  alt={creatorImageUrl}
                   height="35%"
                   width="35%"
                 />
-              {comment}
+              </div>
+              <div>{comment}</div>
             </div>
           ) : (
             ''
@@ -232,17 +234,19 @@ export default function SpecificTutorialCard({
             .reverse()
             .map((singleComment, index) => (
               <div
-                className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md max-w-2xl"
+                className="p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md max-w-2xl"
                 key={index}
               >
-                <Image
-                  className="inline object-cover w-3 h-3 rounded-full"
-                  src={singleComment.split('#£)*$%^!!%')[1]}
-                  alt ={creatorImageUrl}
-                  height="35%"
-                  width="35%"
-                />
-                {singleComment.split('#£)*$%^!!%')[0]}
+                <div>
+                  <Image
+                    className="inline object-cover w-3 h-3 rounded-full"
+                    src={singleComment.split('#£)*$%^!!%')[1]}
+                    alt={creatorImageUrl}
+                    height="35%"
+                    width="35%"
+                  />
+                </div>
+                <div>{singleComment.split('#£)*$%^!!%')[0]}</div>
               </div>
             ))}
         </div>

@@ -34,7 +34,7 @@ export default function Home({ data, user }) {
       {/* card holder that aligns the cards to center */}
       <div className="flex items-center justify-center mt-2">
         {/* media query which shows different amount of cards on different screen sizes */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-1">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2 p-1 py-2">
           {/* Filters the first 6 results before mapping */}
           {data
             .filter((item, index) => index < 8)
