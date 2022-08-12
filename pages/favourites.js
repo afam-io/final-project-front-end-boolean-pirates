@@ -13,7 +13,7 @@ export default function Tutorials({ data, user }) {
 
   return (
     //whole layout
-    <div className="mt-10 h-full">
+    <div className="mt-10 h-full min-h-screen">
       <div className="flex justify-center text-lg font-semibold font-sans text-green-backgroundtext sm:text-2xl text-black-300">
         Favourites
       </div>
