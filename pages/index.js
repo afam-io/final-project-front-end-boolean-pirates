@@ -1,8 +1,9 @@
 import Card from "../components/Card";
 import Image from "next/image";
+import { useUser } from '@auth0/nextjs-auth0';
 
-export default function Home({ data, user }) {
-  console.log(data);
+export default function Home({ data }) {
+  const { user, error, isLoading } = useUser();
 
   return (
     //whole layout
