@@ -11,8 +11,10 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { BsHandThumbsUp } from 'react-icons/bs'
+import { useUser } from '@auth0/nextjs-auth0';
 
-const Header = ({ user, loading }) => {
+const Header = ({ loading }) => {
+  const { user, error, isLoading } = useUser();
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
@@ -125,17 +127,6 @@ const Header = ({ user, loading }) => {
                             <p >Create</p>}
                         </li>
                       </Link>
-                    {(user === null) ?
-                      <Link href='/api/auth/login'>
-                        <li
-                          className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
-                          {(router.pathname) === '/profile' ?
-                            <p className="underline">Profile</p>
-                            :
-                            <p >Profile</p>}
-                        </li>
-                      </Link>
-                      :
                       <Link href='/profile'>
                         <li
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
@@ -144,7 +135,7 @@ const Header = ({ user, loading }) => {
                             :
                             <p >Profile</p>}
                         </li>
-                      </Link>}
+                      </Link>
                       <Link href='/favourites'>
                         <li
                           className=' hover:bg-green-700 text-white px-3 py-2 rounded-md text-lg font-medium list-none hover:cursor-pointer'>
@@ -231,19 +222,6 @@ const Header = ({ user, loading }) => {
             {(ref) => (
               <div className='md:hidden' id='mobile-menu '>
                 <div ref={ref} className='px-2 pt-2 space-y-1 sm:px-3'>
-                  {(user === null) ?
-                    <Link href='/api/auth/login' >
-                      <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
-                        <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
-                          <AiOutlineUser />
-                        </div>
-                        {(router.pathname) === '/profile' ?
-                          <p className="underline ml-4">Profile</p>
-                          :
-                          <p className="ml-4">Profile</p>}
-                      </li>
-                    </Link>
-                    :
                     <Link href='/profile' >
                       <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
@@ -254,7 +232,7 @@ const Header = ({ user, loading }) => {
                           :
                           <p className="ml-4">Profile</p>}
                       </li>
-                    </Link>}
+                    </Link>
                     <Link href='/favourites'>
                       <li onClick={() => setIsOpen(!isOpen)} className='block items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white hover:cursor-pointer'>
                         <div className='block h-5 w-5 text-3xl mb-2 ml-6'>
