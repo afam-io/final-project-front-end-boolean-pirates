@@ -1,11 +1,14 @@
 import Form from '../components/Form';
-import { useFetchUser } from '../lib/user'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-export default function CreateTutorials({ user }) {
+export default function CreateTutorials ({ user }) {
   return (
 
-    <div className="h-screen ">
+    <div className="h-full">
       <Form user={user}/>
     </div>
   );
-}
+};
+
+
+export const getServerSideProps = withPageAuthRequired();

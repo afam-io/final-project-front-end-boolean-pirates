@@ -1,6 +1,7 @@
 import Card from "../components/Card";
 import Image from "next/image";
 import { useEffect, useState } from "react"
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 export default function Tutorials({ data, user }) {
 
@@ -51,17 +52,15 @@ export default function Tutorials({ data, user }) {
     </div>
   );
 }
+export const getServerSideProps = withPageAuthRequired({
+  getServerSideProps: async () => {
 
-export const getServerSideProps = async () => {
+    const data = await fetch(`https://redeem-soc.herokuapp.com/tutorials`).then(
+      (r) => r.json()
+    );
 
-  const data = await fetch(`https://redeem-soc.herokuapp.com/tutorials`).then(
-    (r) => r.json()
-  );
-
-  return {
-    props: {
-      data,
-    },
-
-  };
-};
+    return {
+      props: { data },
+    }
+  },
+});
