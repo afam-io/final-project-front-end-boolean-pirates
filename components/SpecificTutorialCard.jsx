@@ -138,7 +138,7 @@ export default function SpecificTutorialCard({
           </h1>
 
           <div className="flex display pt-1 pr-3 text-2xl">
-            {user === null ? (
+            {user === undefined ? (
               <p className="pt-1 pr-1 text-2xl">
                 {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
               </p>
