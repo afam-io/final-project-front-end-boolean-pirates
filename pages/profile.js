@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Card from '../components/Card'
 import { useState } from 'react'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 const Profile = ({ user, firstData }) => {
   const [data, setData] = useState(firstData)
@@ -94,16 +95,17 @@ const Profile = ({ user, firstData }) => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = withPageAuthRequired({
+  getServerSideProps: async () => {
   const firstData = await fetch(
     `https://backend-soc.herokuapp.com/tutorials`,
   ).then((r) => r.json())
 
   return {
     props: {
-      firstData,
-    },
-  }
-}
+      firstData},
+    }
+  },
+});
 
 export default Profile
