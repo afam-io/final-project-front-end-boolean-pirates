@@ -13,7 +13,7 @@ export default function Tutorials({ data, user }) {
 
   return (
     //whole layout
-    <div className="mt-10 h-screen ">
+    <div className="mt-10 h-full">
       <div className="flex justify-center text-lg font-semibold font-sans text-green-backgroundtext sm:text-2xl text-black-300">
         Favourites
       </div>
@@ -38,6 +38,7 @@ export default function Tutorials({ data, user }) {
                     likes={data.likes}
                     date={data.createdAt}
                     id={data._id}
+                    creatorImageUrl={data.favourites[0]}
                   />
                 </div>
               ))}
