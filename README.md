@@ -43,7 +43,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Enviroment Variables.
 
-The app currently uses Auth0 you will need to set up an account and add the credentials to the env.example file (to be completed...)
+The app currently uses Auth0 you will need to set up an account and add the credentials to the env.example file follow the getting started steps [here](https://github.com/auth0/nextjs-auth0). There are also a few steps you need to follow inside Auth0, the Allowed Callback and Logout URLs.
 
 ## The Stack
 
@@ -52,7 +52,7 @@ We used Next.js on the front end styled with TailwindCSS. Auth0 was used for aut
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Tailwind CSS Docs](https://tailwindcss.com/docs/installation) - info about Tailwind.
 - [Auth0 Docs](https://auth0.com/docs) - info about Auth0.
-- [Cloudianry](https://cloudinary.com/documentation)- info about Cloudianry.
+- [Cloudinary](https://cloudinary.com/documentation)- info about Cloudinary.
 
 ## See the App Running on Vercel
 
