@@ -27,12 +27,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
 
 # vercel
 .vercel
 
 # VsCode settings
-.vscode
 
 
+config.bat
