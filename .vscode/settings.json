@@ -7,5 +7,31 @@
     "paraboloidal",
     "sattelite"
   ],
-  "eslint.packageManager": "npm"
+  "eslint.packageManager": "npm",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#74b1fa",
+    "activityBar.activeBorder": "#d70866",
+    "activityBar.background": "#74b1fa",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#d70866",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "sash.hoverBorder": "#74b1fa",
+    "statusBar.background": "#4395f8",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#1279f6",
+    "statusBarItem.remoteBackground": "#4395f8",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#4395f8",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#4395f899",
+    "titleBar.inactiveForeground": "#15202b99",
+    "tab.activeBorder": "#74b1fa",
+    "panel.border": "#74b1fa",
+    "sideBar.border": "#74b1fa",
+    "statusBar.border": "#4395f8",
+    "titleBar.border": "#4395f8",
+    "commandCenter.border": "#15202b99"
+  },
+  "peacock.color": "#4395f8"
 }
