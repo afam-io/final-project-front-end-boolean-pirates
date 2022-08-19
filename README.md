@@ -47,10 +47,12 @@ The app currently uses Auth0 you will need to set up an account and add the cred
 
 ## The Stack
 
-We used Next.js on the front end styled with TailwindCSS. (need to add Auth0)
+We used Next.js on the front end styled with TailwindCSS. Auth0 was used for authentication and Cloudinary was used for linking the images uploads to the database 
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Tailwind CSS Docs](https://tailwindcss.com/docs/installation) - info about Tailwind.
+- [Auth0 Docs](https://auth0.com/docs) - info about Auth0.
+- [Cloudianry](https://cloudinary.com/documentation)- info about Cloudianry.
 
 ## See the App Running on Vercel
 
