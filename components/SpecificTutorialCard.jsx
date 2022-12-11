@@ -1,6 +1,6 @@
-import { FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function SpecificTutorialCard({
   cardId,
@@ -21,21 +21,14 @@ export default function SpecificTutorialCard({
   const [likeCount, setLikeCount] = useState(likes.length);
   const [comment, setComment] = useState(false);
 
-  useEffect(() => {
-    setLiked(user && likes.includes(user.sub));
-  }, [user, likes]);
-
   async function handleClick() {
-    const data = await fetch(
-      `https://backend-soc.herokuapp.com/tutorials/${cardId}/likeTutorial`,
-      {
-        method: "PATCH",
-        body: JSON.stringify({ userId: user.sub }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/like/${cardId}/`, {
+      method: 'PATCH',
+      body: JSON.stringify({ userId: user.sub }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     const response = await data.json();
     setLiked(response.likes.includes(user.sub));
     setLikeCount(response.likes.length);
@@ -43,7 +36,7 @@ export default function SpecificTutorialCard({
 
   //Functions for comment section on specifictutorial.
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [commentInput, setCommentInput] = useState("");
+  const [commentInput, setCommentInput] = useState('');
 
   function handleChange(e) {
     e.preventDefault();
@@ -52,153 +45,156 @@ export default function SpecificTutorialCard({
 
   async function handleSubmitComment(e) {
     e.preventDefault();
+    let username = null;
+    if (user.given_name === undefined) {
+      username = user.nickname;
+    } else {
+      username = user.given_name;
+    }
     const date = new Date();
     const data = await fetch(
-      `https://backend-soc.herokuapp.com/tutorials/${cardId}/commentPost`,
+      `${process.env.NEXT_PUBLIC_URL}/comments/${cardId}`,
       {
-        method: "PATCH",
+        method: 'PATCH',
         body: JSON.stringify({
           addComments:
             commentInput +
-            " - " +
-            "posted by " +
-            user.given_name +
-            " at " +
+            ' - ' +
+            'posted by ' +
+            username +
+            ' at ' +
             date.toLocaleString() +
             // delimiter
-            "#£)*$%^!!%" +
+            'commentor_image_url:' +
             user.picture,
         }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       }
     );
     const response = await data.json();
-    setCommentInput("");
-    setComment(
+    setCommentInput('');
+    setComment([
+      ...comment,
       commentInput +
-        " - " +
-        "posted by " +
-        user.given_name +
-        " at " +
-        date.toLocaleString()
-    );
+        ' - ' +
+        'posted by ' +
+        username +
+        ' at ' +
+        date.toLocaleString(),
+    ]);
   }
 
-  const embeddedVideoUrl = videoUrl.replace("watch?v=", "embed/");
+  const embeddedVideoUrl = videoUrl.replace('watch?v=', 'embed/');
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="rounded-t-lg text-green-backgroundtext flex justify-center pt-5 w-full">
+    <div className='flex flex-col items-center justify-center'>
+      <div className='flex justify-center w-full pt-5 rounded-t-lg text-green-backgroundtext'>
         <iframe
           src={embeddedVideoUrl}
-          title="YouTube video player"
-          width="574"
-          height="315"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+          title='YouTube video player'
+          width='574'
+          height='315'
+          frameBorder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen></iframe>
       </div>
 
       {/*Tutorial Card*/}
-      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-        <div className="flex justify-between">
-          <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans">
+      <div className='max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md md:w-144'>
+        <div className='flex justify-between'>
+          <h1 className='font-sans text-xl font-semibold text-green-backgroundtext'>
             {title}
           </h1>
         </div>
 
-        <div className="pt-3 flex display ">
+        <div className='flex pt-3 display '>
           <div>
             <Image
-              className="inline object-cover w-3 h-3 rounded-full"
+              className='inline object-cover w-3 h-3 rounded-full'
               src={creatorImageUrl}
               alt={creator}
-              height="35%"
-              width="35%"
+              height='35%'
+              width='35%'
             />
           </div>
-          <div className="pt-2 pl-2">{creator}</div>
+          <div className='pt-2 pl-2'>{creator}</div>
         </div>
 
-        <div className="flex justify-between">
-          <h1 className="text-xl text-green-backgroundtext font-semibold font-sans pt-4">
+        <div className='flex justify-between'>
+          <h1 className='pt-4 font-sans text-xl font-semibold text-green-backgroundtext'>
             Level: {ability}
           </h1>
 
-          <h1 className="text-xl  text-green-backgroundtext font-semibold font-sans pt-4">
+          <h1 className='pt-4 font-sans text-xl font-semibold text-green-backgroundtext'>
             {likeCount} Likes
           </h1>
         </div>
 
-        <div className="flex justify-between">
-          <h1 className="text-xl text-green-backgroundtext font-semibold font-sans pt-4">
+        <div className='flex justify-between'>
+          <h1 className='pt-4 font-sans text-xl font-semibold text-green-backgroundtext'>
             Materials:
           </h1>
 
-          <div className="flex display pt-1 pr-3 text-2xl">
+          <div className='flex pt-1 pr-3 text-2xl display'>
             {user === undefined ? (
-              <p className="pt-1 pr-1 text-2xl">
+              <p className='pt-1 pr-1 text-2xl'>
                 {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
               </p>
             ) : (
-              <p onClick={handleClick} className="pt-1 pr-1 text-2xl">
+              <p onClick={handleClick} className='pt-1 pr-1 text-2xl'>
                 {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
               </p>
             )}
           </div>
         </div>
 
-        <div className="px-2 pt-2 pb-2">
+        <div className='px-2 pt-2 pb-2'>
           {materials.map((material, index) => (
             <span
-              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:bg-gray-400 mr-2 mb-2"
-              key={index}
-            >
+              className='inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full hover:bg-gray-400'
+              key={index}>
               {material}
             </span>
           ))}
         </div>
 
-        <div className="mt-2">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext pt-4">
+        <div className='mt-2'>
+          <h5 className='pt-4 mb-2 text-2xl font-bold tracking-tight text-green-backgroundtext'>
             Instructions:
           </h5>
-          <p className="mb-3 font-normal text-gray-700">{instructions}</p>
+          <p className='mb-3 font-normal text-gray-700'>{instructions}</p>
         </div>
       </div>
       {user && (
-        <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
-          <form className="w-full max-w-xl">
-            <div className="flex flex-wrap -mx-3 mb-6">
-              <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext">
+        <div className='max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md md:w-144'>
+          <form className='w-full max-w-xl'>
+            <div className='flex flex-wrap mb-6 -mx-3'>
+              <h2 className='px-4 pt-3 pb-2 text-green-backgroundtext'>
                 Add a new comment
               </h2>
-              <div className="w-full md:w-full px-3 mb-2 mt-2">
+              <div className='w-full px-3 mt-2 mb-2 md:w-full'>
                 <textarea
-                  className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium text-green-backgroundtext focus:outline-none focus:bg-white"
-                  name="body"
-                  placeholder="Type Your Comment"
+                  className='w-full h-20 px-3 py-2 font-medium leading-normal bg-gray-100 border border-gray-400 rounded resize-none text-green-backgroundtext focus:outline-none focus:bg-white'
+                  name='body'
+                  placeholder='Type Your Comment'
                   onChange={handleChange}
                   value={commentInput}
-                  required
-                ></textarea>
+                  required></textarea>
               </div>
-              <div className="w-full flex items-start md:w-full px-3">
-                <div className="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
+              <div className='flex items-start w-full px-3 md:w-full'>
+                <div className='flex items-start w-1/2 px-2 mr-auto text-gray-700'>
                   <svg
-                    fill="none"
-                    className="w-5 h-5 text-gray-600 mr-1"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  ></svg>
+                    fill='none'
+                    className='w-5 h-5 mr-1 text-gray-600'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'></svg>
                 </div>
-                <div className="-mr-1">
+                <div className='-mr-1'>
                   <input
-                    type="submit"
-                    className="bg-green-backgroundtext text-white-text font-medium py-1 px-4 border border-gray-400 rounded-lg tracking-wide mr-1  hover:bg-green-700"
-                    value="Post Comment"
+                    type='submit'
+                    className='px-4 py-1 mr-1 font-medium tracking-wide border border-gray-400 rounded-lg bg-green-backgroundtext text-white-text hover:bg-green-700'
+                    value='Post Comment'
                     onClick={handleSubmitComment}
                   />
                 </div>
@@ -208,41 +204,40 @@ export default function SpecificTutorialCard({
         </div>
       )}
       {/* Comment card */}
-      <div className=" p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md w-full md:w-144">
-        <h2 className="px-4 pt-3 pb-2 text-green-backgroundtext font-bold">
+      <div className='w-full max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md md:w-144'>
+        <h2 className='px-4 pt-3 pb-2 font-bold text-green-backgroundtext'>
           Comments
         </h2>
-        <div className="px-4 pt-4 pb-2">
+        <div className='px-4 pt-4 pb-2'>
           {comment ? (
-            <div className="  p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md">
+            <div className='max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md '>
               <Image
-                className="inline object-cover w-3 h-3 rounded-full"
+                className='inline object-cover w-3 h-3 rounded-full'
                 src={user.picture}
                 alt={creatorImageUrl}
-                height="35%"
-                width="35%"
-              />{" "}
+                height='35%'
+                width='35%'
+              />{' '}
               {comment}
             </div>
           ) : (
-            ""
+            ''
           )}
           {comments
             .slice(0)
             .reverse()
             .map((singleComment, index) => (
               <div
-                className="p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md"
-                key={index}
-              >
+                className='max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md'
+                key={index}>
                 <Image
-                  className="inline object-cover w-3 h-3 rounded-full"
-                  src={singleComment.split("#£)*$%^!!%")[1]}
+                  className='inline object-cover w-3 h-3 rounded-full'
+                  src={singleComment.split('commentor_image_url:')[1]}
                   alt={creatorImageUrl}
-                  height="35%"
-                  width="35%"
-                />{" "}
-                {singleComment.split("#£)*$%^!!%")[0]}
+                  height='35%'
+                  width='35%'
+                />{' '}
+                {singleComment.split('commentor_image_url:')[0]}
               </div>
             ))}
         </div>
