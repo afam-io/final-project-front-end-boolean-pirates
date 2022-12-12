@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import tutorialsSchema from '../../../models/postTutorial.js';
+import tutorialsSchema from '../../models/postTutorial.js';
 import dbConnect from '../../../utils/connectMongo.js';
 
 export default async function handler(req, res) {
