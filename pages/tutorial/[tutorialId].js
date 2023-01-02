@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
-import SpecificTutorialCard from '../../components/SpecificTutorialCard';
+import { useRouter } from "next/router";
+import SpecificTutorialCard from "../../components/SpecificTutorialCard";
 
 function SpecificTutorial({ data }) {
   // const router = useRouter();
@@ -14,10 +14,10 @@ function SpecificTutorial({ data }) {
 }
 
 export const getServerSideProps = async ({ params }) => {
-  const tutorialId = params.tutorialId.replace(/\-/g, '+');
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/${tutorialId}`).then(
-    (r) => r.json()
-  );
+  const tutorialId = params.tutorialId.replace(/\-/g, "+");
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_URL}/${tutorialId}`
+  ).then((r) => r.json());
 
   return {
     props: {

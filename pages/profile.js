@@ -1,24 +1,27 @@
-import React from 'react';
-import Image from 'next/image';
-import Card from '../components/Card';
-import { useState } from 'react';
+import React from 'react'
+import Image from 'next/image'
+import Card from '../components/Card'
+import { useState } from 'react'
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { useUser } from '@auth0/nextjs-auth0';
 
 const Profile = ({ firstData }) => {
-  const [data, setData] = useState(firstData);
+  const [data, setData] = useState(firstData)
   const { user, error, isLoading } = useUser();
 
   async function handleDelete(myCardId) {
-    //delete user post
+    //post to backend to delete that post that a user was created
 
-    const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/${myCardId}`, {
-      method: 'DELETE',
+    const data = await fetch(
+      `${process.env.NEXT_PUBLIC_URL}/${myCardId}`,
+      {
+        method: "DELETE",
 
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const response = await data.json();
     setData(
       await fetch(`${process.env.NEXT_PUBLIC_URL}/tutorials`).then((r) =>
@@ -28,44 +31,44 @@ const Profile = ({ firstData }) => {
   }
 
   return (
-    <div className='h-full min-h-screen mt-5'>
+    <div className="mt-5 h-full min-h-screen">
       <div>
-        <div className='shadow-lg'>
-          <div className='flex justify-center py-10 bg-gradient-to-r from-sky-200 via-teal-200 to-sky-200'>
+        <div className="shadow-lg">
+          <div className="flex justify-center py-10 bg-gradient-to-r from-sky-200 via-teal-200 to-sky-200">
             <div>
               <Image
-                className='inline object-cover w-8 h-8 rounded-full'
+                className="inline object-cover w-8 h-8 rounded-full border-stone-900"
                 src={user?.picture}
                 alt={user?.sub}
-                height='100%'
-                width='100%'
+                height="100%"
+                width="100%"
               />
             </div>
           </div>
           <div>
-            <p className='pt-5 pb-4 text-center sm:text-2xl text-black-300'>
+            <p className="sm:text-2xl text-black-300 pt-5 pb-4 text-center">
               {user?.name}
             </p>
-            <p className='pb-5 text-center sm:text-1xl text-black-300'>
-              {' '}
+            <p className="sm:text-1xl text-black-300 pb-5 text-center">
+              {" "}
               Last logged in : {user?.updated_at}
             </p>
           </div>
         </div>
 
         {/* card */}
-        <div className='flex justify-center py-12 font-sans text-lg font-semibold sm:text-1xl text-green-backgroundtext'>
+        <div className="flex justify-center sm:text-1xl text-lg font-semibold font-sans text-green-backgroundtext py-12">
           <p>My Uploads</p>
         </div>
       </div>
       {/* card holder that aligns the cards to center */}
-      <div className='flex items-center justify-center'>
+      <div className="flex items-center justify-center">
         {/* media query which shows different amount of cards on different screen sizes */}
-        <div className='grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {data
             .filter((myCard) => myCard.creator === user?.name)
             .map((data, index) => (
-              <div key={index} className='m-2'>
+              <div key={index} className="m-2">
                 <Card
                   user={user}
                   imageUrl={data.imageUrl}
@@ -77,11 +80,12 @@ const Profile = ({ firstData }) => {
                   creator={data.creator}
                   creatorImageUrl={data.creator_image_url[0]}
                 />
-                <div className='px-4 mt-2 text-center text-white bg-red-500 rounded hover:bg-red-700'>
+                <div className="bg-red-500 hover:bg-red-700 text-white text-center px-4 mt-2 rounded hover:cursor-pointer">
                   <button
                     onClick={() => {
                       handleDelete(data._id);
-                    }}>
+                    }}
+                  >
                     Delete
                   </button>
                 </div>
