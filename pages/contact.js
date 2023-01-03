@@ -19,7 +19,7 @@ const Contact = () => {
         <div className="p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md md:w-144">
         <h1 className="text-lg flex justify-center items-center"> Github Profiles : </h1>
         <ul>
-        <li><a href= "https://github.com/JojokCreator"> Joe Klakus </a></li>
+        <li><a href= "https://github.com/JojokCreator"> Joe Klakus: https://github.com/JojokCreator </a></li>
         <li><a href= "https://github.com/afam-io"> Afam Okoh </a></li>
         <li><a href= "https://github.com/tassanee-atsa"> Tassanee Atsawajuramanee </a></li>
         <li><a href= "https://github.com/HairiBeast"> Harri Best </a></li>
