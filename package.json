@@ -13,7 +13,7 @@
     "@headlessui/react": "^1.6.6",
     "axios": "^0.27.2",
     "moment": "^2.29.4",
-    "mongoose": "^6.8.0",
+    "mongoose": "^6.8.2",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
