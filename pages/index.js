@@ -1,7 +1,7 @@
 import Card from '../components/Card';
 import Image from 'next/image';
 import { useUser } from '@auth0/nextjs-auth0';
-
+// Use pets example I understand the error now i was calling my own files to receive the data rather than calling mongodb need to set up handlers
 export default function Home({ data }) {
   const { user, error, isLoading } = useUser();
 
@@ -61,9 +61,7 @@ export default function Home({ data }) {
   );
 }
 export const getServerSideProps = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/tutorials`).then(
-    (r) => r.json()
-  );
+  const data = await fetch(`/api/tutorials`).then((r) => r.json());
 
   return {
     props: {
