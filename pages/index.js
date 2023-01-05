@@ -61,7 +61,9 @@ export default function Home({ data }) {
   );
 }
 export const getServerSideProps = async () => {
-  const data = await fetch(`/api/tutorials`).then((r) => r.json());
+  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tutorials`).then(
+    (r) => r.json()
+  );
 
   return {
     props: {
