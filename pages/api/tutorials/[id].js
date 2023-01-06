@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import tutorialsSchema from '../../../models/Tutorial.js';
-import dbConnect from '../../../libsdbConnect.js';
+import dbConnect from '../../../libs/dbConnect.js';
 
 export default async function handler(req, res) {
   const { method } = req;
