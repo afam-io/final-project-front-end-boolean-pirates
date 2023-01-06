@@ -53,7 +53,7 @@ export default function SpecificTutorialCard({
     }
     const date = new Date();
     const data = await fetch(
-      `${process.env.NEXT_PUBLIC_URL}/comments/${cardId}`,
+      `${process.env.NEXT_PUBLIC_URL}/tutorials/comments/${cardId}`,
       {
         method: 'PATCH',
         body: JSON.stringify({
@@ -204,13 +204,13 @@ export default function SpecificTutorialCard({
         </div>
       )}
       {/* Comment card */}
-      <div className='w-full max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md md:w-144'>
-        <h2 className='px-4 pt-3 pb-2 font-bold text-green-backgroundtext'>
+      <div className=' p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md w-full md:w-144'>
+        <h2 className='px-4 pt-3 pb-2 text-green-backgroundtext font-bold'>
           Comments
         </h2>
         <div className='px-4 pt-4 pb-2'>
           {comment ? (
-            <div className='max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md '>
+            <div className='  p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md'>
               <Image
                 className='inline object-cover w-3 h-3 rounded-full'
                 src={user.picture}
@@ -228,16 +228,16 @@ export default function SpecificTutorialCard({
             .reverse()
             .map((singleComment, index) => (
               <div
-                className='max-w-2xl p-2 mt-2 bg-white border border-gray-200 rounded-lg shadow-md'
+                className='p-2 mt-2 max-w-2xl  bg-white rounded-lg border border-gray-200 shadow-md'
                 key={index}>
                 <Image
                   className='inline object-cover w-3 h-3 rounded-full'
-                  src={singleComment.split('commentor_image_url:')[1]}
+                  src={singleComment.split('#£)*$%^!!%')[1]}
                   alt={creatorImageUrl}
                   height='35%'
                   width='35%'
                 />{' '}
-                {singleComment.split('commentor_image_url:')[0]}
+                {singleComment.split('#£)*$%^!!%')[0]}
               </div>
             ))}
         </div>
