@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import tutorialsSchema from '../../../../models/postTutorial.js';
-import dbConnect from '../../../../utils/connectMongo.js';
+import tutorialsSchema from '../../../../models/Tutorial.js';
+import dbConnect from '../../../../libs/dbConnect.js';
 
 export default async function handler(req, res) {
   await dbConnect();
