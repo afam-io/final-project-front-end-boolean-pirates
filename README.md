@@ -7,6 +7,8 @@ For our final project we developed an App for eco-minded individuals who are loo
 
 Our App aims to provide a platform for creators to showcase their builds, helping others to follow every step of the way and guiding users of varying ability. From wind turbines made of old car parts, to window farms made of plastic bottles.
 
+Backend can be found at: https://github.com/afam-io/final-project_back-end-boolean_pirates
+
 ## Get Started
 
 First, clone the repository:
